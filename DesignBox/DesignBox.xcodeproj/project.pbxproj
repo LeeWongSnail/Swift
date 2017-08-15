@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		0F9ED1FA34C52768882D890D /* Pods_DesignBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD50125A2DD2368C6925843 /* Pods_DesignBox.framework */; };
 		EB249A861F42D1C800D48C2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB249A851F42D1C800D48C2F /* AppDelegate.swift */; };
-		EB249A881F42D1C800D48C2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB249A871F42D1C800D48C2F /* ViewController.swift */; };
-		EB249A8B1F42D1C800D48C2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB249A891F42D1C800D48C2F /* Main.storyboard */; };
-		EB249A8D1F42D1C800D48C2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB249A8C1F42D1C800D48C2F /* Assets.xcassets */; };
-		EB249A901F42D1C800D48C2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB249A8E1F42D1C800D48C2F /* LaunchScreen.storyboard */; };
 		EB249A9B1F42D1C800D48C2F /* DesignBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB249A9A1F42D1C800D48C2F /* DesignBoxTests.swift */; };
 		EB249AA61F42D1C800D48C2F /* DesignBoxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB249AA51F42D1C800D48C2F /* DesignBoxUITests.swift */; };
+		EB249AC01F42F2D600D48C2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB249ABA1F42F2D600D48C2F /* Assets.xcassets */; };
+		EB249AC11F42F2D700D48C2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB249ABB1F42F2D600D48C2F /* LaunchScreen.storyboard */; };
+		EB249AC21F42F2D700D48C2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB249ABD1F42F2D600D48C2F /* Main.storyboard */; };
+		EB249AC71F42F31200D48C2F /* ArtWorkListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB249AC61F42F31200D48C2F /* ArtWorkListViewController.swift */; };
+		EB249AC81F42F7A100D48C2F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB249ABF1F42F2D600D48C2F /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,17 +40,17 @@
 		AAD50125A2DD2368C6925843 /* Pods_DesignBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesignBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB249A821F42D1C800D48C2F /* DesignBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB249A851F42D1C800D48C2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EB249A871F42D1C800D48C2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EB249A8A1F42D1C800D48C2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		EB249A8C1F42D1C800D48C2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		EB249A8F1F42D1C800D48C2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		EB249A911F42D1C800D48C2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB249A961F42D1C800D48C2F /* DesignBoxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesignBoxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB249A9A1F42D1C800D48C2F /* DesignBoxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignBoxTests.swift; sourceTree = "<group>"; };
 		EB249A9C1F42D1C800D48C2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB249AA11F42D1C800D48C2F /* DesignBoxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesignBoxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB249AA51F42D1C800D48C2F /* DesignBoxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignBoxUITests.swift; sourceTree = "<group>"; };
 		EB249AA71F42D1C800D48C2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB249ABA1F42F2D600D48C2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EB249ABC1F42F2D600D48C2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EB249ABE1F42F2D600D48C2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EB249ABF1F42F2D600D48C2F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB249AC61F42F31200D48C2F /* ArtWorkListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtWorkListViewController.swift; sourceTree = "<group>"; };
 		EDF11EE45BE2B5ECC7E3C9A6 /* Pods-DesignBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesignBox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DesignBox/Pods-DesignBox.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,11 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				EB249A851F42D1C800D48C2F /* AppDelegate.swift */,
-				EB249A871F42D1C800D48C2F /* ViewController.swift */,
-				EB249A891F42D1C800D48C2F /* Main.storyboard */,
-				EB249A8C1F42D1C800D48C2F /* Assets.xcassets */,
-				EB249A8E1F42D1C800D48C2F /* LaunchScreen.storyboard */,
-				EB249A911F42D1C800D48C2F /* Info.plist */,
+				EB249AB31F42F2AF00D48C2F /* App */,
+				EB249AB91F42F2D600D48C2F /* SupportingFiles */,
 			);
 			path = DesignBox;
 			sourceTree = "<group>";
@@ -147,6 +145,65 @@
 				EB249AA71F42D1C800D48C2F /* Info.plist */,
 			);
 			path = DesignBoxUITests;
+			sourceTree = "<group>";
+		};
+		EB249AB31F42F2AF00D48C2F /* App */ = {
+			isa = PBXGroup;
+			children = (
+				EB249AB41F42F2AF00D48C2F /* Work */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		EB249AB41F42F2AF00D48C2F /* Work */ = {
+			isa = PBXGroup;
+			children = (
+				EB249AB51F42F2AF00D48C2F /* Command */,
+				EB249AB61F42F2AF00D48C2F /* View */,
+				EB249AB71F42F2AF00D48C2F /* ViewController */,
+				EB249AB81F42F2AF00D48C2F /* ViewModel */,
+			);
+			path = Work;
+			sourceTree = "<group>";
+		};
+		EB249AB51F42F2AF00D48C2F /* Command */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Command;
+			sourceTree = "<group>";
+		};
+		EB249AB61F42F2AF00D48C2F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EB249AB71F42F2AF00D48C2F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EB249AC61F42F31200D48C2F /* ArtWorkListViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		EB249AB81F42F2AF00D48C2F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EB249AB91F42F2D600D48C2F /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				EB249ABA1F42F2D600D48C2F /* Assets.xcassets */,
+				EB249ABB1F42F2D600D48C2F /* LaunchScreen.storyboard */,
+				EB249ABD1F42F2D600D48C2F /* Main.storyboard */,
+				EB249ABF1F42F2D600D48C2F /* Info.plist */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,9 +319,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB249A901F42D1C800D48C2F /* LaunchScreen.storyboard in Resources */,
-				EB249A8D1F42D1C800D48C2F /* Assets.xcassets in Resources */,
-				EB249A8B1F42D1C800D48C2F /* Main.storyboard in Resources */,
+				EB249AC81F42F7A100D48C2F /* Info.plist in Resources */,
+				EB249AC01F42F2D600D48C2F /* Assets.xcassets in Resources */,
+				EB249AC21F42F2D700D48C2F /* Main.storyboard in Resources */,
+				EB249AC11F42F2D700D48C2F /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,7 +395,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB249A881F42D1C800D48C2F /* ViewController.swift in Sources */,
+				EB249AC71F42F31200D48C2F /* ArtWorkListViewController.swift in Sources */,
 				EB249A861F42D1C800D48C2F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,20 +432,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		EB249A891F42D1C800D48C2F /* Main.storyboard */ = {
+		EB249ABB1F42F2D600D48C2F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				EB249A8A1F42D1C800D48C2F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		EB249A8E1F42D1C800D48C2F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EB249A8F1F42D1C800D48C2F /* Base */,
+				EB249ABC1F42F2D600D48C2F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		EB249ABD1F42F2D600D48C2F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB249ABE1F42F2D600D48C2F /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -492,7 +550,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XWNPFKK4U5;
-				INFOPLIST_FILE = DesignBox/Info.plist;
+				INFOPLIST_FILE = DesignBox/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.msb.DesignBox1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -506,7 +564,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XWNPFKK4U5;
-				INFOPLIST_FILE = DesignBox/Info.plist;
+				INFOPLIST_FILE = DesignBox/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.msb.DesignBox1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -591,6 +649,7 @@
 				EB249AAC1F42D1C800D48C2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB249AAD1F42D1C800D48C2F /* Build configuration list for PBXNativeTarget "DesignBoxTests" */ = {
 			isa = XCConfigurationList;
@@ -599,6 +658,7 @@
 				EB249AAF1F42D1C800D48C2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB249AB01F42D1C800D48C2F /* Build configuration list for PBXNativeTarget "DesignBoxUITests" */ = {
 			isa = XCConfigurationList;
@@ -607,6 +667,7 @@
 				EB249AB21F42D1C800D48C2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
