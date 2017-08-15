@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F9ED1FA34C52768882D890D /* Pods_DesignBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD50125A2DD2368C6925843 /* Pods_DesignBox.framework */; };
 		EB249A861F42D1C800D48C2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB249A851F42D1C800D48C2F /* AppDelegate.swift */; };
 		EB249A881F42D1C800D48C2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB249A871F42D1C800D48C2F /* ViewController.swift */; };
 		EB249A8B1F42D1C800D48C2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB249A891F42D1C800D48C2F /* Main.storyboard */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A99D23A7AD340B2B1B80973 /* Pods-DesignBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesignBox.release.xcconfig"; path = "Pods/Target Support Files/Pods-DesignBox/Pods-DesignBox.release.xcconfig"; sourceTree = "<group>"; };
+		AAD50125A2DD2368C6925843 /* Pods_DesignBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesignBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB249A821F42D1C800D48C2F /* DesignBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB249A851F42D1C800D48C2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB249A871F42D1C800D48C2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +50,7 @@
 		EB249AA11F42D1C800D48C2F /* DesignBoxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesignBoxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB249AA51F42D1C800D48C2F /* DesignBoxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignBoxUITests.swift; sourceTree = "<group>"; };
 		EB249AA71F42D1C800D48C2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDF11EE45BE2B5ECC7E3C9A6 /* Pods-DesignBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesignBox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DesignBox/Pods-DesignBox.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F9ED1FA34C52768882D890D /* Pods_DesignBox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +79,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1FC9B0292496FF62BCCEB308 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EDF11EE45BE2B5ECC7E3C9A6 /* Pods-DesignBox.debug.xcconfig */,
+				5A99D23A7AD340B2B1B80973 /* Pods-DesignBox.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7B827EB4D506CCC751216145 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AAD50125A2DD2368C6925843 /* Pods_DesignBox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EB249A791F42D1C800D48C2F = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +103,8 @@
 				EB249A991F42D1C800D48C2F /* DesignBoxTests */,
 				EB249AA41F42D1C800D48C2F /* DesignBoxUITests */,
 				EB249A831F42D1C800D48C2F /* Products */,
+				1FC9B0292496FF62BCCEB308 /* Pods */,
+				7B827EB4D506CCC751216145 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,9 +156,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EB249AAA1F42D1C800D48C2F /* Build configuration list for PBXNativeTarget "DesignBox" */;
 			buildPhases = (
+				D74C89E16E1353FB762A20B0 /* [CP] Check Pods Manifest.lock */,
 				EB249A7E1F42D1C800D48C2F /* Sources */,
 				EB249A7F1F42D1C800D48C2F /* Frameworks */,
 				EB249A801F42D1C800D48C2F /* Resources */,
+				10E27BD2C73C9DE7E3E0B807 /* [CP] Embed Pods Frameworks */,
+				F0E5E217B28985608F61D4EB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -256,6 +283,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		10E27BD2C73C9DE7E3E0B807 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DesignBox/Pods-DesignBox-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D74C89E16E1353FB762A20B0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F0E5E217B28985608F61D4EB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DesignBox/Pods-DesignBox-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EB249A7E1F42D1C800D48C2F /* Sources */ = {
@@ -413,6 +488,7 @@
 		};
 		EB249AAB1F42D1C800D48C2F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EDF11EE45BE2B5ECC7E3C9A6 /* Pods-DesignBox.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XWNPFKK4U5;
@@ -426,6 +502,7 @@
 		};
 		EB249AAC1F42D1C800D48C2F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A99D23A7AD340B2B1B80973 /* Pods-DesignBox.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XWNPFKK4U5;

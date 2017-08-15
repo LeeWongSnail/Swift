@@ -1,0 +1,6 @@
+framework module Pods_DesignBox {
+  umbrella header "Pods-DesignBox-umbrella.h"
+
+  export *
+  module * { export * }
+}
