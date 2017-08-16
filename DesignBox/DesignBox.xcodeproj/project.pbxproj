@@ -20,6 +20,7 @@
 		EB249ACD1F43E08700D48C2F /* ArtCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB249ACC1F43E08700D48C2F /* ArtCommand.swift */; };
 		EB249AD11F44281A00D48C2F /* ArtWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB249AD01F44281A00D48C2F /* ArtWork.swift */; };
 		EB4741791F44658E00235E1A /* ArtWorkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4741781F44658E00235E1A /* ArtWorkCell.swift */; };
+		EB47417C1F44689400235E1A /* ArtImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB47417B1F44689400235E1A /* ArtImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		EB249ACC1F43E08700D48C2F /* ArtCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtCommand.swift; sourceTree = "<group>"; };
 		EB249AD01F44281A00D48C2F /* ArtWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtWork.swift; sourceTree = "<group>"; };
 		EB4741781F44658E00235E1A /* ArtWorkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtWorkCell.swift; sourceTree = "<group>"; };
+		EB47417B1F44689400235E1A /* ArtImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtImageView.swift; sourceTree = "<group>"; };
 		EDF11EE45BE2B5ECC7E3C9A6 /* Pods-DesignBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesignBox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DesignBox/Pods-DesignBox.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,6 +135,7 @@
 				EB249A851F42D1C800D48C2F /* AppDelegate.swift */,
 				EB249AB31F42F2AF00D48C2F /* App */,
 				EB249ACB1F43E05700D48C2F /* Service */,
+				EB47417A1F44682400235E1A /* ArtKit */,
 				EB249AB91F42F2D600D48C2F /* SupportingFiles */,
 			);
 			path = DesignBox;
@@ -232,6 +235,14 @@
 				EB4741781F44658E00235E1A /* ArtWorkCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		EB47417A1F44682400235E1A /* ArtKit */ = {
+			isa = PBXGroup;
+			children = (
+				EB47417B1F44689400235E1A /* ArtImageView.swift */,
+			);
+			path = ArtKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,6 +439,7 @@
 				EB249ACD1F43E08700D48C2F /* ArtCommand.swift in Sources */,
 				EB249A861F42D1C800D48C2F /* AppDelegate.swift in Sources */,
 				EB249ACA1F43E03800D48C2F /* ArtWorkCommand.swift in Sources */,
+				EB47417C1F44689400235E1A /* ArtImageView.swift in Sources */,
 				EB249AD11F44281A00D48C2F /* ArtWork.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
