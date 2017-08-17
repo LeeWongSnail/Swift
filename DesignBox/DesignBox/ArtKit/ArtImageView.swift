@@ -11,9 +11,12 @@ import Kingfisher
 
 class ArtImageView: UIImageView {
 
+    
+    //图片缓存目录
     let myCache = ImageCache(name:"my_cache")
     
     
+    //图片缓存的相关配置
     func imageConfig() -> Void {
         let downloader = KingfisherManager.shared.downloader
         // 修改超时时间
@@ -28,32 +31,46 @@ class ArtImageView: UIImageView {
     }
     
     
-    func getCacheSize() -> Void {
+    //获取缓存文件的大小
+    func getCacheSize(completion:@escaping (_ size:UInt)->()) -> Void {
         // 获取硬盘缓存的大小
-//        cache.calculateDiskCacheSizeWithCompletionHandler { (size) -> () in
-//            print(size)
-//        }
-        
-        
-        
-//        //清理内存缓存
-//        cache.clearMemoryCache()
-//        
-//        // 清理硬盘缓存，这是一个异步的操作
-//        cache.clearDiskCache()
-//        
-//        // 清理过期或大小超过磁盘限制缓存。这是一个异步的操作
-//        cache.cleanExpiredDiskCache()
+        let cache = KingfisherManager.shared.cache
+
+        cache.calculateDiskCacheSize(completion: { (size) in
+            completion(size)
+        })
     }
     
     
+    //清除缓存 包括 内存缓存 磁盘缓存
+    func cleanCache() -> Void {
+        let cache = KingfisherManager.shared.cache
+
+        //清理内存缓存
+        cache.clearMemoryCache()
+
+        // 清理硬盘缓存，这是一个异步的操作
+        cache.clearDiskCache()
+
+        // 清理过期或大小超过磁盘限制缓存。这是一个异步的操作
+        cache.cleanExpiredDiskCache()
+    }
+    
+    
+    
+    //MARK: - 设置图片
     func setImageWithURL(imageURL:String) -> Void {
         let url = URL(string: imageURL)
         self.kf.setImage(with: url)
     }
     
-    func setImageWith(imageURL:String,placeholder:UIImage) -> Void {
-        let url = URL(string: imageURL)
+    func setImageWith(imageURL:String?,placeholder:UIImage) -> Void {
+        var url:URL?
+        
+        if let imgURL = imageURL {
+            url = URL(string: imgURL)
+        }
+        
         self.kf.setImage(with: url, placeholder: placeholder, options:nil, progressBlock: { (receivedSize, totalSize) in
             
         }) { (image, error, cacheType, imageURL) in
@@ -61,6 +78,9 @@ class ArtImageView: UIImageView {
         }
     }
     
+    func setWithImage(image:UIImage) -> Void {
+        self.setImageWith(imageURL: nil, placeholder: image)
+    }
 
     
     //MARK: - Cancel Image Downloader
