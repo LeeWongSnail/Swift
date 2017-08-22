@@ -27,12 +27,14 @@ class ArtWorkCommand: ArtCommand {
         startCommand(success: { (response) in
             //字典转模型
             let works:JSON = response["works"]
+            print(works)
             for(_,subjson) in works {
                 let json1:JSON = subjson["work"]
-                let work:ArtWork = Mapper<ArtWork>().map(JSONObject: json1)!
+                print(json1)
+                let work:ArtWork = Mapper<ArtWork>().map(JSONObject: json1.object)!
                 print(work)
             }
-            let workArr:[ArtWork] = Mapper<ArtWork>().mapArray(JSONString: works.rawString()!)!
+            let workArr:[ArtWork] = Mapper<ArtWork>().mapArray(JSONObject: works.object)!
             print(workArr.count)
         }) { (error) in
             print(error)
