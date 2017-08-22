@@ -12,6 +12,7 @@ import SnapKit
 
 class ArtWorkListViewController: UIViewController, UITableViewDelegate , UITableViewDataSource {
 
+    var works:[ArtWork]?
     
     lazy var tableView:UITableView = {
         let tableView = UITableView(frame: CGRect.zero, style: UITableViewStyle.plain)
@@ -36,7 +37,10 @@ class ArtWorkListViewController: UIViewController, UITableViewDelegate , UITable
         
         worklistCommand.fetchWork(success: { (works) in
             //请求获取的work
-            
+            if works.count > 0 {
+                self.works = works
+                self.tableView.reloadData()
+            }
         }) { (error) in
             print(error)
         }
@@ -63,7 +67,7 @@ class ArtWorkListViewController: UIViewController, UITableViewDelegate , UITable
     
     //MARK: -UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return works!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

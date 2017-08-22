@@ -10,7 +10,11 @@ import UIKit
 
 class ArtWorkCell: UITableViewCell {
 
-    
+    func buildUI() -> Void {
+        
+        
+        
+    }
     
     
     
@@ -29,9 +33,39 @@ class ArtWorkCell: UITableViewCell {
     
     
     //MARK: - Lazy Load
+    lazy var iconImage: ArtImageView? = {
+        var tempImage = ArtImageView()
+        return tempImage
+    }()
     
+    lazy var nickname: UILabel? = {
+        var tempLabel = UILabel()
+        tempLabel.font = UIFont().withSize(15)
+        tempLabel.textColor = UIColor.black
+        return tempLabel
+    }()
     
+    lazy var detailLabel: UILabel? = {
+        var tempLabel = UILabel()
+        tempLabel.font = UIFont().withSize(12)
+        tempLabel.textColor = UIColor.black
+        return tempLabel
+    }()
     
+    lazy var tagBtn:UIButton? = {
+        var tempBtn = UIButton(type: UIButtonType.custom)
+        tempBtn.setTitleColor(UIColor.red, for: UIControlState.normal)
+        tempBtn.titleLabel?.font = UIFont.systemFont(ofSize: 13)
+        return tempBtn
+    }()
     
-
+    lazy var contentLabel: UILabel? = {
+        var tempLabel = UILabel()
+        
+        tempLabel.font = UIFont.systemFont(ofSize: 15)
+        tempLabel.textColor = UIColor.black
+        
+        return tempLabel
+    }()
+    
 }

@@ -11,7 +11,27 @@ import Foundation
 import ObjectMapper
 
 
-class ArtWork: Mappable{
+class ArtWork: Mappable {
+    var author: ArtUser?
+    var work: ArtWorkPaint?
+    var share: ArtShare?
+    
+    
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        author <- map["author"]
+        work   <- map["work"]
+        share  <- map["share"]
+    }
+    
+}
+
+
+
+class ArtWorkPaint: Mappable{
     var _id: String?
     var userid: String?
     var city: String?
@@ -27,11 +47,13 @@ class ArtWork: Mappable{
     var worktype: NSNumber?
     var status: NSNumber?
     var isoriginal: NSNumber?
-    var tags:[AnyObject]?
-    var sorts:[AnyObject]?
+    var tags:[String]?
+    var sorts:[String]?
     var sortsname:[String]?
     var text: String?
-    var imgInfos: [AnyObject]?
+    var imgInfos: [String]?
+    var imgids: [String]?
+    var imgs: [AnyObject]?
     var imgHeight: Float?
     var topicid: String?
     var topicname: String?
@@ -76,6 +98,13 @@ class ArtWork: Mappable{
         virtual      <- map["virtual"]
         cheat        <- map["cheat"]
         supported    <- map["supported"]
+        imgids       <- map["imgids"]
+        imgs         <- map["imgs"]
     }
     
 }
+
+
+
+
+
