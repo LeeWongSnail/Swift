@@ -18,6 +18,7 @@ class ArtWorkListViewController: UIViewController, UITableViewDelegate , UITable
         let tableView = UITableView(frame: CGRect.zero, style: UITableViewStyle.plain)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         return tableView;
     }()
     
@@ -68,26 +69,38 @@ class ArtWorkListViewController: UIViewController, UITableViewDelegate , UITable
     
     //MARK: -UITableViewDelegate
     
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 10.0
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.000001
+    }
     
     
     //MARK: -UITableViewDataSource
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         if let paints = works {
             return paints.count
         }
         return 0
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:ArtWorkCell = tableView.dequeueReusableCell(withIdentifier: "ArtWorkCell") as! ArtWorkCell
         
-        cell .configWorkCell(work: (works?[indexPath.row])!)
+        cell .configWorkCell(work: (works?[indexPath.section])!)
         
         return cell;
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return 120
     }
 
 }

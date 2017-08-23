@@ -17,6 +17,10 @@ extension AppDelegate {
         tabBar?.tintColor = UIColor.art_colorWithHexString(hexString: "F64E4E")
         tabBar?.barTintColor = UIColor.clear
         
+        
+        let navBar = UINavigationBar.appearance()
+        navBar.tintColor = UIColor.art_mainHighColor()
+        navBar.barTintColor = UIColor.art_mainGrayColor()
     }
     
 }
