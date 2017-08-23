@@ -53,10 +53,18 @@ class ArtWorkCell: UITableViewCell {
             make.height.equalTo(0.5)
         }
         
+        self.contentView.addSubview(imageArea)
+        imageArea.snp.makeConstraints { (make) in
+            make.left.right.equalTo(self.contentView)
+            make.top.equalTo(contentLabel.snp.bottom)
+        }
+        
+        
         addToolBar()
     }
     
     
+    //MARK: - 底部的工具栏
     func addToolBar() -> Void {
         let count = 4
         let w = SCREEN_W / CGFloat(count)
@@ -91,8 +99,6 @@ class ArtWorkCell: UITableViewCell {
         }
 
     }
-    
-    
     
     func createButtonAtIndex(index:Int) -> UIButton {
         let btn = UIButton(type: UIButtonType.custom)
@@ -129,6 +135,34 @@ class ArtWorkCell: UITableViewCell {
     
     
     
+    //MARK: - 图片展示九宫格
+//    + (CGFloat)height:(NSArray *)aImageInfos
+//    {
+//    NSInteger row = (aImageInfos.count + 2)/3;
+//    return (art_workGridImageWidth() + kImagesMarginSep)*row + (kImagesMarginB - kImagesMarginSep);
+//    }
+//    
+//    - (CGPoint)caculateCenterAtIndex:(NSInteger)aIndex
+//    {
+//    NSInteger y = aIndex/3;
+//    NSInteger x = aIndex%3;
+//    CGFloat centerY = y*(art_workGridImageWidth() + kImagesMarginSep) + art_workGridImageWidth()/2. + kImagesMarginT;
+//    CGFloat centerX = x*(art_workGridImageWidth() + kImagesMarginSep) + kImagesMarginSep + art_workGridImageWidth()/2. + kImagesMarginLR;
+//    
+//    return CGPointMake(centerX, centerY);
+//    }
+//    func configImageGridView(work:ArtWorkPaint?) -> Void {
+//        if work?.imgs?.count == 0 {
+//            return
+//        }
+//        
+//        for index in 0...work!.imgs!.count {
+//            let paintImage = ArtImageView()
+//            
+//        }
+//    }
+    
+    
     func configWorkCell(work:ArtWork) -> Void {
         iconImage.art_setImageWithURL(imageURL: work.author?.icon)
         nickname.text = work.author?.nickname
@@ -146,6 +180,8 @@ class ArtWorkCell: UITableViewCell {
         tagBtn.setTitle(work.work?.sortsname?.last, for: UIControlState.normal)
         
         contentLabel.text = work.work?.text
+        
+//        configImageGridView(work: work.work)
     }
     
     
@@ -194,7 +230,7 @@ class ArtWorkCell: UITableViewCell {
         
         tempLabel.font = UIFont.systemFont(ofSize: 15)
         tempLabel.textColor = UIColor.black
-//        tempLabel.numberOfLines = 0
+        tempLabel.numberOfLines = 0
         
         return tempLabel
     }()
@@ -206,5 +242,9 @@ class ArtWorkCell: UITableViewCell {
     }()
     
     
-    
+    lazy var imageArea:UIView = {
+        var tempView = UIView()
+        
+        return tempView
+    }()
 }
