@@ -12,15 +12,23 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    public var tabBarController: UITabBarController?
+    
+    func buildBaseApp() -> Void {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        tabBarController = sb.instantiateInitialViewController() as? UITabBarController
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = tabBarController
+        window?.makeKeyAndVisible()
+    }
+    
+    
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let tabBarVc = sb.instantiateInitialViewController()
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = tabBarVc
-        window?.makeKeyAndVisible()
+        buildBaseApp()
+        art_didFinishLaunchingWithOptions(launchOptions: launchOptions)
         return true
     }
 

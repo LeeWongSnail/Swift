@@ -28,7 +28,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ioD-Bl-rr8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2498" y="-535"/>
+            <point key="canvasLocation" x="-5566" y="-836"/>
         </scene>
         <!--首页-->
         <scene sceneID="MgE-MD-G27">
@@ -47,7 +47,7 @@
             </objects>
             <point key="canvasLocation" x="-1345" y="-1498"/>
         </scene>
-        <!--Art Work List View Controller-->
+        <!--首页-->
         <scene sceneID="oqp-a9-3dA">
             <objects>
                 <viewController id="ggW-90-8hD" customClass="ArtWorkListViewController" customModule="DesignBox" customModuleProvider="target" sceneMemberID="viewController">
@@ -60,13 +60,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="b5g-Oc-M2l"/>
+                    <navigationItem key="navigationItem" title="首页" id="b5g-Oc-M2l"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nay-ni-rIq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-266" y="-1498"/>
         </scene>
-        <!--Root View Controller-->
+        <!--社区-->
         <scene sceneID="b0r-p6-3BH">
             <objects>
                 <tableViewController id="NPF-jr-WAc" sceneMemberID="viewController">
@@ -89,13 +89,13 @@
                             <outlet property="delegate" destination="NPF-jr-WAc" id="kkG-Ee-ck1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="p56-At-bDb"/>
+                    <navigationItem key="navigationItem" title="社区" id="p56-At-bDb"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5pj-VG-mSK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="113" y="-706"/>
         </scene>
-        <!--Root View Controller-->
+        <!--素材-->
         <scene sceneID="HYt-zI-CEC">
             <objects>
                 <tableViewController id="H9a-c8-z5Y" sceneMemberID="viewController">
@@ -118,13 +118,13 @@
                             <outlet property="delegate" destination="H9a-c8-z5Y" id="8Z4-tM-jlJ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="bAg-ge-bl4"/>
+                    <navigationItem key="navigationItem" title="素材" id="bAg-ge-bl4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3D4-vl-Og5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="113" y="74"/>
         </scene>
-        <!--Root View Controller-->
+        <!--发现-->
         <scene sceneID="yPn-gl-plg">
             <objects>
                 <tableViewController id="r9o-1b-wGz" sceneMemberID="viewController">
@@ -147,7 +147,7 @@
                             <outlet property="delegate" destination="r9o-1b-wGz" id="IaM-5Q-jcF"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="g3n-4q-xua"/>
+                    <navigationItem key="navigationItem" title="发现" id="g3n-4q-xua"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B7m-v0-52g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -170,7 +170,7 @@
             </objects>
             <point key="canvasLocation" x="-1268" y="860"/>
         </scene>
-        <!--Root View Controller-->
+        <!--我的-->
         <scene sceneID="2Kn-8x-r86">
             <objects>
                 <tableViewController id="DoN-UI-omo" sceneMemberID="viewController">
@@ -193,7 +193,7 @@
                             <outlet property="delegate" destination="DoN-UI-omo" id="r0a-YU-aDT"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="ynu-4r-ywv"/>
+                    <navigationItem key="navigationItem" title="我的" id="ynu-4r-ywv"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="89i-f7-0fd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -214,7 +214,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aoI-8v-93b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2391" y="360"/>
+            <point key="canvasLocation" x="-4774" y="572"/>
         </scene>
         <!--素材-->
         <scene sceneID="gSE-Lm-muq">
