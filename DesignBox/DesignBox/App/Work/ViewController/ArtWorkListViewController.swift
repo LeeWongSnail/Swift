@@ -27,6 +27,7 @@ class ArtWorkListViewController: UIViewController, UITableViewDelegate , UITable
         tableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
+        registerCells()
     }
     
     
@@ -46,6 +47,10 @@ class ArtWorkListViewController: UIViewController, UITableViewDelegate , UITable
         }
     }
     
+    
+    func registerCells() -> Void {
+        tableView.register(ArtWorkCell.self, forCellReuseIdentifier: "ArtWorkCell")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,15 +72,22 @@ class ArtWorkListViewController: UIViewController, UITableViewDelegate , UITable
     
     //MARK: -UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return works!.count
+        if let paints = works {
+            return paints.count
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell:ArtWorkCell = tableView.dequeueReusableCell(withIdentifier: "ArtWorkCell") as! ArtWorkCell
+        
+        cell .configWorkCell(work: (works?[indexPath.row])!)
+        
+        return cell;
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44
+        return 60
     }
 
 }

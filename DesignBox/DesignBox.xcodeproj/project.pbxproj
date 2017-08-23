@@ -21,6 +21,7 @@
 		EB249AD11F44281A00D48C2F /* ArtWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB249AD01F44281A00D48C2F /* ArtWork.swift */; };
 		EB4741791F44658E00235E1A /* ArtWorkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4741781F44658E00235E1A /* ArtWorkCell.swift */; };
 		EB47417C1F44689400235E1A /* ArtImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB47417B1F44689400235E1A /* ArtImageView.swift */; };
+		EB7FF9031F4D1C5A00CFEB8A /* DesignBox-Prefix.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7FF9021F4D1C5A00CFEB8A /* DesignBox-Prefix.swift */; };
 		EBEE742D1F4BD92C0092EFCC /* ArtUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEE742C1F4BD92C0092EFCC /* ArtUser.swift */; };
 		EBEE742F1F4BD97F0092EFCC /* ArtShare.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEE742E1F4BD97F0092EFCC /* ArtShare.swift */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,7 @@
 		EB249AD01F44281A00D48C2F /* ArtWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtWork.swift; sourceTree = "<group>"; };
 		EB4741781F44658E00235E1A /* ArtWorkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtWorkCell.swift; sourceTree = "<group>"; };
 		EB47417B1F44689400235E1A /* ArtImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtImageView.swift; sourceTree = "<group>"; };
+		EB7FF9021F4D1C5A00CFEB8A /* DesignBox-Prefix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DesignBox-Prefix.swift"; sourceTree = "<group>"; };
 		EBEE742C1F4BD92C0092EFCC /* ArtUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtUser.swift; sourceTree = "<group>"; };
 		EBEE742E1F4BD97F0092EFCC /* ArtShare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtShare.swift; sourceTree = "<group>"; };
 		EDF11EE45BE2B5ECC7E3C9A6 /* Pods-DesignBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesignBox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DesignBox/Pods-DesignBox.debug.xcconfig"; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				EB249ABB1F42F2D600D48C2F /* LaunchScreen.storyboard */,
 				EB249ABD1F42F2D600D48C2F /* Main.storyboard */,
 				EB249ABF1F42F2D600D48C2F /* Info.plist */,
+				EB7FF9021F4D1C5A00CFEB8A /* DesignBox-Prefix.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				EB249ACA1F43E03800D48C2F /* ArtWorkCommand.swift in Sources */,
 				EB47417C1F44689400235E1A /* ArtImageView.swift in Sources */,
 				EBEE742D1F4BD92C0092EFCC /* ArtUser.swift in Sources */,
+				EB7FF9031F4D1C5A00CFEB8A /* DesignBox-Prefix.swift in Sources */,
 				EB249AD11F44281A00D48C2F /* ArtWork.swift in Sources */,
 				EBEE742F1F4BD97F0092EFCC /* ArtShare.swift in Sources */,
 			);

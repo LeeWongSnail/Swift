@@ -29,7 +29,9 @@ class ArtWorkCommand: ArtCommand {
             let works:JSON = response["works"]
             let workArr:[ArtWork] = Mapper<ArtWork>().mapArray(JSONObject: works.object)!
             print(works)
-            success(workArr)
+            DispatchQueue.main.async {
+                success(workArr)
+            }
         }) { (error) in
             print(error)
         }

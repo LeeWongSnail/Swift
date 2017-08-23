@@ -17,7 +17,7 @@ class ArtImageView: UIImageView {
     
     
     //图片缓存的相关配置
-    func imageConfig() -> Void {
+    func art_imageConfig() -> Void {
         let downloader = KingfisherManager.shared.downloader
         // 修改超时时间
         downloader.downloadTimeout = 5
@@ -32,7 +32,7 @@ class ArtImageView: UIImageView {
     
     
     //获取缓存文件的大小
-    func getCacheSize(completion:@escaping (_ size:UInt)->()) -> Void {
+    func art_getCacheSize(completion:@escaping (_ size:UInt)->()) -> Void {
         // 获取硬盘缓存的大小
         let cache = KingfisherManager.shared.cache
 
@@ -43,7 +43,7 @@ class ArtImageView: UIImageView {
     
     
     //清除缓存 包括 内存缓存 磁盘缓存
-    func cleanCache() -> Void {
+    func art_cleanCache() -> Void {
         let cache = KingfisherManager.shared.cache
 
         //清理内存缓存
@@ -59,12 +59,15 @@ class ArtImageView: UIImageView {
     
     
     //MARK: - 设置图片
-    func setImageWithURL(imageURL:String) -> Void {
-        let url = URL(string: imageURL)
+    func art_setImageWithURL(imageURL:String?) -> Void {
+        var url:URL?
+        if let pic = imageURL {
+            url = URL(string: pic)!
+        } 
         self.kf.setImage(with: url)
     }
     
-    func setImageWith(imageURL:String?,placeholder:UIImage) -> Void {
+    func art_setImageWith(imageURL:String?,placeholder:UIImage) -> Void {
         var url:URL?
         
         if let imgURL = imageURL {
@@ -78,13 +81,13 @@ class ArtImageView: UIImageView {
         }
     }
     
-    func setWithImage(image:UIImage) -> Void {
-        self.setImageWith(imageURL: nil, placeholder: image)
+    func art_setWithImage(image:UIImage) -> Void {
+        self.art_setImageWith(imageURL: nil, placeholder: image)
     }
 
     
     //MARK: - Cancel Image Downloader
-    func cancelImageDownload(imageURL:String) -> Void {
+    func art_cancelImageDownload(imageURL:String) -> Void {
         let task = self.kf.setImage(with: URL(string: imageURL))
         task.cancel()
     }
