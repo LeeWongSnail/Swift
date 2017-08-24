@@ -153,6 +153,11 @@ class ArtWorkCell: UITableViewCell {
     }
     
     func configImageGridView(work:ArtWorkPaint?) -> Void {
+        for  view in imageArea.subviews {
+            view.removeFromSuperview()
+        }
+        
+        
         if work?.imgs?.count == 0 {
             imageArea.snp.makeConstraints({ (make) in
                 make.width.height.equalTo(0)
@@ -176,7 +181,8 @@ class ArtWorkCell: UITableViewCell {
         
         //设置imageArea
         let row = (work?.imgs?.count)!/3
-        let height = (ArtStyle.shared.art_workGridImageWidth + 5) * Float(row)
+        let column = (work?.imgs?.count)!%3
+        let height = (ArtStyle.shared.art_workGridImageWidth + 5) * (Float(row) + Float(column == 0 ? 0 : 1))
         imageArea.snp.remakeConstraints { (make) in
             make.left.right.equalTo(self.contentView)
             make.top.equalTo(contentLabel.snp.bottom).offset(10)
@@ -218,16 +224,16 @@ class ArtWorkCell: UITableViewCell {
     }
 
     public class func cellHeight(work:ArtWork) -> CGFloat {
-        if  work.workCellHeight > Float(0.0)  {
-            return CGFloat(work.workCellHeight)
-        }
+//        if  work.workCellHeight > Float(0.0)  {
+//            return CGFloat(work.workCellHeight)
+//        }
         let row = (work.work?.imgs?.count)!/3
         let column = (work.work?.imgs?.count)!%3
         //图片的高度
         var height = (ArtStyle.shared.art_workGridImageWidth + 5) * (Float(row) + Float(column == 0 ? 0 : 1))
         
         //文本的高度
-        height += (work.work?.text?.getTextHeigh(font: UIFont.systemFont(ofSize: 12), width: SCREEN_W-30))!
+        height += (work.work?.text?.getTextHeigh(font: UIFont.systemFont(ofSize: 15), width: SCREEN_W-30))!
         
         //作者部分
         height += 50

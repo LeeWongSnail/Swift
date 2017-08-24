@@ -93,13 +93,14 @@ class ArtWorkListViewController: UIViewController, UITableViewDelegate , UITable
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:ArtWorkCell = tableView.dequeueReusableCell(withIdentifier: "ArtWorkCell") as! ArtWorkCell
-//        let cell:ArtWorkCell = ArtWorkCell(style: UITableViewCellStyle.default, reuseIdentifier: "ArtWorkCell")
         cell .configWorkCell(work: (works?[indexPath.section])!)
         
         return cell;
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let workP = works?[indexPath.section]
+        print(workP?.work?.text,workP?.workCellHeight)
         return ArtWorkCell.cellHeight(work: (works?[indexPath.section])!)
     }
 
