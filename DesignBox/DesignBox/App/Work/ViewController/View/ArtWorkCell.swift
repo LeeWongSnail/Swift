@@ -1,4 +1,4 @@
-//
+ //
 //  ArtWorkCell.swift
 //  DesignBox
 //
@@ -46,21 +46,26 @@ class ArtWorkCell: UITableViewCell {
             make.right.equalTo(self.contentView.snp.right).offset(-10)
         }
         
-        self.contentView.addSubview(sepLine)
-        sepLine.snp.makeConstraints { (make) in
-            make.left.right.equalTo(self.contentView)
-            make.top.equalTo(contentLabel.snp.bottom).offset(10)
-            make.height.equalTo(0.5)
-        }
-        
         self.contentView.addSubview(imageArea)
         imageArea.snp.makeConstraints { (make) in
             make.left.right.equalTo(self.contentView)
             make.top.equalTo(contentLabel.snp.bottom)
+            make.height.equalTo(100)
         }
         
+         addToolBar()
         
-        addToolBar()
+        self.contentView.addSubview(sepLine)
+        sepLine.snp.makeConstraints { (make) in
+            make.left.right.equalTo(self.contentView)
+            make.bottom.equalTo(self.contentView.snp.bottom).offset(-40)
+            make.height.equalTo(0.5)
+        }
+        
+
+        
+        
+       
     }
     
     
@@ -134,33 +139,51 @@ class ArtWorkCell: UITableViewCell {
     }
     
     
+    func calculateImageCenterAtIndex(index:UInt) -> CGPoint {
+        let y = index/3
+        let x = index%3
+        let centerX = Float(x) * (ArtStyle.shared.art_workGridImageWidth + 5) + 5 + ArtStyle.shared.art_workGridImageWidth/2.0;
+        let centerY = Float(y) * (ArtStyle.shared.art_workGridImageWidth + 5) + ArtStyle.shared.art_workGridImageWidth/2.0;
+        
+        
+        var point: CGPoint = CGPoint()
+        point.x = CGFloat(centerX)
+        point.y = CGFloat(centerY)
+        return point
+    }
     
-    //MARK: - 图片展示九宫格
-//    + (CGFloat)height:(NSArray *)aImageInfos
-//    {
-//    NSInteger row = (aImageInfos.count + 2)/3;
-//    return (art_workGridImageWidth() + kImagesMarginSep)*row + (kImagesMarginB - kImagesMarginSep);
-//    }
-//    
-//    - (CGPoint)caculateCenterAtIndex:(NSInteger)aIndex
-//    {
-//    NSInteger y = aIndex/3;
-//    NSInteger x = aIndex%3;
-//    CGFloat centerY = y*(art_workGridImageWidth() + kImagesMarginSep) + art_workGridImageWidth()/2. + kImagesMarginT;
-//    CGFloat centerX = x*(art_workGridImageWidth() + kImagesMarginSep) + kImagesMarginSep + art_workGridImageWidth()/2. + kImagesMarginLR;
-//    
-//    return CGPointMake(centerX, centerY);
-//    }
-//    func configImageGridView(work:ArtWorkPaint?) -> Void {
-//        if work?.imgs?.count == 0 {
-//            return
-//        }
-//        
-//        for index in 0...work!.imgs!.count {
-//            let paintImage = ArtImageView()
-//            
-//        }
-//    }
+    func configImageGridView(work:ArtWorkPaint?) -> Void {
+        if work?.imgs?.count == 0 {
+            imageArea.snp.makeConstraints({ (make) in
+                make.width.height.equalTo(0)
+                make.top.left.equalTo(self.contentView)
+            })
+            return
+        }
+        
+        for index in 0...work!.imgs!.count-1 {
+            let paintImage = ArtImageView()
+            let image:[String:AnyObject] = work?.imgs![index] as! [String : AnyObject]
+            paintImage.art_setImageWithURL(imageURL: image["imgurl"] as? String)
+            var imageSize = CGSize()
+            imageSize.width = CGFloat(ArtStyle.shared.art_workGridImageWidth)
+            imageSize.height = CGFloat(ArtStyle.shared.art_workGridImageWidth)
+            paintImage.frame.size = imageSize
+            paintImage.center = calculateImageCenterAtIndex(index: UInt(index))
+            imageArea.addSubview(paintImage)
+            
+        }
+        
+        //设置imageArea
+        let row = (work?.imgs?.count)!/3
+        let height = (ArtStyle.shared.art_workGridImageWidth + 5) * Float(row)
+        imageArea.snp.remakeConstraints { (make) in
+            make.left.right.equalTo(self.contentView)
+            make.top.equalTo(contentLabel.snp.bottom).offset(10)
+            make.height.equalTo(height)
+        }
+        
+    }
     
     
     func configWorkCell(work:ArtWork) -> Void {
@@ -181,7 +204,7 @@ class ArtWorkCell: UITableViewCell {
         
         contentLabel.text = work.work?.text
         
-//        configImageGridView(work: work.work)
+        configImageGridView(work: work.work)
     }
     
     
@@ -194,7 +217,27 @@ class ArtWorkCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    
+    public class func cellHeight(work:ArtWork) -> CGFloat {
+        if  work.workCellHeight > Float(0.0)  {
+            return CGFloat(work.workCellHeight)
+        }
+        let row = (work.work?.imgs?.count)!/3
+        let column = (work.work?.imgs?.count)!%3
+        //图片的高度
+        var height = (ArtStyle.shared.art_workGridImageWidth + 5) * (Float(row) + Float(column == 0 ? 0 : 1))
+        
+        //文本的高度
+        height += (work.work?.text?.getTextHeigh(font: UIFont.systemFont(ofSize: 12), width: SCREEN_W-30))!
+        
+        //作者部分
+        height += 50
+        
+        //底部工具栏
+        height += 65
+        
+        work.workCellHeight = height
+        return CGFloat(height);
+    }
     
     //MARK: - Lazy Load
     lazy var iconImage: ArtImageView = {
@@ -244,7 +287,6 @@ class ArtWorkCell: UITableViewCell {
     
     lazy var imageArea:UIView = {
         var tempView = UIView()
-        
         return tempView
     }()
 }

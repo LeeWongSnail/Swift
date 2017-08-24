@@ -15,6 +15,7 @@ class ArtWork: Mappable {
     var author: ArtUser?
     var work: ArtWorkPaint?
     var share: ArtShare?
+    var workCellHeight:Float = 0.0
     
     
     required init?(map: Map) {
