@@ -20,6 +20,8 @@ class ArtStyle {
         return width;
     }()
     
-
+    public let art_scrollTabMargin: CGFloat = {
+        return 12
+    }()
     
 }

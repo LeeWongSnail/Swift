@@ -269,8 +269,9 @@ class ArtWorkCell: UITableViewCell {
     
     lazy var tagBtn:UIButton = {
         var tempBtn = UIButton(type: UIButtonType.custom)
-        tempBtn.setTitleColor(UIColor.red, for: UIControlState.normal)
+        tempBtn.setTitleColor(UIColor.art_colorWithHexString(hexString: "666666"), for: UIControlState.normal)
         tempBtn.titleLabel?.font = UIFont.systemFont(ofSize: 13)
+        tempBtn.setBackgroundImage(UIImage.init(named: "work_classify_new"), for: UIControlState.normal)
         return tempBtn
     }()
     

@@ -26,7 +26,7 @@ class ArtWorkListViewController: UIViewController, UITableViewDelegate , UITable
     func buildUI() -> Void {
         self.view.addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
+            make.edges.equalTo(self.view)
         }
         registerCells()
     }
