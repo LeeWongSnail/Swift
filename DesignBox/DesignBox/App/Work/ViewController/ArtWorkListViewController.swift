@@ -99,8 +99,6 @@ class ArtWorkListViewController: UIViewController, UITableViewDelegate , UITable
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let workP = works?[indexPath.section]
-        print(workP?.work?.text,workP?.workCellHeight)
         return ArtWorkCell.cellHeight(work: (works?[indexPath.section])!)
     }
 
