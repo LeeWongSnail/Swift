@@ -35,7 +35,44 @@ class ArtScrollTab: UIView {
     //MARK - Properities
     var tabItems = Array<ArtScrollTabDelegate>()
     var selectedColor:UIColor?
-    var currentIndex:Int = 0
+    var currentIndex:Int = 0 {
+        willSet
+        {
+            print("Will set an new value \(newValue) to age")
+            
+            let newButFrame = (tabItems[currentIndex] as! ArtScrollTabItem).tabFrame
+            if currentIndex == newValue {
+                self.collectionView.scrollToItem(at: IndexPath.init(row: currentIndex, section: 0), at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
+                return
+            }
+            
+            let array = [IndexPath.init(row: currentIndex, section: 0),IndexPath.init(row: currentIndex, section: 0)]
+            currentIndex = newValue
+            self.collectionView.reloadItems(at: array)
+            
+            
+            if self.indicatorView.isHidden {
+                self.collectionView.scrollToItem(at: IndexPath.init(row: currentIndex, section: 0), at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
+                return
+            }
+            
+            let frame = indicatorViewFrameForItemFrame(frame: newButFrame!)
+            UIView.animate(withDuration: 0.2, animations: {
+                
+//                self.indicatorView.center = CGPoint(x: (newButFrame.origin.x+ newButFrame.size.width / 2.0), y: self.indicatorView.center.y)
+//                self.indicatorView.transform = CGAffineTransformMakeScale(frame.size.width/self.indicatorView.frame.size.width, 1.0);
+            }) { (finish:Bool) in
+                
+            }
+            
+        }
+        //我们需要在age属性发生变化后，更新一下nickName这个属性
+        didSet
+        {
+            print("age filed changed form \(oldValue) to \(currentIndex)")
+            
+        }
+    }
     
     weak var delegate:ArtScrollTabDelegate?
 
@@ -45,6 +82,7 @@ class ArtScrollTab: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.white
+        registerCells()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -113,7 +151,18 @@ class ArtScrollTab: UIView {
     
     
     func constructScrollControls() -> Void {
-        
+        let sectionInset = self.flowLayout.sectionInset
+        let margin = self.flowLayout.minimumLineSpacing
+        var lastx = sectionInset.left
+        for item in tabItems {
+            let size = titleSize(title: (item as! ArtScrollTabItem).tabTitle!)
+            var height:CGFloat = 0
+            if let h = self.delegate?.artScrollTabHeight?(scrollTab: self) {
+                height = h
+            }
+            (item as! ArtScrollTabItem).tabFrame = CGRect(x: lastx, y: 0, width: size.width, height: height)
+            lastx = lastx + size.width + margin
+        }
     }
     
     func caculateTotalWidth() -> CGFloat {
@@ -181,13 +230,33 @@ class ArtScrollTab: UIView {
 
 extension ArtScrollTab: UICollectionViewDelegate,UICollectionViewDataSource {
     
+    func registerCells() -> Void {
+        self.collectionView.register(ArtScrollTabCell.self, forCellWithReuseIdentifier: "ArtScrollTabCell")
+    }
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return tabItems.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ArtScrollTabCell", for: indexPath) as! ArtScrollTabCell
+        
+        if let item = (tabItems[indexPath.item]) as? ArtScrollTabItem {
+            cell.titleLabel.text = item.tabTitle
+        }
+        return cell
     }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        if let item = (tabItems[indexPath.item]) as? ArtScrollTabItem {
+            return (item.tabFrame?.size)!;
+        }
+        
+        return CGSize.zero
+    }
+    
+
     
 }
 
@@ -200,8 +269,8 @@ extension ArtScrollTab: ArtScrollTabDelegate {
     func artScrollTabIndicatorBottomMargin() -> CGFloat {
         return 3
     }
-    func artScrollTabItemShowType(scrollTab:ArtScrollTab) -> EArtScrollTabItemShowType {
-        return EArtScrollTabItemShowType.Automatic
+    func artScrollTabItemShowType(scrollTab:ArtScrollTab) -> Int {
+        return 0
     }
     func artScrollTabItemControlLimitWidth(scrollTab:ArtScrollTab) -> CGFloat {
         return 80
@@ -220,6 +289,35 @@ extension ArtScrollTab: ArtScrollTabDelegate {
     }
 }
 
+
+class ArtScrollTabCell: UICollectionViewCell {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        buildUI()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func buildUI() -> Void {
+        self.titleLabel.snp.makeConstraints { (make) in
+            make.edges.equalTo(self.contentView)
+        }
+    }
+    
+    
+   public lazy var titleLabel:UILabel = {
+        let tempLabel = UILabel()
+        
+        tempLabel.font = UIFont.systemFont(ofSize: 17)
+        tempLabel.textColor = UIColor.black
+        
+        return tempLabel
+    }()
+    
+}
 
 
 
