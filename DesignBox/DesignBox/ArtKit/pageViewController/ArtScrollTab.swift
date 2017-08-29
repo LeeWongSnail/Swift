@@ -59,14 +59,16 @@ class ArtScrollTab: UIView {
             let frame = indicatorViewFrameForItemFrame(frame: newButFrame!)
             UIView.animate(withDuration: 0.2, animations: {
                 
-//                self.indicatorView.center = CGPoint(x: (newButFrame.origin.x+ newButFrame.size.width / 2.0), y: self.indicatorView.center.y)
-//                self.indicatorView.transform = CGAffineTransformMakeScale(frame.size.width/self.indicatorView.frame.size.width, 1.0);
+                self.indicatorView.center = CGPoint(x: ((newButFrame?.origin.x)!+(newButFrame?.size.width)! / 2.0), y: self.indicatorView.center.y)
+                self.indicatorView.transform = CGAffineTransform(scaleX: frame.size.width/self.indicatorView.frame.size.width, y: 1.0);
             }) { (finish:Bool) in
-                
+                self.indicatorView.transform = CGAffineTransform.identity;
+                self.indicatorView.frame = frame;
+                self.collectionView.scrollToItem(at: NSIndexPath.init(item: self.currentIndex, section: 0) as IndexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
             }
             
         }
-        //我们需要在age属性发生变化后，更新一下nickName这个属性
+       
         didSet
         {
             print("age filed changed form \(oldValue) to \(currentIndex)")
@@ -258,35 +260,6 @@ extension ArtScrollTab: UICollectionViewDelegate,UICollectionViewDataSource {
     
 
     
-}
-
-
-extension ArtScrollTab: ArtScrollTabDelegate {
-    
-    func artScrollTabHeight(scrollTab:ArtScrollTab) -> CGFloat {
-        return 44
-    }
-    func artScrollTabIndicatorBottomMargin() -> CGFloat {
-        return 3
-    }
-    func artScrollTabItemShowType(scrollTab:ArtScrollTab) -> Int {
-        return 0
-    }
-    func artScrollTabItemControlLimitWidth(scrollTab:ArtScrollTab) -> CGFloat {
-        return 80
-    }
-    func artScrollTabItemOffset(scrollTab:ArtScrollTab) -> CGFloat {
-        return 40
-    }
-    func artScrollTabItemNormalColor(scrollTab:ArtScrollTab) -> UIColor {
-        return UIColor.gray
-    }
-    func artScrollTabItemSelectedColorColor(scrollTab:ArtScrollTab) -> UIColor {
-        return UIColor.red
-    }
-    func artScrollTabIndicatorViewHidden() -> Bool {
-        return false
-    }
 }
 
 

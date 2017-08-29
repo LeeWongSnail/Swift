@@ -32,6 +32,8 @@
 		EB7FF9241F4FCBB600CFEB8A /* ArtRequirementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7FF9231F4FCBB600CFEB8A /* ArtRequirementViewController.swift */; };
 		EB7FF9271F4FCC5A00CFEB8A /* ArtScrollTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7FF9261F4FCC5A00CFEB8A /* ArtScrollTab.swift */; };
 		EB7FF9291F50059A00CFEB8A /* ArtScrollTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7FF9281F50059A00CFEB8A /* ArtScrollTabItem.swift */; };
+		EB7FF92B1F53FF0300CFEB8A /* ArtPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7FF92A1F53FF0300CFEB8A /* ArtPageViewController.swift */; };
+		EB7FF92D1F5402F300CFEB8A /* ArtFilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7FF92C1F5402F300CFEB8A /* ArtFilterModel.swift */; };
 		EBEE742D1F4BD92C0092EFCC /* ArtUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEE742C1F4BD92C0092EFCC /* ArtUser.swift */; };
 		EBEE742F1F4BD97F0092EFCC /* ArtShare.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEE742E1F4BD97F0092EFCC /* ArtShare.swift */; };
 /* End PBXBuildFile section */
@@ -85,6 +87,8 @@
 		EB7FF9231F4FCBB600CFEB8A /* ArtRequirementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtRequirementViewController.swift; sourceTree = "<group>"; };
 		EB7FF9261F4FCC5A00CFEB8A /* ArtScrollTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtScrollTab.swift; sourceTree = "<group>"; };
 		EB7FF9281F50059A00CFEB8A /* ArtScrollTabItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtScrollTabItem.swift; sourceTree = "<group>"; };
+		EB7FF92A1F53FF0300CFEB8A /* ArtPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtPageViewController.swift; sourceTree = "<group>"; };
+		EB7FF92C1F5402F300CFEB8A /* ArtFilterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtFilterModel.swift; sourceTree = "<group>"; };
 		EBEE742C1F4BD92C0092EFCC /* ArtUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtUser.swift; sourceTree = "<group>"; };
 		EBEE742E1F4BD97F0092EFCC /* ArtShare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtShare.swift; sourceTree = "<group>"; };
 		EDF11EE45BE2B5ECC7E3C9A6 /* Pods-DesignBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesignBox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DesignBox/Pods-DesignBox.debug.xcconfig"; sourceTree = "<group>"; };
@@ -352,6 +356,8 @@
 			children = (
 				EB7FF9261F4FCC5A00CFEB8A /* ArtScrollTab.swift */,
 				EB7FF9281F50059A00CFEB8A /* ArtScrollTabItem.swift */,
+				EB7FF92A1F53FF0300CFEB8A /* ArtPageViewController.swift */,
+				EB7FF92C1F5402F300CFEB8A /* ArtFilterModel.swift */,
 			);
 			path = pageViewController;
 			sourceTree = "<group>";
@@ -546,7 +552,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB7FF92D1F5402F300CFEB8A /* ArtFilterModel.swift in Sources */,
 				EB7FF90C1F4D44D800CFEB8A /* AppDelegate+Start.swift in Sources */,
+				EB7FF92B1F53FF0300CFEB8A /* ArtPageViewController.swift in Sources */,
 				EB4741791F44658E00235E1A /* ArtWorkCell.swift in Sources */,
 				EB7FF9271F4FCC5A00CFEB8A /* ArtScrollTab.swift in Sources */,
 				EB7FF9181F4E82DF00CFEB8A /* String+Art.swift in Sources */,
