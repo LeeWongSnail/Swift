@@ -19,6 +19,7 @@ extension AppDelegate {
         
         
         let navBar = UINavigationBar.appearance()
+        navBar.isTranslucent = false
         navBar.tintColor = UIColor.art_mainHighColor()
         navBar.barTintColor = UIColor.art_mainGrayColor()
     }

@@ -84,7 +84,12 @@ class ArtScrollTab: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.white
+        self.addSubview(self.collectionView)
+        self.collectionView.snp.makeConstraints { (make) in
+            make.edges.equalTo(self)
+        }
         registerCells()
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -98,7 +103,10 @@ class ArtScrollTab: UIView {
     
     func setTabBarItems(items:Array<ArtScrollTabDelegate>,index:Int) -> Void {
         tabItems = items
-        constructItemControlsIndex(index: index)
+//        constructItemControlsIndex(index: index)
+        self.collectionView.delegate = self;
+        self.collectionView.dataSource = self;
+         self.collectionView.reloadData()
     }
     
     func constructItemControlsIndex(index:Int) -> Void {
@@ -204,11 +212,13 @@ class ArtScrollTab: UIView {
     
     //MARK: - LAZY LOAD
     lazy var collectionView:UICollectionView = {
-        let tempCollectionView:UICollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: self.flowLayout)
+        let tempCollectionView:UICollectionView = UICollectionView(frame: CGRect.init(x: 0, y: 0, width: SCREEN_W, height: 44), collectionViewLayout: self.flowLayout)
         tempCollectionView.showsVerticalScrollIndicator = false
         tempCollectionView.showsHorizontalScrollIndicator = false
-        tempCollectionView.delegate = self
-        tempCollectionView.dataSource = self
+//        tempCollectionView.delegate = self
+//        tempCollectionView.dataSource = self
+        tempCollectionView.backgroundColor = UIColor.red
+        tempCollectionView.alwaysBounceHorizontal = true
         return tempCollectionView
     }()
     
@@ -217,8 +227,11 @@ class ArtScrollTab: UIView {
     
         let tempLayout = UICollectionViewFlowLayout()
         tempLayout.scrollDirection = UICollectionViewScrollDirection.horizontal
-        tempLayout.minimumLineSpacing = ArtStyle.shared.art_scrollTabMargin
-        tempLayout.minimumInteritemSpacing = ArtStyle.shared.art_scrollTabMargin
+//        tempLayout.minimumLineSpacing = ArtStyle.shared.art_scrollTabMargin
+//        tempLayout.minimumInteritemSpacing = ArtStyle.shared.art_scrollTabMargin
+        tempLayout.itemSize = CGSize(width: 60, height: 44)
+        tempLayout.minimumLineSpacing = 0;
+        tempLayout.minimumInteritemSpacing = 0
         return tempLayout
     }()
     
@@ -230,10 +243,14 @@ class ArtScrollTab: UIView {
 }
 
 
-extension ArtScrollTab: UICollectionViewDelegate,UICollectionViewDataSource {
+extension ArtScrollTab: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
     func registerCells() -> Void {
         self.collectionView.register(ArtScrollTabCell.self, forCellWithReuseIdentifier: "ArtScrollTabCell")
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return tabItems.count > 0 ? 1 : 0
     }
     
     
@@ -244,18 +261,19 @@ extension ArtScrollTab: UICollectionViewDelegate,UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ArtScrollTabCell", for: indexPath) as! ArtScrollTabCell
         
-        if let item = (tabItems[indexPath.item]) as? ArtScrollTabItem {
-            cell.titleLabel.text = item.tabTitle
-        }
+//        if let item = (tabItems[indexPath.item]) as? ArtScrollTabItem {
+//            cell.titleLabel.text = item.tabTitle
+//        }
+        cell.titleLabel.text = "1"
         return cell
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        if let item = (tabItems[indexPath.item]) as? ArtScrollTabItem {
-            return (item.tabFrame?.size)!;
-        }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        if let item = (tabItems[indexPath.item]) as? ArtScrollTabItem {
+//            return (item.tabFrame?.size)!;
+//        }
         
-        return CGSize.zero
+        return CGSize(width: 60, height: 44)
     }
     
 
@@ -275,6 +293,7 @@ class ArtScrollTabCell: UICollectionViewCell {
     }
     
     func buildUI() -> Void {
+        self.addSubview(self.titleLabel)
         self.titleLabel.snp.makeConstraints { (make) in
             make.edges.equalTo(self.contentView)
         }
@@ -283,7 +302,7 @@ class ArtScrollTabCell: UICollectionViewCell {
     
    public lazy var titleLabel:UILabel = {
         let tempLabel = UILabel()
-        
+        tempLabel.backgroundColor = UIColor.gray
         tempLabel.font = UIFont.systemFont(ofSize: 17)
         tempLabel.textColor = UIColor.black
         

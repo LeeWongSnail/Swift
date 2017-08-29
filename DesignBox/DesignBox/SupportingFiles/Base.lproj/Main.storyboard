@@ -66,35 +66,6 @@
             </objects>
             <point key="canvasLocation" x="-266" y="-1498"/>
         </scene>
-        <!--社区-->
-        <scene sceneID="b0r-p6-3BH">
-            <objects>
-                <tableViewController id="NPF-jr-WAc" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="xkA-Wq-bzN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="z9Z-v0-r8v">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z9Z-v0-r8v" id="83W-QG-pNt">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="NPF-jr-WAc" id="uXm-g1-JJw"/>
-                            <outlet property="delegate" destination="NPF-jr-WAc" id="kkG-Ee-ck1"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="社区" id="p56-At-bDb"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5pj-VG-mSK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="113" y="-706"/>
-        </scene>
         <!--素材-->
         <scene sceneID="HYt-zI-CEC">
             <objects>
@@ -243,12 +214,31 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="NPF-jr-WAc" kind="relationship" relationship="rootViewController" id="fQH-Qp-rip"/>
+                        <segue destination="0zE-9c-Ys9" kind="relationship" relationship="rootViewController" id="Sfl-qK-b70"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gsh-7D-iEE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1346" y="-736"/>
+        </scene>
+        <!--Art Requirement View Controller-->
+        <scene sceneID="VQM-YC-NL0">
+            <objects>
+                <viewController id="0zE-9c-Ys9" customClass="ArtRequirementViewController" customModule="DesignBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="P6W-eg-qNc"/>
+                        <viewControllerLayoutGuide type="bottom" id="qKl-Wh-iex"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ydJ-lq-ZHN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="iaF-xk-pNW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kfk-t8-04D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-503" y="-736"/>
         </scene>
     </scenes>
     <resources>

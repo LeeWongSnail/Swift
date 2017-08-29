@@ -39,8 +39,10 @@ class ArtPageViewController: UIViewController {
     
     //MARK: - Build View
     func buildMainView() -> Void {
-        
-//        self.workFilterModel = 
+        cleanAll()
+        self.workFilterModel = ArtFilterModel()
+        self.workFilterModel?.maxCachedCount = maxCachedCount()
+       
     }
     
     
@@ -57,8 +59,9 @@ class ArtPageViewController: UIViewController {
     }
     
     
-    
-    
+//
+
+
     
     lazy var pageViewController:UIPageViewController = {
         let options = [UIPageViewControllerOptionSpineLocationKey:UIPageViewControllerSpineLocation.min]
@@ -68,6 +71,17 @@ class ArtPageViewController: UIViewController {
     }()
 
 }
+
+
+extension ArtPageViewController {
+    //这里面 的信息是需要子类去重写的
+    
+    func maxCachedCount() -> Int {
+        return 3
+    }
+    
+}
+
 
 
 

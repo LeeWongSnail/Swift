@@ -10,7 +10,7 @@ import UIKit
 
 class ArtFilterModel: NSObject {
     
-    var pageControllers: [String:AnyObject]?
+    var pageControllers: [String:AnyObject] = [String:AnyObject]()
     var maxCachedCount: Int?
     var categoryListIndex: Int?
     
@@ -21,9 +21,9 @@ class ArtFilterModel: NSObject {
     
   
     func removeAndReleaseContentVCFromPagerViewController(aInfoID:String) -> Void {
-        let contentVC = self.pageControllers?[aInfoID];
+        let contentVC = self.pageControllers[aInfoID];
         if (contentVC != nil) {
-            self.pageControllers?.removeValue(forKey: aInfoID)
+            self.pageControllers.removeValue(forKey: aInfoID)
         }
     }
     
@@ -45,6 +45,27 @@ class ArtFilterModel: NSObject {
     }
     
     
+    func indexOfPageController(viewController:UIViewController) -> Int {
+        var categoryID:String?
+        
+        for (key,value) in self.pageControllers {
+            if (value as! UIViewController) == viewController {
+                categoryID = key
+            }
+        }
+        
+        var index:Int = 0
+        for idx in 0...self.categoryList.count-1 {
+            let obj = self.categoryList[index] as! ArtScrollTabItem
+            if obj.tabId == categoryID {
+                index = idx
+            }
+        }
+        
+        return index
+    }
+    
+    
     func pageControllerAtIndex(aIndex:Int) -> UIViewController? {
         
         if aIndex == -1 || aIndex >= self.categoryList.count {
@@ -53,7 +74,7 @@ class ArtFilterModel: NSObject {
         self.removeMoreCachedViewController(aIndex: aIndex)
         
         let categroy = self.categoryList[aIndex] as! ArtScrollTabItem
-        var viewController = self.pageControllers?[categroy.tabId!]
+        var viewController = self.pageControllers[categroy.tabId!]
         
         if viewController == nil {
             if let contentBlock = contentVCBlock {
@@ -63,11 +84,13 @@ class ArtFilterModel: NSObject {
             }
         }
         
-        self.pageControllers?[categroy.tabId!] = viewController
+        self.pageControllers[categroy.tabId!] = viewController
     
         return viewController as? UIViewController
         
     }
+    
+    
     
     
 }
