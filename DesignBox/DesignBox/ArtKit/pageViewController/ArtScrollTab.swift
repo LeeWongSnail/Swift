@@ -88,6 +88,9 @@ class ArtScrollTab: UIView {
         self.collectionView.snp.makeConstraints { (make) in
             make.edges.equalTo(self)
         }
+        
+        self.addSubview(self.indicatorView)
+        
         registerCells()
         
     }
@@ -103,10 +106,7 @@ class ArtScrollTab: UIView {
     
     func setTabBarItems(items:Array<ArtScrollTabDelegate>,index:Int) -> Void {
         tabItems = items
-//        constructItemControlsIndex(index: index)
-        self.collectionView.delegate = self;
-        self.collectionView.dataSource = self;
-         self.collectionView.reloadData()
+        constructItemControlsIndex(index: index)
     }
     
     func constructItemControlsIndex(index:Int) -> Void {
@@ -129,7 +129,7 @@ class ArtScrollTab: UIView {
         if itemOffset > CGFloat(0.1) {
             self.flowLayout.sectionInset = UIEdgeInsetsMake(0, itemOffset, 0, itemOffset)
         } else {
-            self.flowLayout.sectionInset = UIEdgeInsetsMake(0, ArtStyle.shared.art_scrollTabMargin, 0, 0)
+            self.flowLayout.sectionInset = UIEdgeInsetsMake(0,0, 0, 0)
         }
         
         switch showType {
@@ -140,7 +140,7 @@ class ArtScrollTab: UIView {
         
             let totalWidth = caculateTotalWidth()
             if totalWidth >= itemControlLimitWidth() {
-                self.flowLayout.sectionInset = UIEdgeInsetsMake(0, ArtStyle.shared.art_scrollTabMargin, 0, 0)
+                self.flowLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0)
                 constructScrollControls()
             } else {
                 let width = (itemControlLimitWidth() - totalWidth)/CGFloat(tabItems.count+1)
@@ -187,7 +187,7 @@ class ArtScrollTab: UIView {
     
     func titleSize(title:String) -> CGSize {
         let font = UIFont.systemFont(ofSize: 16)
-        let width: CGFloat = CGFloat(title.getTexWidth(font: font, height: CGFloat(MAXFLOAT)))
+        let width: CGFloat = CGFloat(title.getTexWidth(font: font, height: CGFloat(MAXFLOAT)))+10
         let height: CGFloat = CGFloat(title.getTextHeigh(font: font, width: CGFloat(MAXFLOAT)))
         return CGSize(width: width, height: height)
     }
@@ -204,7 +204,7 @@ class ArtScrollTab: UIView {
         let x = frame.origin.x - 2.0
         let height:CGFloat = 2.0
         let y = frame.origin.y + frame.size.height - CGFloat(height)
-        let width = frame.size.width + 4.0
+        let width = frame.size.width - 4.0
         
         return CGRect(x: x, y: y, width: width, height: height)
     }
@@ -215,10 +215,10 @@ class ArtScrollTab: UIView {
         let tempCollectionView:UICollectionView = UICollectionView(frame: CGRect.init(x: 0, y: 0, width: SCREEN_W, height: 44), collectionViewLayout: self.flowLayout)
         tempCollectionView.showsVerticalScrollIndicator = false
         tempCollectionView.showsHorizontalScrollIndicator = false
-//        tempCollectionView.delegate = self
-//        tempCollectionView.dataSource = self
-        tempCollectionView.backgroundColor = UIColor.red
+        tempCollectionView.delegate = self
+        tempCollectionView.dataSource = self
         tempCollectionView.alwaysBounceHorizontal = true
+        tempCollectionView.backgroundColor = UIColor.white
         return tempCollectionView
     }()
     
@@ -227,8 +227,6 @@ class ArtScrollTab: UIView {
     
         let tempLayout = UICollectionViewFlowLayout()
         tempLayout.scrollDirection = UICollectionViewScrollDirection.horizontal
-//        tempLayout.minimumLineSpacing = ArtStyle.shared.art_scrollTabMargin
-//        tempLayout.minimumInteritemSpacing = ArtStyle.shared.art_scrollTabMargin
         tempLayout.itemSize = CGSize(width: 60, height: 44)
         tempLayout.minimumLineSpacing = 0;
         tempLayout.minimumInteritemSpacing = 0
@@ -237,6 +235,7 @@ class ArtScrollTab: UIView {
     
     lazy var indicatorView:UIView = {
         let tempIndicator = UIView()
+        tempIndicator.backgroundColor = UIColor.red
         return tempIndicator
     }()
     
@@ -261,17 +260,18 @@ extension ArtScrollTab: UICollectionViewDelegate,UICollectionViewDataSource,UICo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ArtScrollTabCell", for: indexPath) as! ArtScrollTabCell
         
-//        if let item = (tabItems[indexPath.item]) as? ArtScrollTabItem {
-//            cell.titleLabel.text = item.tabTitle
-//        }
-        cell.titleLabel.text = "1"
+        if let item = (tabItems[indexPath.item]) as? ArtScrollTabItem {
+            cell.titleLabel.text = item.tabTitle
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        if let item = (tabItems[indexPath.item]) as? ArtScrollTabItem {
-//            return (item.tabFrame?.size)!;
-//        }
+        if let item = (tabItems[indexPath.item]) as? ArtScrollTabItem {
+            if let size = item.tabFrame?.size {
+                return size;
+            }
+        }
         
         return CGSize(width: 60, height: 44)
     }
@@ -302,7 +302,6 @@ class ArtScrollTabCell: UICollectionViewCell {
     
    public lazy var titleLabel:UILabel = {
         let tempLabel = UILabel()
-        tempLabel.backgroundColor = UIColor.gray
         tempLabel.font = UIFont.systemFont(ofSize: 17)
         tempLabel.textColor = UIColor.black
         

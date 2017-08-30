@@ -18,7 +18,6 @@ class ArtRequirementViewController: UIViewController {
             make.top.left.right.equalTo(self.view)
             make.height.equalTo(44)
         }
-//        self.view.layoutIfNeeded()
         initTabItems()
         self.scrollTab.setTabBarItems(items: tabItems)
 
@@ -49,11 +48,37 @@ class ArtRequirementViewController: UIViewController {
     
     lazy var scrollTab:ArtScrollTab = {
         let tab = ArtScrollTab()
-        
+        tab.delegate = self;
         return tab
     }()
-    
-    
-    
 
+}
+
+
+extension ArtRequirementViewController: ArtScrollTabDelegate {
+    
+    func artScrollTabHeight(scrollTab:ArtScrollTab) -> CGFloat {
+        return 44
+    }
+    func artScrollTabIndicatorBottomMargin() -> CGFloat {
+        return 3
+    }
+    func artScrollTabItemShowType(scrollTab:ArtScrollTab) -> Int {
+        return EArtScrollTabItemShowType.Automatic.rawValue
+    }
+    func artScrollTabItemControlLimitWidth(scrollTab:ArtScrollTab) -> CGFloat {
+        return 80
+    }
+    func artScrollTabItemOffset(scrollTab:ArtScrollTab) -> CGFloat {
+        return 0
+    }
+    func artScrollTabItemNormalColor(scrollTab:ArtScrollTab) -> UIColor {
+        return UIColor.gray
+    }
+    func artScrollTabItemSelectedColorColor(scrollTab:ArtScrollTab) -> UIColor {
+        return UIColor.red
+    }
+    func artScrollTabIndicatorViewHidden() -> Bool {
+        return false
+    }
 }

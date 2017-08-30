@@ -27,7 +27,7 @@ extension String {
         
         let stringSize = (self as NSString).boundingRect(with: size, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: dic, context: nil).size
         
-        return Float(stringSize.width)
+        return Float(stringSize.width+5.0)
         
     }
 }
