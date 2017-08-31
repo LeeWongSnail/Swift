@@ -38,16 +38,22 @@ class ArtScrollTab: UIView {
     var currentIndex:Int = 0 {
         willSet
         {
-            print("Will set an new value \(newValue) to age")
+            print("Will set an new value \(newValue) to currentIndex")
             
+
+            
+        }
+       
+        didSet
+        {
             let newButFrame = (tabItems[currentIndex] as! ArtScrollTabItem).tabFrame
-            if currentIndex == newValue {
+            if currentIndex == oldValue {
                 self.collectionView.scrollToItem(at: IndexPath.init(row: currentIndex, section: 0), at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
                 return
             }
             
-            let array = [IndexPath.init(row: currentIndex, section: 0),IndexPath.init(row: currentIndex, section: 0)]
-            currentIndex = newValue
+            let array = [IndexPath.init(row: oldValue, section: 0),IndexPath.init(row: currentIndex, section: 0)]
+            
             self.collectionView.reloadItems(at: array)
             
             
@@ -66,11 +72,6 @@ class ArtScrollTab: UIView {
                 self.indicatorView.frame = frame;
                 self.collectionView.scrollToItem(at: NSIndexPath.init(item: self.currentIndex, section: 0) as IndexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
             }
-            
-        }
-       
-        didSet
-        {
             print("age filed changed form \(oldValue) to \(currentIndex)")
             
         }
@@ -89,7 +90,7 @@ class ArtScrollTab: UIView {
             make.edges.equalTo(self)
         }
         
-        self.addSubview(self.indicatorView)
+        self.collectionView.addSubview(self.indicatorView)
         
         registerCells()
         
@@ -162,7 +163,7 @@ class ArtScrollTab: UIView {
     
     func constructScrollControls() -> Void {
         let sectionInset = self.flowLayout.sectionInset
-        let margin = self.flowLayout.minimumLineSpacing
+        let margin = self.flowLayout.minimumInteritemSpacing
         var lastx = sectionInset.left
         for item in tabItems {
             let size = titleSize(title: (item as! ArtScrollTabItem).tabTitle!)
@@ -201,10 +202,10 @@ class ArtScrollTab: UIView {
     }
     
     func indicatorViewFrameForItemFrame(frame:CGRect) -> CGRect {
-        let x = frame.origin.x - 2.0
+        let x = frame.origin.x + 10.0
         let height:CGFloat = 2.0
         let y = frame.origin.y + frame.size.height - CGFloat(height)
-        let width = frame.size.width - 4.0
+        let width = frame.size.width - 20.0
         
         return CGRect(x: x, y: y, width: width, height: height)
     }
@@ -229,13 +230,13 @@ class ArtScrollTab: UIView {
         tempLayout.scrollDirection = UICollectionViewScrollDirection.horizontal
         tempLayout.itemSize = CGSize(width: 60, height: 44)
         tempLayout.minimumLineSpacing = 0;
-        tempLayout.minimumInteritemSpacing = 0
+        tempLayout.minimumInteritemSpacing = ArtStyle.shared.art_scrollTabMargin
         return tempLayout
     }()
     
     lazy var indicatorView:UIView = {
         let tempIndicator = UIView()
-        tempIndicator.backgroundColor = UIColor.red
+        tempIndicator.backgroundColor = UIColor.art_colorWithHexString(hexString: "FEE306")
         return tempIndicator
     }()
     
@@ -262,7 +263,12 @@ extension ArtScrollTab: UICollectionViewDelegate,UICollectionViewDataSource,UICo
         
         if let item = (tabItems[indexPath.item]) as? ArtScrollTabItem {
             cell.titleLabel.text = item.tabTitle
+            cell.tapBlock =  {(_ scrollTab:ArtScrollTabCell) -> (Void) in
+                print(item)
+                self.currentIndex = cell.tag - 10000
+            }
         }
+        cell.tag = 10000+indexPath.item
         return cell
     }
     
@@ -283,6 +289,10 @@ extension ArtScrollTab: UICollectionViewDelegate,UICollectionViewDataSource,UICo
 
 class ArtScrollTabCell: UICollectionViewCell {
     
+    typealias scrollTabDidTapBlock = (_ scrollTab:ArtScrollTabCell) -> Void
+    var tapBlock:scrollTabDidTapBlock?
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         buildUI()
@@ -292,19 +302,27 @@ class ArtScrollTabCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func scrollTabDidTap() -> Void {
+        if tapBlock != nil {
+            tapBlock!(self)
+        }
+    }
+    
     func buildUI() -> Void {
         self.addSubview(self.titleLabel)
         self.titleLabel.snp.makeConstraints { (make) in
             make.edges.equalTo(self.contentView)
         }
+        
+        self.contentView.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(ArtScrollTabCell.scrollTabDidTap)))
     }
     
     
    public lazy var titleLabel:UILabel = {
         let tempLabel = UILabel()
         tempLabel.font = UIFont.systemFont(ofSize: 17)
-        tempLabel.textColor = UIColor.black
-        
+        tempLabel.textColor = UIColor.art_colorWithHexString(hexString: "333333")
+        tempLabel.textAlignment = NSTextAlignment.center
         return tempLabel
     }()
     

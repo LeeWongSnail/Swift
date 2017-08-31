@@ -16,7 +16,7 @@ class ArtRequirementViewController: UIViewController {
         self.view.addSubview(self.scrollTab)
         self.scrollTab.snp.makeConstraints { (make) in
             make.top.left.right.equalTo(self.view)
-            make.height.equalTo(44)
+            make.height.equalTo(39)
         }
         initTabItems()
         self.scrollTab.setTabBarItems(items: tabItems)
@@ -58,7 +58,7 @@ class ArtRequirementViewController: UIViewController {
 extension ArtRequirementViewController: ArtScrollTabDelegate {
     
     func artScrollTabHeight(scrollTab:ArtScrollTab) -> CGFloat {
-        return 44
+        return 39
     }
     func artScrollTabIndicatorBottomMargin() -> CGFloat {
         return 3

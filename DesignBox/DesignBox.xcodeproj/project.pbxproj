@@ -35,6 +35,7 @@
 		EB7FF9291F50059A00CFEB8A /* ArtScrollTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7FF9281F50059A00CFEB8A /* ArtScrollTabItem.swift */; };
 		EB7FF92B1F53FF0300CFEB8A /* ArtPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7FF92A1F53FF0300CFEB8A /* ArtPageViewController.swift */; };
 		EB7FF92D1F5402F300CFEB8A /* ArtFilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7FF92C1F5402F300CFEB8A /* ArtFilterModel.swift */; };
+		EBC9DD151F56B2FC0013EC94 /* UIView+Art.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC9DD141F56B2FC0013EC94 /* UIView+Art.swift */; };
 		EBEE742D1F4BD92C0092EFCC /* ArtUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEE742C1F4BD92C0092EFCC /* ArtUser.swift */; };
 		EBEE742F1F4BD97F0092EFCC /* ArtShare.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEE742E1F4BD97F0092EFCC /* ArtShare.swift */; };
 /* End PBXBuildFile section */
@@ -91,6 +92,7 @@
 		EB7FF9281F50059A00CFEB8A /* ArtScrollTabItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtScrollTabItem.swift; sourceTree = "<group>"; };
 		EB7FF92A1F53FF0300CFEB8A /* ArtPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtPageViewController.swift; sourceTree = "<group>"; };
 		EB7FF92C1F5402F300CFEB8A /* ArtFilterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtFilterModel.swift; sourceTree = "<group>"; };
+		EBC9DD141F56B2FC0013EC94 /* UIView+Art.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Art.swift"; sourceTree = "<group>"; };
 		EBEE742C1F4BD92C0092EFCC /* ArtUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtUser.swift; sourceTree = "<group>"; };
 		EBEE742E1F4BD97F0092EFCC /* ArtShare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtShare.swift; sourceTree = "<group>"; };
 		EDF11EE45BE2B5ECC7E3C9A6 /* Pods-DesignBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesignBox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DesignBox/Pods-DesignBox.debug.xcconfig"; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 				EB7FF90E1F4D450E00CFEB8A /* UIColor+Art.swift */,
 				EB7FF9171F4E82DF00CFEB8A /* String+Art.swift */,
 				EB54FAFA1F5574E100833770 /* UIViewController+Art.swift */,
+				EBC9DD141F56B2FC0013EC94 /* UIView+Art.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -566,6 +569,7 @@
 				EB54FAFB1F5574E100833770 /* UIViewController+Art.swift in Sources */,
 				EB249ACD1F43E08700D48C2F /* ArtCommand.swift in Sources */,
 				EB249A861F42D1C800D48C2F /* AppDelegate.swift in Sources */,
+				EBC9DD151F56B2FC0013EC94 /* UIView+Art.swift in Sources */,
 				EB249ACA1F43E03800D48C2F /* ArtWorkCommand.swift in Sources */,
 				EB47417C1F44689400235E1A /* ArtImageView.swift in Sources */,
 				EBEE742D1F4BD92C0092EFCC /* ArtUser.swift in Sources */,
