@@ -8,19 +8,12 @@
 
 import UIKit
 
-class ArtRequirementViewController: UIViewController {
+class ArtRequirementViewController: ArtPageViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.automaticallyAdjustsScrollViewInsets = false;
-        self.view.addSubview(self.scrollTab)
-        self.scrollTab.snp.makeConstraints { (make) in
-            make.top.left.right.equalTo(self.view)
-            make.height.equalTo(39)
-        }
-        initTabItems()
-        self.scrollTab.setTabBarItems(items: tabItems)
-
+        
+        buildMainView()
         
         
         // Do any additional setup after loading the view.
@@ -34,51 +27,15 @@ class ArtRequirementViewController: UIViewController {
     
 
     
-    var tabItems = Array<ArtScrollTabDelegate>()
-    func initTabItems() -> Void {
+    override func categoryNameList() -> [String]? {
+        var titles = [String]()
         for index in 0...8 {
-            let item = ArtScrollTabItem()
-            item.tabId = "\(index)"
-            item.tabTitle = "标题".appending(item.tabId!)
-            tabItems.append(item)
+            let tabTitle = "标题".appending("\(index)")
+            titles.append(tabTitle)
         }
+        return titles
     }
-    
-    
-    
-    lazy var scrollTab:ArtScrollTab = {
-        let tab = ArtScrollTab()
-        tab.delegate = self;
-        return tab
-    }()
 
 }
 
 
-extension ArtRequirementViewController: ArtScrollTabDelegate {
-    
-    func artScrollTabHeight(scrollTab:ArtScrollTab) -> CGFloat {
-        return 39
-    }
-    func artScrollTabIndicatorBottomMargin() -> CGFloat {
-        return 3
-    }
-    func artScrollTabItemShowType(scrollTab:ArtScrollTab) -> Int {
-        return EArtScrollTabItemShowType.Automatic.rawValue
-    }
-    func artScrollTabItemControlLimitWidth(scrollTab:ArtScrollTab) -> CGFloat {
-        return 80
-    }
-    func artScrollTabItemOffset(scrollTab:ArtScrollTab) -> CGFloat {
-        return 0
-    }
-    func artScrollTabItemNormalColor(scrollTab:ArtScrollTab) -> UIColor {
-        return UIColor.gray
-    }
-    func artScrollTabItemSelectedColorColor(scrollTab:ArtScrollTab) -> UIColor {
-        return UIColor.red
-    }
-    func artScrollTabIndicatorViewHidden() -> Bool {
-        return false
-    }
-}

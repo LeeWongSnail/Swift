@@ -12,3 +12,5 @@ import SnapKit
 
 let SCREEN_W = UIScreen.main.bounds.size.width 
 let SCREEN_H = UIScreen.main.bounds.size.height
+
+let SCREEN_SCALE = UIScreen.main.scale

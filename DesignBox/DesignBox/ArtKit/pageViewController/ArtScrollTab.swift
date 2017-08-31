@@ -30,7 +30,7 @@ enum EArtScrollTabItemShowType:Int {
     @objc optional func artScrollTabIndicatorViewHidden() -> Bool
 }
 
-class ArtScrollTab: UIView {
+class ArtScrollTab: UIView,ArtPageHeaderViewProtocol {
 
     //MARK - Properities
     var tabItems = Array<ArtScrollTabDelegate>()
@@ -239,6 +239,18 @@ class ArtScrollTab: UIView {
         tempIndicator.backgroundColor = UIColor.art_colorWithHexString(hexString: "FEE306")
         return tempIndicator
     }()
+    
+}
+
+
+extension ArtScrollTab {
+    
+    func tabHeight() -> CGFloat {
+        if let h = self.delegate?.artScrollTabHeight?(scrollTab: self) {
+            return h
+        }
+        return 0
+    }
     
 }
 
