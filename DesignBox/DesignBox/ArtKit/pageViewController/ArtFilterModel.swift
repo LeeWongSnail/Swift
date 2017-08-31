@@ -14,7 +14,7 @@ class ArtFilterModel: NSObject {
     var maxCachedCount: Int?
     var categoryListIndex: Int?
     
-    var categoryList = Array<ArtScrollTabDelegate>()
+    var categoryList:[ArtScrollTabDelegate] = [ArtScrollTabDelegate]()
     
     var contentVCBlock: ((_ currentIndex:Int) -> (UIViewController))?
     

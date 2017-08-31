@@ -27,6 +27,16 @@ class ArtRequirementViewController: ArtPageViewController {
     
 
     
+    override func createControllerByIndex(index: Int) -> UIViewController? {
+        let vc = UIViewController()
+        if index%2==0 {
+            vc.view.backgroundColor = UIColor.red
+        } else {
+            vc.view.backgroundColor = UIColor.yellow
+        }
+        return vc
+    }
+    
     override func categoryNameList() -> [String]? {
         var titles = [String]()
         for index in 0...8 {

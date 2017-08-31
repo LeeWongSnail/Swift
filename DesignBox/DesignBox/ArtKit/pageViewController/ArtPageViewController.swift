@@ -165,6 +165,7 @@ class ArtPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.automaticallyAdjustsScrollViewInsets = false;
 
         // Do any additional setup after loading the view.
     }
@@ -184,12 +185,13 @@ class ArtPageViewController: UIViewController {
         }
         
         var list:[ArtScrollTabDelegate] = [ArtScrollTabDelegate]()
-        
+        var index:Int = 0
         for name in namelist! {
             let item = ArtScrollTabItem()
             item.tabId = "\(index)"
             item.tabTitle = "标题".appending(item.tabId!)
             list.append(item)
+            index+=1
         }
         
         return list
@@ -304,19 +306,19 @@ extension ArtPageViewController: UIPageViewControllerDelegate,UIPageViewControll
 extension ArtPageViewController: ArtScrollTabDelegate {
     
     func artScrollTabHeight(scrollTab:ArtScrollTab) -> CGFloat {
-        return 44
+        return 39
     }
     func artScrollTabIndicatorBottomMargin() -> CGFloat {
         return 3
     }
     func artScrollTabItemShowType(scrollTab:ArtScrollTab) -> Int {
-        return 0
+        return 1
     }
     func artScrollTabItemControlLimitWidth(scrollTab:ArtScrollTab) -> CGFloat {
         return 80
     }
     func artScrollTabItemOffset(scrollTab:ArtScrollTab) -> CGFloat {
-        return 40
+        return 0
     }
     func artScrollTabItemNormalColor(scrollTab:ArtScrollTab) -> UIColor {
         return UIColor.gray
