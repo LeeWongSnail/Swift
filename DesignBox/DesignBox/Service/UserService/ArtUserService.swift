@@ -17,14 +17,18 @@ class ArtUserService: NSObject {
     
     
     //MARK: Properties
-    var loginUserService:ArtLoginUserService
-    
+    var loginUserService: ArtLoginUserService
+    var loginUser: ArtUser?  {
+        get {
+            return self.loginUserService.loginUser
+        }
+    }
     
     
     
     //MARK: Functions
     
-    func loginWithUserOperation(operation:ArtUserOperation,completed:(_ error:Error) ->()) -> Void {
+    func loginWithUserOperation(operation:ArtUserOperation,completed:@escaping (_ error:Error?) ->()) -> Void {
         self.loginUserService.loginWithUserOperation(operation: operation, completed: completed)
     }
     

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SwiftyJSON
+import ObjectMapper
 
 class ArtCommandLogin: ArtCommand {
 
@@ -19,21 +21,31 @@ class ArtCommandLogin: ArtCommand {
         if let mob = mobile {
             params["mobile"] = mob as AnyObject
         }
-        if let pwd = passwd {
-            params["passwd"] = pwd as AnyObject
+        if passwd != nil {
+            params["passwd"] = "c97554911e393c5cf451fa5b0c1f3f7b" as AnyObject
         }
+        
+        params["platform"] = "SJB" as AnyObject
         return params
     }
     
     
-    public func loginCommand(success:@escaping (_ works:[ArtWork])->(),failure:@escaping (_ error:Error)->()) -> Void {
+    public func loginCommand(success:@escaping (_ author:ArtUser)->(),failure:@escaping (_ error:Error)->()) -> Void {
         startCommand(success: { (response) in
             //字典转模型
-            print(response)
+            if let error = response.error {
+                failure(error)
+                return
+            }
+           
+            let dict = response.dictionaryObject
+            let author:ArtUser = Mapper<ArtUser>().map(JSONObject: dict)!
+            print(author)
             DispatchQueue.main.async {
-               
+               success(author)
             }
         }) { (error) in
+            failure(error)
             print(error)
         }
     }

@@ -44,6 +44,7 @@
 		EB9522161F593E1D00849DEC /* ArtCommandLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9522151F593E1D00849DEC /* ArtCommandLogin.swift */; };
 		EB9522181F5944FA00849DEC /* NSData+Art.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9522171F5944FA00849DEC /* NSData+Art.swift */; };
 		EB95221A1F59452700849DEC /* libSystem.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EB9522191F59452700849DEC /* libSystem.tbd */; };
+		EB95221C1F59477D00849DEC /* ArtUserConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB95221B1F59477D00849DEC /* ArtUserConfig.swift */; };
 		EBC9DD151F56B2FC0013EC94 /* UIView+Art.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC9DD141F56B2FC0013EC94 /* UIView+Art.swift */; };
 		EBEE742D1F4BD92C0092EFCC /* ArtUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEE742C1F4BD92C0092EFCC /* ArtUser.swift */; };
 		EBEE742F1F4BD97F0092EFCC /* ArtShare.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEE742E1F4BD97F0092EFCC /* ArtShare.swift */; };
@@ -110,6 +111,7 @@
 		EB9522151F593E1D00849DEC /* ArtCommandLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtCommandLogin.swift; sourceTree = "<group>"; };
 		EB9522171F5944FA00849DEC /* NSData+Art.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSData+Art.swift"; sourceTree = "<group>"; };
 		EB9522191F59452700849DEC /* libSystem.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libSystem.tbd; path = usr/lib/libSystem.tbd; sourceTree = SDKROOT; };
+		EB95221B1F59477D00849DEC /* ArtUserConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtUserConfig.swift; sourceTree = "<group>"; };
 		EBC9DD141F56B2FC0013EC94 /* UIView+Art.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Art.swift"; sourceTree = "<group>"; };
 		EBEE742C1F4BD92C0092EFCC /* ArtUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtUser.swift; sourceTree = "<group>"; };
 		EBEE742E1F4BD97F0092EFCC /* ArtShare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtShare.swift; sourceTree = "<group>"; };
@@ -456,6 +458,7 @@
 				EB95220F1F593C5D00849DEC /* Model */,
 				EB9522101F593C5D00849DEC /* Service */,
 				EB9522081F593B2E00849DEC /* ArtUserService.swift */,
+				EB95221B1F59477D00849DEC /* ArtUserConfig.swift */,
 			);
 			path = UserService;
 			sourceTree = "<group>";
@@ -680,6 +683,7 @@
 				EB7FF90C1F4D44D800CFEB8A /* AppDelegate+Start.swift in Sources */,
 				EB7FF92B1F53FF0300CFEB8A /* ArtPageViewController.swift in Sources */,
 				EB9522181F5944FA00849DEC /* NSData+Art.swift in Sources */,
+				EB95221C1F59477D00849DEC /* ArtUserConfig.swift in Sources */,
 				EB4741791F44658E00235E1A /* ArtWorkCell.swift in Sources */,
 				EB95220B1F593B2E00849DEC /* ArtUserService.swift in Sources */,
 				EB7FF9271F4FCC5A00CFEB8A /* ArtScrollTab.swift in Sources */,

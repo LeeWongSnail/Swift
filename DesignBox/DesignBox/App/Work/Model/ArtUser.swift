@@ -26,13 +26,17 @@ class ArtUser: Mappable {
     var graduation_schoolid: String?
     var level: Int?
     var ischeck: Int?
+    var mobile: String?
+    var token: String?
+    var number: String?
+    
     
     required init?(map: Map) {
         
     }
     
     func mapping(map: Map) {
-        _id             <- map["id"]
+        _id             <- map["userid"]
         nickname        <- map["nickname"]
         icon            <- map["icon"]
         gender          <- map["gender"]
@@ -46,6 +50,10 @@ class ArtUser: Mappable {
         workplace       <- map["workplace"]
         level           <- map["level"]
         ischeck         <- map["ischeck"]
+        mobile          <- map["mobile"]
+        token           <- map["token"]
+        number          <- map["number"]
+        
         
         graduation_school <- map["graduation_school"]
         graduation_schoolid <- map["graduation_schoolid"]

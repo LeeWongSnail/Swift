@@ -36,7 +36,10 @@ class ArtLoginViewController: UIViewController {
         operation.mobile = self.mobileTextField.text
         operation.passwd = self.pwdTextField.text
         ArtUserService.shared.loginWithUserOperation(operation: operation) { (aError) in
-            print(aError)
+            if (aError == nil) {
+                //成功
+                self.dismiss(animated: true, completion: nil)
+            }
         }
     }
     
