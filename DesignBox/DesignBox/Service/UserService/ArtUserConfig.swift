@@ -17,6 +17,28 @@ class ArtUserConfig: NSObject {
     private override init() {
     }
     
+    var isLogin:Bool  {
+        get {
+            
+            guard (ArtUserService.shared.loginUser != nil) else {
+                return false
+            }
+            
+            guard ArtUserService.shared.loginUser!._id != nil else {
+                return false
+            }
+            
+            
+            return ArtUserService.shared.loginUser!._id!.characters.count > 0
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
     
     static let key = "541693271533634859518766627812890492810379158320023844493257416"
     static let iv = ""

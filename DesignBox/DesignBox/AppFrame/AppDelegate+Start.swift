@@ -26,23 +26,22 @@ extension AppDelegate:UITabBarControllerDelegate {
     }
     
     
-    
-    
-    
-    
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         if let idx = tabBarController.viewControllers?.index(of: viewController) {
             if idx == 4 {
                 //判断是否登录
-                if true {
+                if !ArtUserConfig.shared.isLogin {
                     let sb = UIStoryboard(name: "ArtLoginViewController", bundle: nil)
                     let login = sb.instantiateInitialViewController()
                     let nav = viewController as! UINavigationController
                     nav.present(login!, animated: true, completion: nil)
+                    return false
                 }
             }
         }
+        return true
     }
+    
     
 }
 

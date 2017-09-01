@@ -39,7 +39,10 @@ class ArtLoginViewController: UIViewController {
             if (aError == nil) {
                 //成功
                 self.dismiss(animated: true, completion: nil)
+                return
             }
+            
+            print(aError!)
         }
     }
     
