@@ -279,8 +279,8 @@ extension ArtPageViewController: UIPageViewControllerDelegate,UIPageViewControll
         
         if finished && !pageDoingScroll {
             isCurrentPage = true
-            if let idx = self.workFilterModel?.indexOfPageController(viewController: pageViewController) {
-//                self.scrollTab?.currentIndex = idx
+            if let idx = self.workFilterModel?.indexOfPageController(viewController:(pageViewController.viewControllers?.first!)!) {
+                self.scrollTab?.currentIndex = idx
             }
             
         }
