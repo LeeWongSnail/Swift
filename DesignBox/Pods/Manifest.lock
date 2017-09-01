@@ -5,6 +5,21 @@ PODS:
   - ObjectMapper (2.2.7)
   - SnapKit (3.2.0)
   - SwiftyJSON (3.1.4)
+  - UMengUShare/Core (6.4.4):
+    - UMengUShare/Network
+  - UMengUShare/Network (6.4.4)
+  - UMengUShare/Social/QQ (6.4.4):
+    - UMengUShare/Core
+    - UMengUShare/Social/ReducedQQ
+  - UMengUShare/Social/ReducedQQ (6.4.4):
+    - UMengUShare/Core
+  - UMengUShare/Social/ReducedWeChat (6.4.4):
+    - UMengUShare/Core
+  - UMengUShare/Social/WeChat (6.4.4):
+    - UMengUShare/Core
+    - UMengUShare/Social/ReducedWeChat
+  - UMengUShare/UI (6.4.4):
+    - UMengUShare/Core
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
@@ -13,6 +28,9 @@ DEPENDENCIES:
   - ObjectMapper (~> 2.2)
   - SnapKit (~> 3.2.0)
   - SwiftyJSON
+  - UMengUShare/Social/QQ
+  - UMengUShare/Social/WeChat
+  - UMengUShare/UI
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
@@ -21,7 +39,8 @@ SPEC CHECKSUMS:
   ObjectMapper: 65abcfd9a61cf7396cbd14a4fb22fddfcc46577e
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  UMengUShare: cd54ae52958426b79aa9193a7b02058d6a6d9aa0
 
-PODFILE CHECKSUM: 2fc57c980bcf1d87d59155139dd7e48a6bfd1c86
+PODFILE CHECKSUM: 549d942cea3b7926124bdff4c4667bbb56dd9f23
 
 COCOAPODS: 1.2.1

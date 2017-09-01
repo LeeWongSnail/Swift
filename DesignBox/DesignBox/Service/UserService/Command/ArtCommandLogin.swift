@@ -14,6 +14,10 @@ class ArtCommandLogin: ArtCommand {
 
     var mobile: String?
     var passwd: String?
+    var icon: String?
+    var nickname: String?
+    var platform: String?
+    var openid: String?
     
     override func requestParams() -> [String : AnyObject] {
         var params = [String:AnyObject]()

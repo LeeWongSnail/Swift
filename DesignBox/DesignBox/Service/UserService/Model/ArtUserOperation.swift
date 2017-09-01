@@ -12,7 +12,11 @@ class ArtUserOperation: NSObject {
     
     var mobile: String?
     var passwd: String?
-    
+    var nickname: String?
+    var gender: String?
+    var icon: String?
+    var openid: String?
+    var platform: String?
     
     
 }

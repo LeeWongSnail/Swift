@@ -9,7 +9,30 @@
 import Foundation
 import UIKit
 
+
 extension AppDelegate:UITabBarControllerDelegate {
+    
+    
+    func setUMeng() -> Void {
+        let url:String = "http://www.umeng.com/social"
+        // 友盟
+        UMSocialManager.default().umSocialAppkey = "55e66807e0f55a41750006c7"
+        
+        UMSocialManager.default().setPlaform(.wechatSession, appKey: "wx1fc7563d9a774388", appSecret: "1fe70ec90cd099ec3f8c86231727d1b9", redirectURL: url)
+        
+        UMSocialManager.default().setPlaform(.QQ, appKey: "1104826860", appSecret: "57Pn46hho7jrUFux", redirectURL: url)
+        
+        UMSocialManager.default().setPlaform(.sina, appKey: "73126032", appSecret: "7ae506aff40c63b6f58c2f7e167b27b7", redirectURL: nil)
+    }
+    
+    //并添加系统回调方法
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        let result = UMSocialManager.default().handleOpen(url)
+        if !result {
+            //返回其他
+        }
+        return result
+    }
     
     
     public func art_didFinishLaunchingWithOptions(launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Void {

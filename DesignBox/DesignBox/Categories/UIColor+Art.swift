@@ -41,7 +41,12 @@ extension UIColor {
         Scanner.init(string: gString).scanHexInt32(&g)
         Scanner.init(string: bString).scanHexInt32(&b)
         
-        return UIColor(displayP3Red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: CGFloat(1))
+        if #available(iOS 10.0, *) {
+            return UIColor(displayP3Red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: CGFloat(1))
+        } else {
+            // Fallback on earlier versions
+            return UIColor(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: CGFloat(1))
+        }
         
     }
 

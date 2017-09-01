@@ -45,6 +45,7 @@
 		EB9522181F5944FA00849DEC /* NSData+Art.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9522171F5944FA00849DEC /* NSData+Art.swift */; };
 		EB95221A1F59452700849DEC /* libSystem.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EB9522191F59452700849DEC /* libSystem.tbd */; };
 		EB95221C1F59477D00849DEC /* ArtUserConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB95221B1F59477D00849DEC /* ArtUserConfig.swift */; };
+		EB95221E1F59642D00849DEC /* shareicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB95221D1F59642D00849DEC /* shareicon@2x.png */; };
 		EBC9DD151F56B2FC0013EC94 /* UIView+Art.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC9DD141F56B2FC0013EC94 /* UIView+Art.swift */; };
 		EBEE742D1F4BD92C0092EFCC /* ArtUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEE742C1F4BD92C0092EFCC /* ArtUser.swift */; };
 		EBEE742F1F4BD97F0092EFCC /* ArtShare.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEE742E1F4BD97F0092EFCC /* ArtShare.swift */; };
@@ -112,6 +113,8 @@
 		EB9522171F5944FA00849DEC /* NSData+Art.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSData+Art.swift"; sourceTree = "<group>"; };
 		EB9522191F59452700849DEC /* libSystem.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libSystem.tbd; path = usr/lib/libSystem.tbd; sourceTree = SDKROOT; };
 		EB95221B1F59477D00849DEC /* ArtUserConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtUserConfig.swift; sourceTree = "<group>"; };
+		EB95221D1F59642D00849DEC /* shareicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "shareicon@2x.png"; path = "../../../../../../Work/YIQITech/DesignBox/DesignBox/images/shareicon@2x.png"; sourceTree = "<group>"; };
+		EB95221F1F59666700849DEC /* UMSocialSDK-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UMSocialSDK-Bridging-Header.h"; sourceTree = "<group>"; };
 		EBC9DD141F56B2FC0013EC94 /* UIView+Art.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Art.swift"; sourceTree = "<group>"; };
 		EBEE742C1F4BD92C0092EFCC /* ArtUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtUser.swift; sourceTree = "<group>"; };
 		EBEE742E1F4BD97F0092EFCC /* ArtShare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtShare.swift; sourceTree = "<group>"; };
@@ -267,11 +270,13 @@
 		EB249AB91F42F2D600D48C2F /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				EB95221D1F59642D00849DEC /* shareicon@2x.png */,
 				EB249ABA1F42F2D600D48C2F /* Assets.xcassets */,
 				EB249ABB1F42F2D600D48C2F /* LaunchScreen.storyboard */,
 				EB249ABD1F42F2D600D48C2F /* Main.storyboard */,
 				EB249ABF1F42F2D600D48C2F /* Info.plist */,
 				EB7FF9021F4D1C5A00CFEB8A /* DesignBox-Prefix.swift */,
+				EB95221F1F59666700849DEC /* UMSocialSDK-Bridging-Header.h */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -601,6 +606,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB7FF9111F4D661B00CFEB8A /* Work.xcassets in Resources */,
+				EB95221E1F59642D00849DEC /* shareicon@2x.png in Resources */,
 				EB249AC81F42F7A100D48C2F /* Info.plist in Resources */,
 				EB249AC01F42F2D600D48C2F /* Assets.xcassets in Resources */,
 				EB9522001F59038100849DEC /* Login.xcassets in Resources */,
@@ -863,10 +869,53 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = XWNPFKK4U5;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = DesignBox/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"SocialQQ\"",
+					"-l\"SocialWeChat\"",
+					"-l\"UMSocialLog\"",
+					"-l\"WeChatSDK\"",
+					"-l\"c++\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CryptoSwift\"",
+					"-framework",
+					"\"Kingfisher\"",
+					"-framework",
+					"\"ObjectMapper\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"SnapKit\"",
+					"-framework",
+					"\"SwiftyJSON\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"TencentOpenAPI\"",
+					"-framework",
+					"\"UMSocialCore\"",
+					"-framework",
+					"\"UMSocialNetwork\"",
+					"-framework",
+					"\"UShareUI\"",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.msb.DesignBox1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/DesignBox/SupportingFiles/UMSocialSDK-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -878,10 +927,53 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = XWNPFKK4U5;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = DesignBox/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"SocialQQ\"",
+					"-l\"SocialWeChat\"",
+					"-l\"UMSocialLog\"",
+					"-l\"WeChatSDK\"",
+					"-l\"c++\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CryptoSwift\"",
+					"-framework",
+					"\"Kingfisher\"",
+					"-framework",
+					"\"ObjectMapper\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"SnapKit\"",
+					"-framework",
+					"\"SwiftyJSON\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"TencentOpenAPI\"",
+					"-framework",
+					"\"UMSocialCore\"",
+					"-framework",
+					"\"UMSocialNetwork\"",
+					"-framework",
+					"\"UShareUI\"",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.msb.DesignBox1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/DesignBox/SupportingFiles/UMSocialSDK-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

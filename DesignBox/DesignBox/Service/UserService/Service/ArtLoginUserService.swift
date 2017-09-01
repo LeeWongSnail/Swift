@@ -17,6 +17,10 @@ class ArtLoginUserService: NSObject {
         let loginCommand = ArtCommandLogin()
         loginCommand.mobile = operation.mobile
         loginCommand.passwd = operation.passwd
+        loginCommand.icon = operation.icon
+        loginCommand.nickname = operation.nickname
+        loginCommand.openid = operation.openid
+        loginCommand.platform = operation.platform
         
         loginCommand.loginCommand(success: { (author) in
             self.loginUser = author

@@ -54,9 +54,65 @@ class ArtLoginViewController: UIViewController {
     
     
     @IBAction func qqLoginDidClick(_ sender: UIButton) {
+        UMSocialDataManager.default().clearAllAuthorUserInfo()
+        UMSocialManager.default().getUserInfo(with: .QQ, currentViewController: self, completion: { (result, userError) in
+            if (result != nil) {
+                //获取用户的个人信息
+                let userInfo = result as! UMSocialUserInfoResponse
+                
+                let operation = ArtUserOperation()
+                operation.nickname = userInfo.name
+                operation.gender = userInfo.gender
+                operation.icon = userInfo.iconurl
+                operation.openid = userInfo.openid
+                operation.platform = "QQ"
+                
+                ArtUserService.shared.loginWithUserOperation(operation: operation, completed: { (aError) in
+                    if (aError == nil) {
+                        //成功
+                        self.dismiss(animated: true, completion: nil)
+                        return
+                    }
+                    
+                    print(aError!)
+                })
+                
+            }else
+            {
+                debugPrint("--",userError.debugDescription)
+            }
+        })
     }
     
     @IBAction func weChatLoginDidClick(_ sender: UIButton) {
+        UMSocialDataManager.default().clearAllAuthorUserInfo()
+        UMSocialManager.default().getUserInfo(with: .wechatSession, currentViewController: self, completion: { (result, userError) in
+            if (result != nil) {
+                //获取用户的个人信息
+                let userInfo = result as! UMSocialUserInfoResponse
+                
+                let operation = ArtUserOperation()
+                operation.nickname = userInfo.name
+                operation.gender = userInfo.gender
+                operation.icon = userInfo.iconurl
+                operation.openid = userInfo.openid
+                operation.platform = "QQ"
+                
+                ArtUserService.shared.loginWithUserOperation(operation: operation, completed: { (aError) in
+                    if (aError == nil) {
+                        //成功
+                        self.dismiss(animated: true, completion: nil)
+                        return
+                    }
+                    
+                    print(aError!)
+                })
+                
+            }else
+            {
+                debugPrint("--",userError.debugDescription)
+            }
+        })
     }
     
     
