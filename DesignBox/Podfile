@@ -6,4 +6,5 @@ pod 'SnapKit', '~> 3.2.0'
 pod 'SwiftyJSON'
 pod 'ObjectMapper', '~> 2.2'
 pod 'Kingfisher'
+pod 'CryptoSwift'
 

@@ -9,11 +9,12 @@
 import Foundation
 import UIKit
 
-extension AppDelegate {
+extension AppDelegate:UITabBarControllerDelegate {
     
     
     public func art_didFinishLaunchingWithOptions(launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Void {
         let tabBar = tabBarController?.tabBar
+        tabBarController?.delegate = self
         tabBar?.tintColor = UIColor.art_colorWithHexString(hexString: "F64E4E")
         tabBar?.barTintColor = UIColor.clear
         
@@ -24,4 +25,25 @@ extension AppDelegate {
         navBar.barTintColor = UIColor.art_mainGrayColor()
     }
     
+    
+    
+    
+    
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        if let idx = tabBarController.viewControllers?.index(of: viewController) {
+            if idx == 4 {
+                //判断是否登录
+                if true {
+                    let sb = UIStoryboard(name: "ArtLoginViewController", bundle: nil)
+                    let login = sb.instantiateInitialViewController()
+                    let nav = viewController as! UINavigationController
+                    nav.present(login!, animated: true, completion: nil)
+                }
+            }
+        }
+    }
+    
 }
+
+
