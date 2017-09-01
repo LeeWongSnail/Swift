@@ -261,7 +261,7 @@ extension ArtPageViewController: UIPageViewControllerDelegate,UIPageViewControll
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
-        if let idx = self.workFilterModel?.indexOfPageController(viewController: pageViewController) {
+        if let idx = self.workFilterModel?.indexOfPageController(viewController: viewController) {
             return self.workFilterModel?.pageControllerAtIndex(aIndex: idx+1)
         }
         return nil
@@ -269,7 +269,7 @@ extension ArtPageViewController: UIPageViewControllerDelegate,UIPageViewControll
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
-        if let idx = self.workFilterModel?.indexOfPageController(viewController: pageViewController) {
+        if let idx = self.workFilterModel?.indexOfPageController(viewController: viewController) {
             return self.workFilterModel?.pageControllerAtIndex(aIndex: idx-1)
         }
         return nil
@@ -280,7 +280,7 @@ extension ArtPageViewController: UIPageViewControllerDelegate,UIPageViewControll
         if finished && !pageDoingScroll {
             isCurrentPage = true
             if let idx = self.workFilterModel?.indexOfPageController(viewController: pageViewController) {
-                self.scrollTab?.currentIndex = idx
+//                self.scrollTab?.currentIndex = idx
             }
             
         }

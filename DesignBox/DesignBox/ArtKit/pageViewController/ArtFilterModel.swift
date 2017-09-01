@@ -56,7 +56,7 @@ class ArtFilterModel: NSObject {
         
         var index:Int = 0
         for idx in 0...self.categoryList.count-1 {
-            let obj = self.categoryList[index] as! ArtScrollTabItem
+            let obj = self.categoryList[idx] as! ArtScrollTabItem
             if obj.tabId == categoryID {
                 index = idx
             }
