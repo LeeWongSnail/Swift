@@ -1,21 +1,31 @@
 platform :ios, '9.0' #手机的系统
 use_frameworks!
 
-target 'DesignBox'
+target 'DesignBox' do
     pod 'Alamofire', '~> 4.4'
     pod 'SnapKit', '~> 3.2.0'
     pod 'SwiftyJSON'
     pod 'ObjectMapper', '~> 2.2'
     pod 'Kingfisher'
     pod 'CryptoSwift'
-
+    pod 'SQLite.swift', '~> 0.11.3'
 
     # U-Share SDK UI模块（分享面板，建议添加）
-    pod 'UMengUShare/UI'
+    pod ‘UMengUShare/UI’
+
 
     # 集成微信(完整版14.4M)
-    pod 'UMengUShare/Social/WeChat'
-    # 集成QQ(完整版7.6M)
-    pod 'UMengUShare/Social/QQ'
+    pod ‘UMengUShare/Social/WeChat'
 
 
+
+    # 集成QQ/QZone/TIM(完整版7.6M)
+    pod ‘UMengUShare/Social/QQ'
+
+
+    # 集成新浪微博(完整版25.3M)
+    pod ‘UMengUShare/Social/Sina'
+
+
+
+end

@@ -29,4 +29,17 @@ class ArtLoginUserService: NSObject {
             completed(aError)
         }
     }
+    
+    func fetchLoginUserInfo(completed:@escaping (_ cmd:ArtCommandUser?,_ error:Error?) ->()) -> Void {
+        
+        let userinfoCmd = ArtCommandUser()
+    
+        userinfoCmd.fetchUserCommand(success: { (user) in
+            completed(userinfoCmd,nil)
+        }) { (error) in
+            print(error)
+            completed(nil,error)
+        }
+        
+    }
 }

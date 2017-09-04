@@ -26,11 +26,14 @@ class ArtUserService: NSObject {
     
     
     
+    
     //MARK: Functions
     
     func loginWithUserOperation(operation:ArtUserOperation,completed:@escaping (_ error:Error?) ->()) -> Void {
         self.loginUserService.loginWithUserOperation(operation: operation, completed: completed)
     }
     
-    
+    func fetchLoginUserInfo(completed:@escaping (_ cmd:ArtCommandUser?,_ error:Error?) ->()) -> Void {
+        self.loginUserService.fetchLoginUserInfo(completed: completed)
+    }
 }

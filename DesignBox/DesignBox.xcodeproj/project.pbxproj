@@ -46,6 +46,14 @@
 		EB95221A1F59452700849DEC /* libSystem.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EB9522191F59452700849DEC /* libSystem.tbd */; };
 		EB95221C1F59477D00849DEC /* ArtUserConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB95221B1F59477D00849DEC /* ArtUserConfig.swift */; };
 		EB95221E1F59642D00849DEC /* shareicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB95221D1F59642D00849DEC /* shareicon@2x.png */; };
+		EB9522211F5CF08900849DEC /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EB9522201F5CF08900849DEC /* libsqlite3.tbd */; };
+		EB9522231F5CF09300849DEC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB9522221F5CF09300849DEC /* CoreGraphics.framework */; };
+		EB95222C1F5CF4B200849DEC /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB95222B1F5CF4B200849DEC /* User.storyboard */; };
+		EB95222E1F5CF5BD00849DEC /* User.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB95222D1F5CF5BD00849DEC /* User.xcassets */; };
+		EBC58DD01F5D30AC00E10FFC /* ArtMineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC58DCF1F5D30AC00E10FFC /* ArtMineCell.swift */; };
+		EBC58DD21F5D37CC00E10FFC /* ArtUserHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC58DD11F5D37CC00E10FFC /* ArtUserHeaderCell.swift */; };
+		EBC8DCCC1F5CFF390047F52C /* ArtUserMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC8DCCB1F5CFF390047F52C /* ArtUserMineViewController.swift */; };
+		EBC8DCD01F5D01B40047F52C /* ArtCommandUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC8DCCF1F5D01B40047F52C /* ArtCommandUser.swift */; };
 		EBC9DD151F56B2FC0013EC94 /* UIView+Art.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC9DD141F56B2FC0013EC94 /* UIView+Art.swift */; };
 		EBEE742D1F4BD92C0092EFCC /* ArtUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEE742C1F4BD92C0092EFCC /* ArtUser.swift */; };
 		EBEE742F1F4BD97F0092EFCC /* ArtShare.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEE742E1F4BD97F0092EFCC /* ArtShare.swift */; };
@@ -115,6 +123,14 @@
 		EB95221B1F59477D00849DEC /* ArtUserConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtUserConfig.swift; sourceTree = "<group>"; };
 		EB95221D1F59642D00849DEC /* shareicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "shareicon@2x.png"; path = "../../../../../../Work/YIQITech/DesignBox/DesignBox/images/shareicon@2x.png"; sourceTree = "<group>"; };
 		EB95221F1F59666700849DEC /* UMSocialSDK-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UMSocialSDK-Bridging-Header.h"; sourceTree = "<group>"; };
+		EB9522201F5CF08900849DEC /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		EB9522221F5CF09300849DEC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EB95222B1F5CF4B200849DEC /* User.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
+		EB95222D1F5CF5BD00849DEC /* User.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = User.xcassets; sourceTree = "<group>"; };
+		EBC58DCF1F5D30AC00E10FFC /* ArtMineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtMineCell.swift; sourceTree = "<group>"; };
+		EBC58DD11F5D37CC00E10FFC /* ArtUserHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtUserHeaderCell.swift; sourceTree = "<group>"; };
+		EBC8DCCB1F5CFF390047F52C /* ArtUserMineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtUserMineViewController.swift; sourceTree = "<group>"; };
+		EBC8DCCF1F5D01B40047F52C /* ArtCommandUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtCommandUser.swift; sourceTree = "<group>"; };
 		EBC9DD141F56B2FC0013EC94 /* UIView+Art.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Art.swift"; sourceTree = "<group>"; };
 		EBEE742C1F4BD92C0092EFCC /* ArtUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtUser.swift; sourceTree = "<group>"; };
 		EBEE742E1F4BD97F0092EFCC /* ArtShare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtShare.swift; sourceTree = "<group>"; };
@@ -126,6 +142,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB9522231F5CF09300849DEC /* CoreGraphics.framework in Frameworks */,
+				EB9522211F5CF08900849DEC /* libsqlite3.tbd in Frameworks */,
 				EB95221A1F59452700849DEC /* libSystem.tbd in Frameworks */,
 				0F9ED1FA34C52768882D890D /* Pods_DesignBox.framework in Frameworks */,
 			);
@@ -160,6 +178,8 @@
 		7B827EB4D506CCC751216145 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EB9522221F5CF09300849DEC /* CoreGraphics.framework */,
+				EB9522201F5CF08900849DEC /* libsqlite3.tbd */,
 				EB9522191F59452700849DEC /* libSystem.tbd */,
 				AAD50125A2DD2368C6925843 /* Pods_DesignBox.framework */,
 			);
@@ -227,6 +247,7 @@
 				EB9521F61F59021400849DEC /* Login */,
 				EB7FF91E1F4FCB9C00CFEB8A /* Requirement */,
 				EB249AB41F42F2AF00D48C2F /* Work */,
+				EB9522241F5CF36700849DEC /* User */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -472,6 +493,7 @@
 			isa = PBXGroup;
 			children = (
 				EB9522151F593E1D00849DEC /* ArtCommandLogin.swift */,
+				EBC8DCCF1F5D01B40047F52C /* ArtCommandUser.swift */,
 			);
 			path = Command;
 			sourceTree = "<group>";
@@ -490,6 +512,58 @@
 				EB9522111F593C5D00849DEC /* ArtLoginUserService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		EB9522241F5CF36700849DEC /* User */ = {
+			isa = PBXGroup;
+			children = (
+				EB9522251F5CF36700849DEC /* Command */,
+				EB9522261F5CF36700849DEC /* Model */,
+				EB9522271F5CF36700849DEC /* ViewController */,
+				EB9522281F5CF36700849DEC /* ViewModel */,
+				EB95222D1F5CF5BD00849DEC /* User.xcassets */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		EB9522251F5CF36700849DEC /* Command */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Command;
+			sourceTree = "<group>";
+		};
+		EB9522261F5CF36700849DEC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EB9522271F5CF36700849DEC /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EBC58DCE1F5D307600E10FFC /* View */,
+				EB95222B1F5CF4B200849DEC /* User.storyboard */,
+				EBC8DCCB1F5CFF390047F52C /* ArtUserMineViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		EB9522281F5CF36700849DEC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EBC58DCE1F5D307600E10FFC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EBC58DCF1F5D30AC00E10FFC /* ArtMineCell.swift */,
+				EBC58DD11F5D37CC00E10FFC /* ArtUserHeaderCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -609,10 +683,12 @@
 				EB95221E1F59642D00849DEC /* shareicon@2x.png in Resources */,
 				EB249AC81F42F7A100D48C2F /* Info.plist in Resources */,
 				EB249AC01F42F2D600D48C2F /* Assets.xcassets in Resources */,
+				EB95222E1F5CF5BD00849DEC /* User.xcassets in Resources */,
 				EB9522001F59038100849DEC /* Login.xcassets in Resources */,
 				EB9521FE1F59024200849DEC /* ArtLoginViewController.storyboard in Resources */,
 				EB249AC21F42F2D700D48C2F /* Main.storyboard in Resources */,
 				EB249AC11F42F2D700D48C2F /* LaunchScreen.storyboard in Resources */,
+				EB95222C1F5CF4B200849DEC /* User.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -688,9 +764,11 @@
 				EB7FF92D1F5402F300CFEB8A /* ArtFilterModel.swift in Sources */,
 				EB7FF90C1F4D44D800CFEB8A /* AppDelegate+Start.swift in Sources */,
 				EB7FF92B1F53FF0300CFEB8A /* ArtPageViewController.swift in Sources */,
+				EBC8DCCC1F5CFF390047F52C /* ArtUserMineViewController.swift in Sources */,
 				EB9522181F5944FA00849DEC /* NSData+Art.swift in Sources */,
 				EB95221C1F59477D00849DEC /* ArtUserConfig.swift in Sources */,
 				EB4741791F44658E00235E1A /* ArtWorkCell.swift in Sources */,
+				EBC58DD21F5D37CC00E10FFC /* ArtUserHeaderCell.swift in Sources */,
 				EB95220B1F593B2E00849DEC /* ArtUserService.swift in Sources */,
 				EB7FF9271F4FCC5A00CFEB8A /* ArtScrollTab.swift in Sources */,
 				EB7FF9181F4E82DF00CFEB8A /* String+Art.swift in Sources */,
@@ -704,10 +782,12 @@
 				EB9522091F593B2E00849DEC /* ArtCommand.swift in Sources */,
 				EB47417C1F44689400235E1A /* ArtImageView.swift in Sources */,
 				EBEE742D1F4BD92C0092EFCC /* ArtUser.swift in Sources */,
+				EBC8DCD01F5D01B40047F52C /* ArtCommandUser.swift in Sources */,
 				EB7FF9241F4FCBB600CFEB8A /* ArtRequirementViewController.swift in Sources */,
 				EB9522121F593C5D00849DEC /* ArtLoginUserService.swift in Sources */,
 				EB7FF9031F4D1C5A00CFEB8A /* DesignBox-Prefix.swift in Sources */,
 				EB7FF9141F4D692300CFEB8A /* UIColor+ArtStyle.swift in Sources */,
+				EBC58DD01F5D30AC00E10FFC /* ArtMineCell.swift in Sources */,
 				EB95220A1F593B2E00849DEC /* ArtImageService.swift in Sources */,
 				EB9522141F593C6E00849DEC /* ArtUserOperation.swift in Sources */,
 				EB9522161F593E1D00849DEC /* ArtCommandLogin.swift in Sources */,
@@ -913,7 +993,7 @@
 					"\"UShareUI\"",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.msb.DesignBox1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.msb.DesignBox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/DesignBox/SupportingFiles/UMSocialSDK-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -971,7 +1051,7 @@
 					"\"UShareUI\"",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.msb.DesignBox1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.msb.DesignBox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/DesignBox/SupportingFiles/UMSocialSDK-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

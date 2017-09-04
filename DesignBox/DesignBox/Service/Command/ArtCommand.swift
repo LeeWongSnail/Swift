@@ -31,7 +31,13 @@ class ArtCommand: NSObject {
     
     
     func requestHeaders() -> HTTPHeaders? {
-        return HTTPHeaders()
+        var headers = HTTPHeaders()
+        
+        if ArtUserConfig.shared.isLogin {
+            headers["userid"] = ArtUserConfig.shared.userId
+        }
+        
+        return headers
     }
     
     

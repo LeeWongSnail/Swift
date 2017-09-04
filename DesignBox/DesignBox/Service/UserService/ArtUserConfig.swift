@@ -34,6 +34,16 @@ class ArtUserConfig: NSObject {
     }
     
     
+    var userId: String {
+        get {
+            guard isLogin else {
+                return ""
+            }
+            
+            return (ArtUserService.shared.loginUser?._id!)!
+        }
+    }
+    
     
     
     
