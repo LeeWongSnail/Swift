@@ -15,6 +15,8 @@ class ArtUserConfig: NSObject {
     //MARK: 单例
     static let shared = ArtUserConfig()
     private override init() {
+        super.init()
+        self.loadUserConfig()
     }
     
     var isLogin:Bool  {
@@ -24,29 +26,30 @@ class ArtUserConfig: NSObject {
                 return false
             }
             
-            guard ArtUserService.shared.loginUser!._id != nil else {
+            guard ArtUserConfig.shared.userId != nil else {
                 return false
             }
             
             
-            return ArtUserService.shared.loginUser!._id!.characters.count > 0
+            return ArtUserConfig.shared.userId!.characters.count > 0
         }
     }
     
     
-    var userId: String {
-        get {
-            guard isLogin else {
-                return ""
-            }
-            
-            return (ArtUserService.shared.loginUser?._id!)!
-        }
+    var userId: String?
+    
+    
+    
+    //本地缓存已经登录用户的userid
+    func loadUserConfig() -> Void {
+        let userDefaults = UserDefaults.standard
+        self.userId = userDefaults.object(forKey: "userId") as? String
     }
     
-    
-    
-    
+    func saveUserConfig() -> Void {
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(self.userId, forKey: "userId")
+    }
     
     
     

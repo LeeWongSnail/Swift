@@ -16,8 +16,8 @@ class ArtUser: Mappable {
     var gender: Int?
     var desc: String?
     var sdesc: String?
-    var dirtags: [String]?
-    var dirtagsids: [String]?
+//    var dirtags: [String]?
+//    var dirtagsids: [String]?
     var worktime: String?
     var worktimeid: String?
     var workplaceid: String?
@@ -42,8 +42,8 @@ class ArtUser: Mappable {
         gender          <- map["gender"]
         desc            <- map["desc"]
         sdesc           <- map["sdesc"]
-        dirtags         <- map["dirtags"]
-        dirtagsids      <- map["dirtagsids"]
+//        dirtags         <- map["dirtags"]
+//        dirtagsids      <- map["dirtagsids"]
         worktime        <- map["worktime"]
         worktimeid      <- map["worktimeid"]
         workplaceid     <- map["workplaceid"]

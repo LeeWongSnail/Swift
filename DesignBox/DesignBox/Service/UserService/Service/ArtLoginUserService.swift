@@ -11,7 +11,21 @@ import UIKit
 class ArtLoginUserService: NSObject {
 
     //MARK: - Properties
-    var loginUser: ArtUser?
+    var loginUser: ArtUser? {
+        get {
+            
+            if let userid = ArtUserConfig.shared.userId {
+                if let cacheUser = ArtUserDBService.shared.fetchUser(userId: userid) {
+                    return ArtUser(JSON: cacheUser)
+                }
+            }
+            
+            return nil
+        }
+        set {
+            ArtUserConfig.shared.userId = newValue?._id
+        }
+    }
     
     public func loginWithUserOperation(operation:ArtUserOperation,completed:@escaping (_ error:Error?) ->()) -> Void {
         let loginCommand = ArtCommandLogin()
@@ -24,6 +38,9 @@ class ArtLoginUserService: NSObject {
         
         loginCommand.loginCommand(success: { (author) in
             self.loginUser = author
+            
+            ArtUserDBService.shared.insertUser(user: author)
+            ArtUserConfig.shared.saveUserConfig()
             completed(nil)
         }) { (aError) in
             completed(aError)
