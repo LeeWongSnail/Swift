@@ -54,6 +54,11 @@
 		EBC58DD21F5D37CC00E10FFC /* ArtUserHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC58DD11F5D37CC00E10FFC /* ArtUserHeaderCell.swift */; };
 		EBC58DD51F5D40FF00E10FFC /* ArtDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC58DD41F5D40FF00E10FFC /* ArtDBService.swift */; };
 		EBC58DD91F5D430800E10FFC /* ArtUserDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC58DD81F5D430800E10FFC /* ArtUserDBService.swift */; };
+		EBC58DDC1F5E80ED00E10FFC /* ArtImageBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC58DDB1F5E80ED00E10FFC /* ArtImageBrowserController.swift */; };
+		EBC58DDE1F5E815800E10FFC /* ArtImageBrowserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC58DDD1F5E815800E10FFC /* ArtImageBrowserProtocol.swift */; };
+		EBC58DE01F5E851D00E10FFC /* ArtSingleImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC58DDF1F5E851D00E10FFC /* ArtSingleImageController.swift */; };
+		EBC58DE21F5E8D8800E10FFC /* ArtWorkImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC58DE11F5E8D8800E10FFC /* ArtWorkImageViewModel.swift */; };
+		EBC58DE41F5E9C1C00E10FFC /* ArtImageBrowserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC58DE31F5E9C1C00E10FFC /* ArtImageBrowserModel.swift */; };
 		EBC8DCCC1F5CFF390047F52C /* ArtUserMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC8DCCB1F5CFF390047F52C /* ArtUserMineViewController.swift */; };
 		EBC8DCD01F5D01B40047F52C /* ArtCommandUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC8DCCF1F5D01B40047F52C /* ArtCommandUser.swift */; };
 		EBC9DD151F56B2FC0013EC94 /* UIView+Art.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC9DD141F56B2FC0013EC94 /* UIView+Art.swift */; };
@@ -133,6 +138,11 @@
 		EBC58DD11F5D37CC00E10FFC /* ArtUserHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtUserHeaderCell.swift; sourceTree = "<group>"; };
 		EBC58DD41F5D40FF00E10FFC /* ArtDBService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtDBService.swift; sourceTree = "<group>"; };
 		EBC58DD81F5D430800E10FFC /* ArtUserDBService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtUserDBService.swift; sourceTree = "<group>"; };
+		EBC58DDB1F5E80ED00E10FFC /* ArtImageBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtImageBrowserController.swift; sourceTree = "<group>"; };
+		EBC58DDD1F5E815800E10FFC /* ArtImageBrowserProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtImageBrowserProtocol.swift; sourceTree = "<group>"; };
+		EBC58DDF1F5E851D00E10FFC /* ArtSingleImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtSingleImageController.swift; sourceTree = "<group>"; };
+		EBC58DE11F5E8D8800E10FFC /* ArtWorkImageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtWorkImageViewModel.swift; sourceTree = "<group>"; };
+		EBC58DE31F5E9C1C00E10FFC /* ArtImageBrowserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtImageBrowserModel.swift; sourceTree = "<group>"; };
 		EBC8DCCB1F5CFF390047F52C /* ArtUserMineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtUserMineViewController.swift; sourceTree = "<group>"; };
 		EBC8DCCF1F5D01B40047F52C /* ArtCommandUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtCommandUser.swift; sourceTree = "<group>"; };
 		EBC9DD141F56B2FC0013EC94 /* UIView+Art.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Art.swift"; sourceTree = "<group>"; };
@@ -338,6 +348,7 @@
 		EB47417A1F44682400235E1A /* ArtKit */ = {
 			isa = PBXGroup;
 			children = (
+				EBC58DDA1F5E80A000E10FFC /* PhotoBrowser */,
 				EB7FF9251F4FCBD100CFEB8A /* pageViewController */,
 				EB47417B1F44689400235E1A /* ArtImageView.swift */,
 			);
@@ -580,6 +591,18 @@
 			path = DBService;
 			sourceTree = "<group>";
 		};
+		EBC58DDA1F5E80A000E10FFC /* PhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				EBC58DDB1F5E80ED00E10FFC /* ArtImageBrowserController.swift */,
+				EBC58DDD1F5E815800E10FFC /* ArtImageBrowserProtocol.swift */,
+				EBC58DDF1F5E851D00E10FFC /* ArtSingleImageController.swift */,
+				EBC58DE11F5E8D8800E10FFC /* ArtWorkImageViewModel.swift */,
+				EBC58DE31F5E9C1C00E10FFC /* ArtImageBrowserModel.swift */,
+			);
+			path = PhotoBrowser;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -782,6 +805,7 @@
 				EBC8DCCC1F5CFF390047F52C /* ArtUserMineViewController.swift in Sources */,
 				EB9522181F5944FA00849DEC /* NSData+Art.swift in Sources */,
 				EB95221C1F59477D00849DEC /* ArtUserConfig.swift in Sources */,
+				EBC58DE21F5E8D8800E10FFC /* ArtWorkImageViewModel.swift in Sources */,
 				EB4741791F44658E00235E1A /* ArtWorkCell.swift in Sources */,
 				EBC58DD21F5D37CC00E10FFC /* ArtUserHeaderCell.swift in Sources */,
 				EB95220B1F593B2E00849DEC /* ArtUserService.swift in Sources */,
@@ -796,13 +820,17 @@
 				EB249ACA1F43E03800D48C2F /* ArtWorkCommand.swift in Sources */,
 				EB9522091F593B2E00849DEC /* ArtCommand.swift in Sources */,
 				EB47417C1F44689400235E1A /* ArtImageView.swift in Sources */,
+				EBC58DE41F5E9C1C00E10FFC /* ArtImageBrowserModel.swift in Sources */,
 				EBEE742D1F4BD92C0092EFCC /* ArtUser.swift in Sources */,
+				EBC58DDE1F5E815800E10FFC /* ArtImageBrowserProtocol.swift in Sources */,
 				EBC8DCD01F5D01B40047F52C /* ArtCommandUser.swift in Sources */,
 				EB7FF9241F4FCBB600CFEB8A /* ArtRequirementViewController.swift in Sources */,
 				EB9522121F593C5D00849DEC /* ArtLoginUserService.swift in Sources */,
 				EB7FF9031F4D1C5A00CFEB8A /* DesignBox-Prefix.swift in Sources */,
+				EBC58DDC1F5E80ED00E10FFC /* ArtImageBrowserController.swift in Sources */,
 				EB7FF9141F4D692300CFEB8A /* UIColor+ArtStyle.swift in Sources */,
 				EBC58DD01F5D30AC00E10FFC /* ArtMineCell.swift in Sources */,
+				EBC58DE01F5E851D00E10FFC /* ArtSingleImageController.swift in Sources */,
 				EB95220A1F593B2E00849DEC /* ArtImageService.swift in Sources */,
 				EB9522141F593C6E00849DEC /* ArtUserOperation.swift in Sources */,
 				EBC58DD51F5D40FF00E10FFC /* ArtDBService.swift in Sources */,
