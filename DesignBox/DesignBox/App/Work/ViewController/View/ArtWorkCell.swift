@@ -11,6 +11,18 @@ import UIKit
 
 class ArtWorkCell: UITableViewCell {
 
+    
+    var tapBlock:((_ work:ArtWork?,_ index:Int) -> Void)?
+    var work: ArtWork?
+    
+    func imageDidTap(gesture:UITapGestureRecognizer) -> Void {
+        if tapBlock != nil {
+            tapBlock!(work,(gesture.view?.tag)!)
+        }
+    }
+    
+    
+    
     func buildUI() -> Void {
         self.contentView.addSubview(iconImage)
         iconImage.snp.makeConstraints({ (make) in
@@ -61,11 +73,7 @@ class ArtWorkCell: UITableViewCell {
             make.bottom.equalTo(self.contentView.snp.bottom).offset(-40)
             make.height.equalTo(0.5)
         }
-        
 
-        
-        
-       
     }
     
     
@@ -168,6 +176,10 @@ class ArtWorkCell: UITableViewCell {
         
         for index in 0...work!.imgs!.count-1 {
             let paintImage = ArtImageView()
+            paintImage.isUserInteractionEnabled = true
+            
+            paintImage.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(ArtWorkCell.imageDidTap(gesture:))))
+            paintImage.tag = 10000+index
             let image:[String:AnyObject] = work?.imgs![index] as! [String : AnyObject]
             paintImage.art_setImageWithURL(imageURL: image["imgurl"] as? String)
             var imageSize = CGSize()
@@ -193,6 +205,7 @@ class ArtWorkCell: UITableViewCell {
     
     
     func configWorkCell(work:ArtWork) -> Void {
+        self.work = work
         iconImage.art_setImageWithURL(imageURL: work.author?.icon)
         nickname.text = work.author?.nickname
         // 地域＋毕业学院

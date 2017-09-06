@@ -10,7 +10,11 @@ import UIKit
 
 class ArtSingleImageController: UIViewController {
 
-    var imageURL:String?
+    var imageURL:String? {
+        didSet {
+            self.imageView.art_setImageWithURL(imageURL: self.imageURL)
+        }
+    }
     
     
     func buildUI() -> Void {
@@ -19,6 +23,8 @@ class ArtSingleImageController: UIViewController {
         self.imageView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.view)
         }
+        
+        
     }
     
     
@@ -26,6 +32,7 @@ class ArtSingleImageController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        buildUI()
     }
 
     override func didReceiveMemoryWarning() {

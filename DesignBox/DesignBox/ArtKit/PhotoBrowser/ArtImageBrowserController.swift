@@ -13,6 +13,8 @@ class ArtImageBrowserController: UIViewController {
     var viewModel: ArtImageBrowserProtocol?
     var fileItem: ArtFileItemProtocol?
     var curIndex: Int = 0
+    var pageDoingScroll:Bool = false
+    var isCurrentPage:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,11 +30,12 @@ class ArtImageBrowserController: UIViewController {
     }
     
 
-    lazy var pageViewController = { () -> UIPageViewController in
-        let tempVc = UIPageViewController()
-        tempVc.delegate = self
-        tempVc.dataSource = self
-        return tempVc
+    lazy var pageViewController:UIPageViewController = {
+        let options = [UIPageViewControllerOptionSpineLocationKey:UIPageViewControllerSpineLocation.min]
+        let tempPageVC = UIPageViewController.init(transitionStyle: UIPageViewControllerTransitionStyle.scroll, navigationOrientation: UIPageViewControllerNavigationOrientation.horizontal, options: options)
+        tempPageVC.dataSource = self
+        tempPageVC.delegate = self
+        return tempPageVC
     }()
 
 }
@@ -41,11 +44,24 @@ class ArtImageBrowserController: UIViewController {
 extension ArtImageBrowserController:UIPageViewControllerDelegate,UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        return UIViewController()
+        let index = self.viewModel?.indexOfPageController!(viewController: viewController)
+        return self.viewModel?.pageControllerAtIndex!(index: index!+1)
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        return UIViewController()
+        
+        let index = self.viewModel?.indexOfPageController!(viewController: viewController)
+        
+        return self.viewModel?.pageControllerAtIndex!(index: (index!-1))
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        if finished && !pageDoingScroll {
+            isCurrentPage = true
+            let index = self.viewModel?.indexOfPageController!(viewController: (pageViewController.viewControllers?.first)!)
+            self.curIndex = index!
+        }
+        
     }
     
 }
@@ -80,7 +96,9 @@ extension ArtImageBrowserController {
         
         self.addChildViewController(self.pageViewController)
         
-        self.pageViewController.setViewControllers([(self.viewModel?.pageControllerAtIndex!(index: index))!], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
+        if  let vc = self.viewModel?.pageControllerAtIndex!(index: index) {
+            self.pageViewController.setViewControllers([vc], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
+        }
         
         self.pageViewController.didMove(toParentViewController: self)
         

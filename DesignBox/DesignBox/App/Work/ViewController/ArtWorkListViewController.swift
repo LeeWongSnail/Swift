@@ -32,6 +32,19 @@ class ArtWorkListViewController: UIViewController, UITableViewDelegate , UITable
     }
     
     
+    func showPhotoBrowser(work:ArtWork?,index:Int) -> Void {
+        let browser = ArtImageBrowserController()
+        let viewModel = ArtWorkImageViewModel()
+        viewModel.work = work
+        browser.curIndex = index-10000
+        let model = ArtImageBrowserModel()
+        model.imageURL = work?.work?.imgs?[index-10000]["imgurl"] as? String
+        browser.fileItem = model
+        browser.viewModel = viewModel
+        browser.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        self.navigationController?.present(browser, animated: true, completion: nil)
+    }
+    
     //MARK 获取网络数据
     func fetchData() -> Void {
         let worklistCommand = ArtWorkCommand()
@@ -94,7 +107,9 @@ class ArtWorkListViewController: UIViewController, UITableViewDelegate , UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:ArtWorkCell = tableView.dequeueReusableCell(withIdentifier: "ArtWorkCell") as! ArtWorkCell
         cell .configWorkCell(work: (works?[indexPath.section])!)
-        
+        cell.tapBlock = {(_ work:ArtWork?,_ index:Int) -> Void in
+            self.showPhotoBrowser(work: work, index: index)
+        }
         return cell;
     }
     

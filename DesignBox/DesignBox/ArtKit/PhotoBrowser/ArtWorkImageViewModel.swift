@@ -15,11 +15,13 @@ class ArtWorkImageViewModel: NSObject {
     var work:ArtWork?
     var fileItems:[ArtFileItemProtocol] = [ArtFileItemProtocol]()
     
+    
+    
 }
 
 extension ArtWorkImageViewModel:ArtImageBrowserProtocol {
-    
-    private func setContentViewController(contentVCBlock: @escaping (Int) -> UIViewController) {
+
+    func setContentViewController(contentVCBlock: @escaping (Int) -> UIViewController) {
         self.contentVCBlock = contentVCBlock
     }
     
@@ -100,7 +102,7 @@ extension ArtWorkImageViewModel:ArtImageBrowserProtocol {
             imageItems.append(model)
             
         }
-        
+        self.fileItems = imageItems
         completion(imageItems,true)
     }
     
