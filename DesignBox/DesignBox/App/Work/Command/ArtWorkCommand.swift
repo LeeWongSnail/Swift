@@ -23,14 +23,19 @@ class ArtWorkCommand: ArtCommand {
         return nil
     }
     
-    public func fetchWork(success:@escaping (_ works:[ArtWork])->(),failure:@escaping (_ error:Error)->()) -> Void {
+    public func fetchWork(success:@escaping (_ works:[ArtWork],_ bannerList:ArtBannerList)->(),failure:@escaping (_ error:Error)->()) -> Void {
         startCommand(success: { (response) in
             //字典转模型
             let works:JSON = response["works"]
+            let banner:JSON = response["banner"]
             let workArr:[ArtWork] = Mapper<ArtWork>().mapArray(JSONObject: works.object)!
+            let banners:[ArtBanner] = Mapper<ArtBanner>().mapArray(JSONObject: banner.object)!
+            let bannerList = ArtBannerList()
+            bannerList.banners = banners
             print(works)
+            print(banners)
             DispatchQueue.main.async {
-                success(workArr)
+                success(workArr,bannerList)
             }
         }) { (error) in
             print(error)

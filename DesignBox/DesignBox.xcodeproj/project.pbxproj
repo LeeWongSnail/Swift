@@ -59,6 +59,8 @@
 		EBC58DE01F5E851D00E10FFC /* ArtSingleImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC58DDF1F5E851D00E10FFC /* ArtSingleImageController.swift */; };
 		EBC58DE21F5E8D8800E10FFC /* ArtWorkImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC58DE11F5E8D8800E10FFC /* ArtWorkImageViewModel.swift */; };
 		EBC58DE41F5E9C1C00E10FFC /* ArtImageBrowserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC58DE31F5E9C1C00E10FFC /* ArtImageBrowserModel.swift */; };
+		EBC58DE71F5FC9A300E10FFC /* ArtBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC58DE61F5FC9A300E10FFC /* ArtBannerCell.swift */; };
+		EBC58DE91F5FCD4600E10FFC /* ArtBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC58DE81F5FCD4600E10FFC /* ArtBanner.swift */; };
 		EBC8DCCC1F5CFF390047F52C /* ArtUserMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC8DCCB1F5CFF390047F52C /* ArtUserMineViewController.swift */; };
 		EBC8DCD01F5D01B40047F52C /* ArtCommandUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC8DCCF1F5D01B40047F52C /* ArtCommandUser.swift */; };
 		EBC9DD151F56B2FC0013EC94 /* UIView+Art.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC9DD141F56B2FC0013EC94 /* UIView+Art.swift */; };
@@ -143,6 +145,8 @@
 		EBC58DDF1F5E851D00E10FFC /* ArtSingleImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtSingleImageController.swift; sourceTree = "<group>"; };
 		EBC58DE11F5E8D8800E10FFC /* ArtWorkImageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtWorkImageViewModel.swift; sourceTree = "<group>"; };
 		EBC58DE31F5E9C1C00E10FFC /* ArtImageBrowserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtImageBrowserModel.swift; sourceTree = "<group>"; };
+		EBC58DE61F5FC9A300E10FFC /* ArtBannerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtBannerCell.swift; sourceTree = "<group>"; };
+		EBC58DE81F5FCD4600E10FFC /* ArtBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtBanner.swift; sourceTree = "<group>"; };
 		EBC8DCCB1F5CFF390047F52C /* ArtUserMineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtUserMineViewController.swift; sourceTree = "<group>"; };
 		EBC8DCCF1F5D01B40047F52C /* ArtCommandUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtCommandUser.swift; sourceTree = "<group>"; };
 		EBC9DD141F56B2FC0013EC94 /* UIView+Art.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Art.swift"; sourceTree = "<group>"; };
@@ -348,6 +352,7 @@
 		EB47417A1F44682400235E1A /* ArtKit */ = {
 			isa = PBXGroup;
 			children = (
+				EBC58DE51F5FC92900E10FFC /* Banner */,
 				EBC58DDA1F5E80A000E10FFC /* PhotoBrowser */,
 				EB7FF9251F4FCBD100CFEB8A /* pageViewController */,
 				EB47417B1F44689400235E1A /* ArtImageView.swift */,
@@ -603,6 +608,15 @@
 			path = PhotoBrowser;
 			sourceTree = "<group>";
 		};
+		EBC58DE51F5FC92900E10FFC /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				EBC58DE61F5FC9A300E10FFC /* ArtBannerCell.swift */,
+				EBC58DE81F5FCD4600E10FFC /* ArtBanner.swift */,
+			);
+			path = Banner;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -822,11 +836,13 @@
 				EB47417C1F44689400235E1A /* ArtImageView.swift in Sources */,
 				EBC58DE41F5E9C1C00E10FFC /* ArtImageBrowserModel.swift in Sources */,
 				EBEE742D1F4BD92C0092EFCC /* ArtUser.swift in Sources */,
+				EBC58DE71F5FC9A300E10FFC /* ArtBannerCell.swift in Sources */,
 				EBC58DDE1F5E815800E10FFC /* ArtImageBrowserProtocol.swift in Sources */,
 				EBC8DCD01F5D01B40047F52C /* ArtCommandUser.swift in Sources */,
 				EB7FF9241F4FCBB600CFEB8A /* ArtRequirementViewController.swift in Sources */,
 				EB9522121F593C5D00849DEC /* ArtLoginUserService.swift in Sources */,
 				EB7FF9031F4D1C5A00CFEB8A /* DesignBox-Prefix.swift in Sources */,
+				EBC58DE91F5FCD4600E10FFC /* ArtBanner.swift in Sources */,
 				EBC58DDC1F5E80ED00E10FFC /* ArtImageBrowserController.swift in Sources */,
 				EB7FF9141F4D692300CFEB8A /* UIColor+ArtStyle.swift in Sources */,
 				EBC58DD01F5D30AC00E10FFC /* ArtMineCell.swift in Sources */,

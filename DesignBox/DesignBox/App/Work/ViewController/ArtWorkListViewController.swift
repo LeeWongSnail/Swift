@@ -13,6 +13,7 @@ import SnapKit
 class ArtWorkListViewController: UIViewController, UITableViewDelegate , UITableViewDataSource {
 
     var works:[ArtWork]?
+    var bannerList: ArtBannerList?
     
     lazy var tableView:UITableView = {
         let tableView = UITableView(frame: CGRect.zero, style: UITableViewStyle.plain)
@@ -50,12 +51,13 @@ class ArtWorkListViewController: UIViewController, UITableViewDelegate , UITable
         let worklistCommand = ArtWorkCommand()
         worklistCommand.order = "1"
         
-        worklistCommand.fetchWork(success: { (works) in
+        worklistCommand.fetchWork(success: { (works,bannerList) in
             //请求获取的work
             if works.count > 0 {
                 self.works = works
                 self.tableView.reloadData()
             }
+            self.bannerList = bannerList
         }) { (error) in
             print(error)
         }
@@ -64,6 +66,7 @@ class ArtWorkListViewController: UIViewController, UITableViewDelegate , UITable
     
     func registerCells() -> Void {
         tableView.register(ArtWorkCell.self, forCellReuseIdentifier: "ArtWorkCell")
+        tableView.register(ArtBannerCell.self, forCellReuseIdentifier: "ArtBannerCell")
     }
     
     override func viewDidLoad() {
@@ -94,10 +97,16 @@ class ArtWorkListViewController: UIViewController, UITableViewDelegate , UITable
     //MARK: -UITableViewDataSource
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        if let paints = works {
-            return paints.count
+        
+        var number = 0
+        if ((self.bannerList != nil) && ((self.bannerList?.banners?.count)! > 0) ) {
+            number += 1
         }
-        return 0
+        
+        if let paints = works {
+            return paints.count + number
+        }
+        return number
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -105,16 +114,36 @@ class ArtWorkListViewController: UIViewController, UITableViewDelegate , UITable
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:ArtWorkCell = tableView.dequeueReusableCell(withIdentifier: "ArtWorkCell") as! ArtWorkCell
-        cell .configWorkCell(work: (works?[indexPath.section])!)
-        cell.tapBlock = {(_ work:ArtWork?,_ index:Int) -> Void in
-            self.showPhotoBrowser(work: work, index: index)
+        
+        if ((self.bannerList != nil) && ((self.bannerList?.banners?.count)! > 0) && indexPath.section == 0) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ArtBannerCell") as! ArtBannerCell
+            cell.configBannerCell(bannerList: self.bannerList!)
+            return cell
+        } else {
+            var number = 0
+            if ((self.bannerList != nil) && ((self.bannerList?.banners?.count)! > 0) ) {
+                number += 1
+            }
+            let cell:ArtWorkCell = tableView.dequeueReusableCell(withIdentifier: "ArtWorkCell") as! ArtWorkCell
+            cell .configWorkCell(work: (works?[indexPath.section-number])!)
+            cell.tapBlock = {(_ work:ArtWork?,_ index:Int) -> Void in
+                self.showPhotoBrowser(work: work, index: index)
+            }
+            return cell;
         }
-        return cell;
+        
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return ArtWorkCell.cellHeight(work: (works?[indexPath.section])!)
+        if ((self.bannerList != nil) && ((self.bannerList?.banners?.count)! > 0) && indexPath.section == 0) {
+            return ArtBannerCell.bannerHeight()
+        }
+        var number = 0
+        if ((self.bannerList != nil) && ((self.bannerList?.banners?.count)! > 0) ) {
+            number += 1
+        }
+        return ArtWorkCell.cellHeight(work: (works?[indexPath.section-number])!)
     }
 
 }
