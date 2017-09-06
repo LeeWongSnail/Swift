@@ -16,6 +16,15 @@ class ArtSingleImageController: UIViewController {
         }
     }
     
+    var imageDismissTapBlock:(() -> Void)?
+    
+    
+    func imageDidTapBlock(sender:UITapGestureRecognizer) -> Void {
+        if (imageDismissTapBlock != nil) {
+            imageDismissTapBlock!()
+        }
+    }
+    
     
     func buildUI() -> Void {
         
@@ -23,8 +32,8 @@ class ArtSingleImageController: UIViewController {
         self.imageView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.view)
         }
-        
-        
+        self.imageView.isUserInteractionEnabled = true
+        self.imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ArtSingleImageController.imageDidTapBlock(sender:))))
     }
     
     

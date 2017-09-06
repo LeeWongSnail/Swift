@@ -87,7 +87,9 @@ extension ArtImageBrowserController {
         
         let item = self.viewModel?.fileItemAtIndex!(index: index)
         let singleVc = ArtSingleImageController()
-        
+        singleVc.imageDismissTapBlock = {
+            self.dismiss(animated: true, completion: nil)
+        }
         singleVc.imageURL = item?.getImageURL!()
         return singleVc
     }
