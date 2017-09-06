@@ -182,8 +182,9 @@ class ArtPageViewController: UIViewController {
         var index:Int = 0
         for name in namelist! {
             let item = ArtScrollTabItem()
-            item.tabId = "\(index)"
-            item.tabTitle = "标题".appending(item.tabId!)
+            let cate = ArtUserConfig.shared.reqCategory![index]
+            item.tabTitle = name
+            item.tabId = cate["_id"] as? String
             list.append(item)
             index+=1
         }

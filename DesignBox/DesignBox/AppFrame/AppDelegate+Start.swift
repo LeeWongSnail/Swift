@@ -35,6 +35,12 @@ extension AppDelegate:UITabBarControllerDelegate {
     }
     
     
+    func fetchSorts() -> Void {
+        let initCmd = ArtCommandInitInfo()
+        initCmd.sorttype = "1"
+        initCmd.fetchSort()
+    }
+    
     public func art_didFinishLaunchingWithOptions(launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Void {
         let tabBar = tabBarController?.tabBar
         tabBarController?.delegate = self
@@ -46,6 +52,9 @@ extension AppDelegate:UITabBarControllerDelegate {
         navBar.isTranslucent = false
         navBar.tintColor = UIColor.white
         navBar.barTintColor = UIColor.art_mainGrayColor()
+        
+        setUMeng()
+        fetchSorts()
     }
     
     

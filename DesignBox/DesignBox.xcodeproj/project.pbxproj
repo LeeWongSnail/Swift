@@ -61,6 +61,7 @@
 		EBC58DE41F5E9C1C00E10FFC /* ArtImageBrowserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC58DE31F5E9C1C00E10FFC /* ArtImageBrowserModel.swift */; };
 		EBC58DE71F5FC9A300E10FFC /* ArtBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC58DE61F5FC9A300E10FFC /* ArtBannerCell.swift */; };
 		EBC58DE91F5FCD4600E10FFC /* ArtBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC58DE81F5FCD4600E10FFC /* ArtBanner.swift */; };
+		EBC58DEC1F5FE99200E10FFC /* ArtCommandInitInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC58DEB1F5FE99200E10FFC /* ArtCommandInitInfo.swift */; };
 		EBC8DCCC1F5CFF390047F52C /* ArtUserMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC8DCCB1F5CFF390047F52C /* ArtUserMineViewController.swift */; };
 		EBC8DCD01F5D01B40047F52C /* ArtCommandUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC8DCCF1F5D01B40047F52C /* ArtCommandUser.swift */; };
 		EBC9DD151F56B2FC0013EC94 /* UIView+Art.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC9DD141F56B2FC0013EC94 /* UIView+Art.swift */; };
@@ -147,6 +148,7 @@
 		EBC58DE31F5E9C1C00E10FFC /* ArtImageBrowserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtImageBrowserModel.swift; sourceTree = "<group>"; };
 		EBC58DE61F5FC9A300E10FFC /* ArtBannerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtBannerCell.swift; sourceTree = "<group>"; };
 		EBC58DE81F5FCD4600E10FFC /* ArtBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtBanner.swift; sourceTree = "<group>"; };
+		EBC58DEB1F5FE99200E10FFC /* ArtCommandInitInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtCommandInitInfo.swift; sourceTree = "<group>"; };
 		EBC8DCCB1F5CFF390047F52C /* ArtUserMineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtUserMineViewController.swift; sourceTree = "<group>"; };
 		EBC8DCCF1F5D01B40047F52C /* ArtCommandUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtCommandUser.swift; sourceTree = "<group>"; };
 		EBC9DD141F56B2FC0013EC94 /* UIView+Art.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Art.swift"; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 		EB7FF9041F4D2AE800CFEB8A /* AppFrame */ = {
 			isa = PBXGroup;
 			children = (
+				EBC58DEA1F5FE97C00E10FFC /* Command */,
 				EB7FF90B1F4D44D800CFEB8A /* AppDelegate+Start.swift */,
 			);
 			path = AppFrame;
@@ -617,6 +620,14 @@
 			path = Banner;
 			sourceTree = "<group>";
 		};
+		EBC58DEA1F5FE97C00E10FFC /* Command */ = {
+			isa = PBXGroup;
+			children = (
+				EBC58DEB1F5FE99200E10FFC /* ArtCommandInitInfo.swift */,
+			);
+			path = Command;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -817,6 +828,7 @@
 				EBC58DD91F5D430800E10FFC /* ArtUserDBService.swift in Sources */,
 				EB7FF92B1F53FF0300CFEB8A /* ArtPageViewController.swift in Sources */,
 				EBC8DCCC1F5CFF390047F52C /* ArtUserMineViewController.swift in Sources */,
+				EBC58DEC1F5FE99200E10FFC /* ArtCommandInitInfo.swift in Sources */,
 				EB9522181F5944FA00849DEC /* NSData+Art.swift in Sources */,
 				EB95221C1F59477D00849DEC /* ArtUserConfig.swift in Sources */,
 				EBC58DE21F5E8D8800E10FFC /* ArtWorkImageViewModel.swift in Sources */,

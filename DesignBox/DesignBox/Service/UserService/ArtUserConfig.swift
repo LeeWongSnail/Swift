@@ -37,7 +37,7 @@ class ArtUserConfig: NSObject {
     
     
     var userId: String?
-    
+    var reqCategory: Array<[String:Any]>?
     
     
     //本地缓存已经登录用户的userid

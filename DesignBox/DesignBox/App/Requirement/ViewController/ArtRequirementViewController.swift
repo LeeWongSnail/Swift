@@ -39,9 +39,9 @@ class ArtRequirementViewController: ArtPageViewController {
     
     override func categoryNameList() -> [String]? {
         var titles = [String]()
-        for index in 0...8 {
-            let tabTitle = "标题".appending("\(index)")
-            titles.append(tabTitle)
+        for item in ArtUserConfig.shared.reqCategory! {
+            let title = item["name"] as? String
+            titles.append(title!)
         }
         return titles
     }
