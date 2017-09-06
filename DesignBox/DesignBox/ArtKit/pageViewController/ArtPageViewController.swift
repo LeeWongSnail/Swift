@@ -61,7 +61,9 @@ class ArtPageViewController: UIViewController {
                 make.height.equalTo((self.scrollTab?.tabHeight())!)
             })
             
-            
+            self.scrollTab?.curIndexDidChangeBlock = { (index) -> Void in
+                self.scrollTabCurIndexDidChange(aIndex: index)
+            }
             
             if let view = scrollTabRightView() {
                 self.view.addSubview(view)
@@ -100,7 +102,6 @@ class ArtPageViewController: UIViewController {
             return self.createControllerByIndex(index: currentIndex)!
         }
         
-        self.addObserver(self.scrollTab!, forKeyPath: "currentIndex", options: NSKeyValueObservingOptions.new, context: &myCurrentIndexContext)
         createPageViewPageIndex(index: self.initialIndex)
         if !pageViewControllerScrollEnabled() {
             self.findScrollView()?.isScrollEnabled = false
@@ -108,36 +109,29 @@ class ArtPageViewController: UIViewController {
     }
     
     
-    
-    private var myCurrentIndexContext = 0
-
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        
-        if let change = change, context == &myCurrentIndexContext {
-            let aIndex = change[NSKeyValueChangeKey.newKey] as! Int
-            let idx = self.workFilterModel?.indexOfPageController(viewController: (self.pageViewController.viewControllers?.first)!)
-            if idx != aIndex {
-                self.pageDoingScroll = true
-                let vc = self.workFilterModel?.pageControllerAtIndex(aIndex: aIndex)
-                guard vc != nil else {
-                    self.pageDoingScroll = false
-                    return
-                }
-                
-                self.pageViewController.setViewControllers([vc!], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: { (finish) in
-                    self.pageDoingScroll = false
-                })
-            } else {
-                if !self.isCurrentPage {
-                    
-                } else {
-                    self.isCurrentPage = false
-                }
-            
+    func scrollTabCurIndexDidChange(aIndex:Int) -> Void {
+        let idx = self.workFilterModel?.indexOfPageController(viewController: (self.pageViewController.viewControllers?.first)!)
+        if idx != aIndex {
+            self.pageDoingScroll = true
+            let vc = self.workFilterModel?.pageControllerAtIndex(aIndex: aIndex)
+            guard vc != nil else {
+                self.pageDoingScroll = false
+                return
             }
-            self.workFilterModel?.categoryListIndex = aIndex
+            
+            self.pageViewController.setViewControllers([vc!], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: { (finish) in
+                self.pageDoingScroll = false
+            })
+        } else {
+            if !self.isCurrentPage {
+                
+            } else {
+                self.isCurrentPage = false
+            }
+            
         }
-        
+        self.workFilterModel?.categoryListIndex = aIndex
+
     }
     
     

@@ -35,6 +35,8 @@ class ArtScrollTab: UIView,ArtPageHeaderViewProtocol {
     //MARK - Properities
     var tabItems = Array<ArtScrollTabDelegate>()
     var selectedColor:UIColor?
+    var curIndexDidChangeBlock:((_ index:Int) -> Void)?
+    
     var currentIndex:Int = 0 {
         willSet
         {
@@ -74,6 +76,10 @@ class ArtScrollTab: UIView,ArtPageHeaderViewProtocol {
             }
             print("age filed changed form \(oldValue) to \(currentIndex)")
             
+            
+            if (curIndexDidChangeBlock != nil) {
+                curIndexDidChangeBlock!(currentIndex)
+            }
         }
     }
     
