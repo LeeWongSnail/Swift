@@ -10,12 +10,16 @@ import UIKit
 
 class ArtRequirementCell: UITableViewCell {
 
+    @IBOutlet weak var viewCountBtn: UIButton!
     @IBOutlet weak var imageArea: UIView!
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var purposeLabel: UILabel!
     @IBOutlet weak var numberLabel: UILabel!
+    
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -108,6 +112,8 @@ class ArtRequirementCell: UITableViewCell {
         self.numberLabel.text = "需求编号: ".appending((requrement.requirement?.orderno)!)
         
         configImageGridView(work: requrement.requirement)
+        
+        self.viewCountBtn.setTitle("有".appending("\(String(describing: requrement.requirement!.viewcount!))").appending("看过"), for: UIControlState.normal)
     }
     
     

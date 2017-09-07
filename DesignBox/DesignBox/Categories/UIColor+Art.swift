@@ -49,5 +49,20 @@ extension UIColor {
         }
         
     }
+    
+    func imageForColor() -> UIImage {
+        let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
+        // 在这个范围开启一个上下文
+        UIGraphicsBeginImageContext(rect.size)
+        let context = UIGraphicsGetCurrentContext()
+        // 在这段上下文中获取到颜色
+        context?.setFillColor(self.cgColor)
+//        context?.setFillColor(red: CGFloat(colorLiteralRed), green: CGFloat(green), blue: CGFloat(blue), alpha: 1)
+        // 填充这个颜色
+        context?.fill(rect)
+        let myImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return myImage!
+    }
 
 }

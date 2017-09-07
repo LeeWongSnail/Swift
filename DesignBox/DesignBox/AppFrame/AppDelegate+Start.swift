@@ -44,15 +44,18 @@ extension AppDelegate:UITabBarControllerDelegate {
     public func art_didFinishLaunchingWithOptions(launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Void {
         let tabBar = tabBarController?.tabBar
         tabBarController?.delegate = self
-        tabBar?.tintColor = UIColor.art_colorWithHexString(hexString: "F64E4E")
-        tabBar?.barTintColor = UIColor.clear
-        
-        
+        tabBar?.tintColor = UIColor.art_mainColor()
+        tabBar?.barTintColor = UIColor.white
+        tabBar?.shadowImage = UIColor.art_sepLineHColor().imageForColor()
+        tabBar?.backgroundImage = UIColor.white.imageForColor()
+
         let navBar = UINavigationBar.appearance()
         navBar.isTranslucent = false
-        navBar.tintColor = UIColor.white
-        navBar.barTintColor = UIColor.art_mainGrayColor()
-        
+        navBar.tintColor = UIColor.art_fontColor()
+        navBar.barTintColor = UIColor.white
+        navBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.art_fontColor(),NSFontAttributeName:UIFont.systemFont(ofSize: 18)]
+        navBar.setBackgroundImage(UIColor.white.imageForColor(), for: UIBarPosition.any, barMetrics: UIBarMetrics.default)
+        navBar.shadowImage = UIColor.art_sepLineHColor().imageForColor()
         setUMeng()
         fetchSorts()
     }

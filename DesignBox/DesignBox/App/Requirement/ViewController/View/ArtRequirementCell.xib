@@ -132,6 +132,7 @@
                 <outlet property="priceLabel" destination="4mB-r8-44Q" id="tyb-1u-PNz"/>
                 <outlet property="purposeLabel" destination="6XC-c9-Vxc" id="0ps-95-6rS"/>
                 <outlet property="timeLabel" destination="7S6-et-OgJ" id="ppQ-PD-Cxb"/>
+                <outlet property="viewCountBtn" destination="8OI-MF-Njh" id="F0I-Ep-Lu1"/>
             </connections>
             <point key="canvasLocation" x="-152.5" y="-46"/>
         </tableViewCell>

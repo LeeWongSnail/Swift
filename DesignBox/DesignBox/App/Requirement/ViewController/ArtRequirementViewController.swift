@@ -15,10 +15,23 @@ class ArtRequirementViewController: ArtPageViewController {
         
         buildMainView()
         
-        
+        configNavBar()
         // Do any additional setup after loading the view.
     }
     
+    func scan() -> Void {
+        
+    }
+    
+    func publish() -> Void {
+        
+    }
+    
+    func configNavBar() -> Void {
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage.init(named: "navi_bar_search"), style: UIBarButtonItemStyle.done, target: self, action: #selector(ArtWorkListViewController.scan))
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage.init(named: "pulish"), style: UIBarButtonItemStyle.done, target: self, action: #selector(ArtWorkListViewController.publish))
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

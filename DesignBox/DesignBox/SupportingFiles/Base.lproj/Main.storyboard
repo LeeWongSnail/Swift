@@ -191,7 +191,7 @@
             </objects>
             <point key="canvasLocation" x="-1346" y="-736"/>
         </scene>
-        <!--Art Requirement View Controller-->
+        <!--需求-->
         <scene sceneID="VQM-YC-NL0">
             <objects>
                 <viewController id="0zE-9c-Ys9" customClass="ArtRequirementViewController" customModule="DesignBox" customModuleProvider="target" sceneMemberID="viewController">
@@ -204,7 +204,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="iaF-xk-pNW"/>
+                    <navigationItem key="navigationItem" title="需求" id="iaF-xk-pNW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kfk-t8-04D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -24,12 +24,27 @@ class ArtWorkListViewController: UIViewController, UITableViewDelegate , UITable
     }()
     
     
+    func scan() -> Void {
+        
+    }
+    
+    func publish() -> Void {
+        
+    }
+    
+    func configNavBar() -> Void {
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage.init(named: "custom_scan"), style: UIBarButtonItemStyle.done, target: self, action: #selector(ArtWorkListViewController.scan))
+        
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage.init(named: "pulish"), style: UIBarButtonItemStyle.done, target: self, action: #selector(ArtWorkListViewController.publish))
+    }
+    
     func buildUI() -> Void {
         self.view.addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.view)
         }
         registerCells()
+        configNavBar()
     }
     
     
