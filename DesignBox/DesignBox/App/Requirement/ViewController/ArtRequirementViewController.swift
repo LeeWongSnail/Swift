@@ -28,12 +28,11 @@ class ArtRequirementViewController: ArtPageViewController {
 
     
     override func createControllerByIndex(index: Int) -> UIViewController? {
-        let vc = UIViewController()
-        if index%2==0 {
-            vc.view.backgroundColor = UIColor.red
-        } else {
-            vc.view.backgroundColor = UIColor.yellow
+        let vc = ArtRequirementListController()
+        if let item = ArtUserConfig.shared.reqCategory?[index] {
+            vc.sortid = item["_id"] as? String
         }
+        
         return vc
     }
     

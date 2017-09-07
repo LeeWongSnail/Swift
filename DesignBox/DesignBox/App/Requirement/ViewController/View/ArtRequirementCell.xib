@@ -8,15 +8,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ArtRequirementCell" customModule="DesignBox" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <point key="canvasLocation" x="-20" y="42"/>
-        </view>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="123" id="g8m-Cg-nab" customClass="ArtRequirementCell" customModule="DesignBox" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArtRequirementCell" rowHeight="123" id="g8m-Cg-nab" customClass="ArtRequirementCell" customModule="DesignBox" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="123"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g8m-Cg-nab" id="01p-UR-0Ia">
@@ -53,7 +47,7 @@
                         <color key="textColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="详细需求:我要找个女朋友" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZNF-bS-MmV">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="详细需求:我要找个好朋友" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZNF-bS-MmV">
                         <rect key="frame" x="10" y="53.5" width="355" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -123,6 +117,13 @@
                     <constraint firstItem="25A-Cs-uIE" firstAttribute="bottom" secondItem="uts-Ud-Yoc" secondAttribute="bottom" constant="-10" id="yFl-Jn-tMg"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="contentLabel" destination="ZNF-bS-MmV" id="OhE-0s-oNE"/>
+                <outlet property="numberLabel" destination="XCV-zL-R6T" id="5KG-gj-Yao"/>
+                <outlet property="priceLabel" destination="4mB-r8-44Q" id="tyb-1u-PNz"/>
+                <outlet property="purposeLabel" destination="6XC-c9-Vxc" id="0ps-95-6rS"/>
+                <outlet property="timeLabel" destination="7S6-et-OgJ" id="ppQ-PD-Cxb"/>
+            </connections>
             <point key="canvasLocation" x="-152.5" y="-70.5"/>
         </tableViewCell>
     </objects>

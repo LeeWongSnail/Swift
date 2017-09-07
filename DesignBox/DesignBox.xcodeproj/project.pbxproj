@@ -66,6 +66,9 @@
 		EBC58DF11F5FF51300E10FFC /* ArtRequirementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC58DF01F5FF51300E10FFC /* ArtRequirementCell.swift */; };
 		EBC58DF31F5FF55700E10FFC /* ArtRequirementCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBC58DF21F5FF55700E10FFC /* ArtRequirementCell.xib */; };
 		EBC58DF51F5FF8D400E10FFC /* Requirement.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBC58DF41F5FF8D400E10FFC /* Requirement.xcassets */; };
+		EBC58DF71F5FFC7500E10FFC /* ArtCommandRequirementList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC58DF61F5FFC7500E10FFC /* ArtCommandRequirementList.swift */; };
+		EBC58DF91F5FFC9D00E10FFC /* ArtRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC58DF81F5FFC9D00E10FFC /* ArtRequirement.swift */; };
+		EBC58DFB1F60ED6100E10FFC /* NSNumber+Art.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC58DFA1F60ED6100E10FFC /* NSNumber+Art.swift */; };
 		EBC8DCCC1F5CFF390047F52C /* ArtUserMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC8DCCB1F5CFF390047F52C /* ArtUserMineViewController.swift */; };
 		EBC8DCD01F5D01B40047F52C /* ArtCommandUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC8DCCF1F5D01B40047F52C /* ArtCommandUser.swift */; };
 		EBC9DD151F56B2FC0013EC94 /* UIView+Art.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC9DD141F56B2FC0013EC94 /* UIView+Art.swift */; };
@@ -157,6 +160,9 @@
 		EBC58DF01F5FF51300E10FFC /* ArtRequirementCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtRequirementCell.swift; sourceTree = "<group>"; };
 		EBC58DF21F5FF55700E10FFC /* ArtRequirementCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtRequirementCell.xib; sourceTree = "<group>"; };
 		EBC58DF41F5FF8D400E10FFC /* Requirement.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Requirement.xcassets; sourceTree = "<group>"; };
+		EBC58DF61F5FFC7500E10FFC /* ArtCommandRequirementList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtCommandRequirementList.swift; sourceTree = "<group>"; };
+		EBC58DF81F5FFC9D00E10FFC /* ArtRequirement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtRequirement.swift; sourceTree = "<group>"; };
+		EBC58DFA1F60ED6100E10FFC /* NSNumber+Art.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSNumber+Art.swift"; sourceTree = "<group>"; };
 		EBC8DCCB1F5CFF390047F52C /* ArtUserMineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtUserMineViewController.swift; sourceTree = "<group>"; };
 		EBC8DCCF1F5D01B40047F52C /* ArtCommandUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtCommandUser.swift; sourceTree = "<group>"; };
 		EBC9DD141F56B2FC0013EC94 /* UIView+Art.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Art.swift"; sourceTree = "<group>"; };
@@ -387,6 +393,7 @@
 				EB54FAFA1F5574E100833770 /* UIViewController+Art.swift */,
 				EBC9DD141F56B2FC0013EC94 /* UIView+Art.swift */,
 				EB9522171F5944FA00849DEC /* NSData+Art.swift */,
+				EBC58DFA1F60ED6100E10FFC /* NSNumber+Art.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -415,6 +422,7 @@
 		EB7FF91F1F4FCB9C00CFEB8A /* Command */ = {
 			isa = PBXGroup;
 			children = (
+				EBC58DF61F5FFC7500E10FFC /* ArtCommandRequirementList.swift */,
 			);
 			path = Command;
 			sourceTree = "<group>";
@@ -422,6 +430,7 @@
 		EB7FF9201F4FCB9C00CFEB8A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EBC58DF81F5FFC9D00E10FFC /* ArtRequirement.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -852,6 +861,8 @@
 				EBC8DCCC1F5CFF390047F52C /* ArtUserMineViewController.swift in Sources */,
 				EBC58DEC1F5FE99200E10FFC /* ArtCommandInitInfo.swift in Sources */,
 				EB9522181F5944FA00849DEC /* NSData+Art.swift in Sources */,
+				EBC58DF91F5FFC9D00E10FFC /* ArtRequirement.swift in Sources */,
+				EBC58DF71F5FFC7500E10FFC /* ArtCommandRequirementList.swift in Sources */,
 				EB95221C1F59477D00849DEC /* ArtUserConfig.swift in Sources */,
 				EBC58DE21F5E8D8800E10FFC /* ArtWorkImageViewModel.swift in Sources */,
 				EB4741791F44658E00235E1A /* ArtWorkCell.swift in Sources */,
@@ -879,6 +890,7 @@
 				EB7FF9031F4D1C5A00CFEB8A /* DesignBox-Prefix.swift in Sources */,
 				EBC58DE91F5FCD4600E10FFC /* ArtBanner.swift in Sources */,
 				EBC58DDC1F5E80ED00E10FFC /* ArtImageBrowserController.swift in Sources */,
+				EBC58DFB1F60ED6100E10FFC /* NSNumber+Art.swift in Sources */,
 				EB7FF9141F4D692300CFEB8A /* UIColor+ArtStyle.swift in Sources */,
 				EBC58DD01F5D30AC00E10FFC /* ArtMineCell.swift in Sources */,
 				EBC58DE01F5E851D00E10FFC /* ArtSingleImageController.swift in Sources */,
