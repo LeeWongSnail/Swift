@@ -74,6 +74,7 @@ class ArtRequirement: Mappable {
     var readme: String?
     var code: CLongLong?
     var create_at: String?
+    var imgs: [AnyObject]?
     
     required init?(map: Map) {
         
@@ -116,6 +117,7 @@ class ArtRequirement: Mappable {
         readme <- map["readme"]
         code <- map["code"]
         create_at <- map["create_at"]
+        imgs <- map["imgs"]
     }
     
 }

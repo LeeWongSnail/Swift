@@ -40,7 +40,6 @@ class ArtRequirementListController: UIViewController {
     }
     
     func registerCells() -> Void {
-//        tableView.register(ArtRequirementCell.self, forCellReuseIdentifier: "ArtRequirementCell")
         tableView.register(UINib.init(nibName: "ArtRequirementCell", bundle: nil), forCellReuseIdentifier: "ArtRequirementCell")
         tableView.register(ArtBannerCell.self, forCellReuseIdentifier: "ArtBannerCell")
     }
