@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="ArtMaterialHeaderView" customModule="DesignBox" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="479" height="220"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="免费下载全球最in设计素材" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJL-0x-6Up">
+                    <rect key="frame" x="137.5" y="25" width="204" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="连接手机和电脑，找素材最快工具" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4R-oi-RfJ">
+                    <rect key="frame" x="140" y="52" width="199" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <searchBar contentMode="redraw" searchBarStyle="minimal" text="素材总数 0 张" translatesAutoresizingMaskIntoConstraints="NO" id="h1N-fC-qeV">
+                    <rect key="frame" x="2" y="71" width="475" height="44"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="Kbk-KF-SDs"/>
+                    </constraints>
+                    <offsetWrapper key="searchTextPositionAdjustment" horizontal="160" vertical="0.0"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nHb-xQ-2At">
+                    <rect key="frame" x="0.0" y="120" width="479" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="q5t-Uy-C0g"/>
+                    </constraints>
+                </scrollView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="推荐你看" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EaV-cp-B0c">
+                    <rect key="frame" x="15" y="197" width="57.5" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="vJL-0x-6Up" firstAttribute="centerX" secondItem="U6b-Vx-4bR" secondAttribute="centerX" id="4fg-yZ-dda"/>
+                <constraint firstItem="EaV-cp-B0c" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="15" id="7BQ-sU-WMv"/>
+                <constraint firstItem="h1N-fC-qeV" firstAttribute="top" secondItem="S4R-oi-RfJ" secondAttribute="bottom" constant="3" id="9xr-1M-puD"/>
+                <constraint firstItem="nHb-xQ-2At" firstAttribute="top" secondItem="h1N-fC-qeV" secondAttribute="bottom" constant="5" id="AbZ-UN-KFj"/>
+                <constraint firstItem="S4R-oi-RfJ" firstAttribute="top" secondItem="vJL-0x-6Up" secondAttribute="bottom" constant="6" id="Fnu-6V-39H"/>
+                <constraint firstItem="vJL-0x-6Up" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="25" id="HEk-cH-YvW"/>
+                <constraint firstAttribute="trailing" secondItem="h1N-fC-qeV" secondAttribute="trailing" constant="2" id="HsN-4G-oL4"/>
+                <constraint firstAttribute="trailing" secondItem="nHb-xQ-2At" secondAttribute="trailing" id="SA8-QW-bBO"/>
+                <constraint firstItem="h1N-fC-qeV" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="2" id="bVW-Y7-r2b"/>
+                <constraint firstItem="S4R-oi-RfJ" firstAttribute="centerX" secondItem="U6b-Vx-4bR" secondAttribute="centerX" id="oJ0-ST-1ml"/>
+                <constraint firstItem="EaV-cp-B0c" firstAttribute="top" secondItem="nHb-xQ-2At" secondAttribute="bottom" constant="7" id="t5f-iy-5cP"/>
+                <constraint firstItem="nHb-xQ-2At" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="xL7-sc-7WL"/>
+            </constraints>
+            <connections>
+                <outlet property="materialSugView" destination="nHb-xQ-2At" id="SHm-Rj-vQR"/>
+            </connections>
+            <point key="canvasLocation" x="-88.5" y="-91.5"/>
+        </collectionReusableView>
+    </objects>
+</document>

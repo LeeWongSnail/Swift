@@ -65,35 +65,6 @@
             </objects>
             <point key="canvasLocation" x="-266" y="-1498"/>
         </scene>
-        <!--素材-->
-        <scene sceneID="HYt-zI-CEC">
-            <objects>
-                <tableViewController id="H9a-c8-z5Y" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="aZu-qt-TkW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="tzL-aZ-cnF">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tzL-aZ-cnF" id="EfW-Lb-edO">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="H9a-c8-z5Y" id="ToE-i3-RbP"/>
-                            <outlet property="delegate" destination="H9a-c8-z5Y" id="8Z4-tM-jlJ"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="素材" id="bAg-ge-bl4"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3D4-vl-Og5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="113" y="74"/>
-        </scene>
         <!--发现-->
         <scene sceneID="yPn-gl-plg">
             <objects>
@@ -167,12 +138,31 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="H9a-c8-z5Y" kind="relationship" relationship="rootViewController" id="oDI-9b-4wJ"/>
+                        <segue destination="qKf-dx-3Ud" kind="relationship" relationship="rootViewController" id="U6X-DD-F1p"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qps-0S-T5Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1268" y="75"/>
+        </scene>
+        <!--素材-->
+        <scene sceneID="1gC-Mz-fta">
+            <objects>
+                <viewController storyboardIdentifier="ArtMaterrialViewController" id="qKf-dx-3Ud" customClass="ArtMaterrialViewController" customModule="DesignBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="17V-TZ-A1b"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ela-Dj-RSg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bEx-6F-H3E">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="素材" id="cxc-Tq-A7z"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SaD-cb-8q8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-393" y="74"/>
         </scene>
         <!--社区-->
         <scene sceneID="Mrz-tc-oBT">

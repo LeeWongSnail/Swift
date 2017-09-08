@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SnapKit
+import ETCollectionViewWaterFallLayout
 
 let SCREEN_W = UIScreen.main.bounds.size.width 
 let SCREEN_H = UIScreen.main.bounds.size.height
