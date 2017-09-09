@@ -22,6 +22,8 @@ class ArtMaterial: Mappable {
     var keep: Int?
     var name: String?
     var imgsize: String?
+    var viewcount: Int?
+    var authorID: String?
     
     
     required init?(map: Map) {
@@ -40,5 +42,7 @@ class ArtMaterial: Mappable {
         keep <- map["keep"]
         name <- map["name"]
         imgsize <- map["imgsize"]
+        viewcount <- map["viewcount"]
+        authorID <- map["authorID"]
     }
 }

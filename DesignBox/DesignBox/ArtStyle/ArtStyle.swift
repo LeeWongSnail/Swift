@@ -9,6 +9,22 @@
 import Foundation
 import UIKit
 
+//CGSize art_caculateWorkImageSize(CGFloat width, CGSize size)
+//{
+//    if (size.width == 0 || size.height == 0) {
+//        return CGSizeMake(width, width);
+//    }
+//    CGFloat h = size.height * (width / size.width);
+//    
+//    if (h > width*2.) {
+//        h = width*2.;
+//    }
+//    
+//    return CGSizeMake(width, h);
+//}
+
+
+
 class ArtStyle {
     
     static let shared = ArtStyle.init()
@@ -23,5 +39,20 @@ class ArtStyle {
     public let art_scrollTabMargin: CGFloat = {
         return 12
     }()
+    
+    
+    public func art_caculateWorkImageSize(width:CGFloat,size:CGSize) -> CGSize {
+        if size.width == 0 || size.height == 0 {
+            return CGSize(width: width, height: width)
+        }
+        
+        var h = size.height * (width/size.width)
+        
+        if h > width * 2 {
+            h = width * 2
+        }
+        
+        return CGSize(width: width, height: h)
+    }
     
 }

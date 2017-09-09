@@ -26,13 +26,13 @@
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <searchBar contentMode="redraw" searchBarStyle="minimal" text="素材总数 0 张" translatesAutoresizingMaskIntoConstraints="NO" id="h1N-fC-qeV">
+                <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="素材总数 0 张" translatesAutoresizingMaskIntoConstraints="NO" id="h1N-fC-qeV">
                     <rect key="frame" x="2" y="71" width="475" height="44"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="Kbk-KF-SDs"/>
                     </constraints>
-                    <offsetWrapper key="searchTextPositionAdjustment" horizontal="160" vertical="0.0"/>
+                    <offsetWrapper key="searchTextPositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     <textInputTraits key="textInputTraits"/>
                 </searchBar>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nHb-xQ-2At">

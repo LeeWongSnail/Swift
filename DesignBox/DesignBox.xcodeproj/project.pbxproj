@@ -77,7 +77,7 @@
 		EBC58E101F623E6000E10FFC /* ArtCommandMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC58E0F1F623E6000E10FFC /* ArtCommandMaterial.swift */; };
 		EBC58E121F6241DE00E10FFC /* ArtMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC58E111F6241DE00E10FFC /* ArtMaterial.swift */; };
 		EBC58E171F62700500E10FFC /* ArtMaterilCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC58E151F62700500E10FFC /* ArtMaterilCell.swift */; };
-		EBC58E181F62700500E10FFC /* ArtMaterilCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBC58E161F62700500E10FFC /* ArtMaterilCell.xib */; };
+		EBC58E1A1F6396C500E10FFC /* Material.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBC58E191F6396C500E10FFC /* Material.xcassets */; };
 		EBC8DCCC1F5CFF390047F52C /* ArtUserMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC8DCCB1F5CFF390047F52C /* ArtUserMineViewController.swift */; };
 		EBC8DCD01F5D01B40047F52C /* ArtCommandUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC8DCCF1F5D01B40047F52C /* ArtCommandUser.swift */; };
 		EBC9DD151F56B2FC0013EC94 /* UIView+Art.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC9DD141F56B2FC0013EC94 /* UIView+Art.swift */; };
@@ -180,7 +180,7 @@
 		EBC58E0F1F623E6000E10FFC /* ArtCommandMaterial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtCommandMaterial.swift; sourceTree = "<group>"; };
 		EBC58E111F6241DE00E10FFC /* ArtMaterial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtMaterial.swift; sourceTree = "<group>"; };
 		EBC58E151F62700500E10FFC /* ArtMaterilCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtMaterilCell.swift; sourceTree = "<group>"; };
-		EBC58E161F62700500E10FFC /* ArtMaterilCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtMaterilCell.xib; sourceTree = "<group>"; };
+		EBC58E191F6396C500E10FFC /* Material.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Material.xcassets; sourceTree = "<group>"; };
 		EBC8DCCB1F5CFF390047F52C /* ArtUserMineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtUserMineViewController.swift; sourceTree = "<group>"; };
 		EBC8DCCF1F5D01B40047F52C /* ArtCommandUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtCommandUser.swift; sourceTree = "<group>"; };
 		EBC9DD141F56B2FC0013EC94 /* UIView+Art.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Art.swift"; sourceTree = "<group>"; };
@@ -682,6 +682,7 @@
 				EBC58DFD1F612B0700E10FFC /* Command */,
 				EBC58DFE1F612B0700E10FFC /* Model */,
 				EBC58DFF1F612B0700E10FFC /* ViewController */,
+				EBC58E191F6396C500E10FFC /* Material.xcassets */,
 			);
 			path = Material;
 			sourceTree = "<group>";
@@ -719,7 +720,6 @@
 				EBC58E071F613C9B00E10FFC /* ArtMaterialHeaderView.swift */,
 				EBC58E081F613C9B00E10FFC /* ArtMaterialHeaderView.xib */,
 				EBC58E151F62700500E10FFC /* ArtMaterilCell.swift */,
-				EBC58E161F62700500E10FFC /* ArtMaterilCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -847,9 +847,9 @@
 				EB9521FE1F59024200849DEC /* ArtLoginViewController.storyboard in Resources */,
 				EBC58DF31F5FF55700E10FFC /* ArtRequirementCell.xib in Resources */,
 				EBC58E0A1F613C9B00E10FFC /* ArtMaterialHeaderView.xib in Resources */,
+				EBC58E1A1F6396C500E10FFC /* Material.xcassets in Resources */,
 				EB249AC21F42F2D700D48C2F /* Main.storyboard in Resources */,
 				EB249AC11F42F2D700D48C2F /* LaunchScreen.storyboard in Resources */,
-				EBC58E181F62700500E10FFC /* ArtMaterilCell.xib in Resources */,
 				EB95222C1F5CF4B200849DEC /* User.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

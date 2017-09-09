@@ -30,14 +30,18 @@ class ArtMaterrialViewController: UIViewController {
         }
     }
     
-    
+    func configNavBar() -> Void {
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage.init(named: "navi_bar_search"), style: UIBarButtonItemStyle.done, target: self, action: #selector(ArtWorkListViewController.scan))
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage.init(named: "pulish"), style: UIBarButtonItemStyle.done, target: self, action: #selector(ArtWorkListViewController.publish))
+    }
     
     func buildUI() -> Void {
         self.view.addSubview(self.collectionView)
         self.collectionView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.view)
         }
-        self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "UICollectionViewCell")
+        self.collectionView.register(ArtMaterilCell.self, forCellWithReuseIdentifier: "ArtMaterilCell")
         self.collectionView.register(UINib.init(nibName: "ArtMaterialHeaderView", bundle: nil), forSupplementaryViewOfKind: kSupplementaryViewKindHeader, withReuseIdentifier: "ArtMaterialHeaderView")
         self.collectionView.reloadData()
     }
@@ -45,10 +49,11 @@ class ArtMaterrialViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.backgroundColor = UIColor.art_backgroundColor()
         // Do any additional setup after loading the view.
         fetchMaterialList()
         buildUI()
+        configNavBar()
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,11 +66,7 @@ class ArtMaterrialViewController: UIViewController {
         let tempCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: self.layout)
         tempCollectionView.delegate = self
         tempCollectionView.dataSource = self
-        tempCollectionView.backgroundColor = UIColor.white
-        
-        
-
-        
+        tempCollectionView.backgroundColor = UIColor.art_backgroundColor()
         return tempCollectionView
     }()
 
@@ -96,14 +97,17 @@ extension ArtMaterrialViewController: UICollectionViewDelegate,UICollectionViewD
     
     //MARK: UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dataCount
+        guard ((self.materialList != nil) && (self.materialList?.count)! > 0) else {
+            return 0
+        }
+        return (self.materialList?.count)!
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UICollectionViewCell", for: indexPath)
-        cell.contentView.backgroundColor    = [UIColor.blue, UIColor.red, UIColor.yellow][indexPath.row % 3]
-        cell.contentView.clipsToBounds      = true
-        cell.contentView.layer.cornerRadius = 5
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ArtMaterilCell", for: indexPath) as! ArtMaterilCell
+   
+        cell.configMaterialCell(material: (self.materialList?[indexPath.item]))
+        
         return cell
     }
     
@@ -120,15 +124,12 @@ extension ArtMaterrialViewController: UICollectionViewDelegate,UICollectionViewD
         return UICollectionReusableView()
     }
     
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: SCREEN_W, height: 100)
-    }
+
     
     /** 根据宽度，获取对应的比例的高度 用于垂直滚动 */
     func collectionViewLayout(_ collectionViewLayout: RMCollectionViewLayout, heightForItemAt index: Int, itemWidth width:CGFloat) -> CGFloat {
-        let height = 200 + arc4random() % 100
-        return CGFloat(height)
+        let size = ArtMaterilCell.sizeForMaterial(material: (self.materialList?[index]))
+        return size.height
     }
     
     /** 根据高度，获取对应的比例的宽度 用于水平滚动 */
