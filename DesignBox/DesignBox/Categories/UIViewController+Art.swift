@@ -8,8 +8,9 @@
 
 import UIKit
 import DGElasticPullToRefresh
+import NVActivityIndicatorView
 
-extension UIViewController {
+extension UIViewController: NVActivityIndicatorViewable {
     
     func art_addRefresh(tableView:UITableView) -> DGElasticPullToRefreshLoadingView {
         let loadingView = DGElasticPullToRefreshLoadingViewCircle()
@@ -36,6 +37,23 @@ extension UIViewController {
     
     func setPullProgress(progress:CGFloat) -> Void {
         
+    }
+    
+    
+    func test() -> Void {
+
+    }
+    
+    func showText(text:String) -> Void {
+        let size = CGSize(width: 60, height: 60)
+        
+        startAnimating(size, message: text, type: NVActivityIndicatorType.ballTrianglePath)
+        
+       NVActivityIndicatorView.DEFAULT_BLOCKER_BACKGROUND_COLOR = UIColor.clear
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
+            self.stopAnimating()
+        }
     }
 
 
