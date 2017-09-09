@@ -185,7 +185,7 @@
         <scene sceneID="LJi-lR-DKf">
             <objects>
                 <viewControllerPlaceholder storyboardName="ArtDiscoveryViewController" id="zZq-J7-8pY" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="2lC-7Z-LKj"/>
+                    <navigationItem key="navigationItem" title="发现" id="2lC-7Z-LKj"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C9D-Tz-pWR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

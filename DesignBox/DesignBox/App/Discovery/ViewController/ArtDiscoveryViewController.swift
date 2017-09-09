@@ -14,7 +14,7 @@ class ArtDiscoveryViewController: UITableViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        self.title = "发现"
         self.tableView.tableFooterView = nil
         self.tableView.backgroundColor = UIColor.art_colorWithHexString(hexString: "f2f2f2")
     }
