@@ -31,7 +31,7 @@ class ArtMaterrialViewController: UIViewController {
     }
     
     func configNavBar() -> Void {
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage.init(named: "navi_bar_search"), style: UIBarButtonItemStyle.done, target: self, action: #selector(ArtWorkListViewController.scan))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage.init(named: "custom_scan"), style: UIBarButtonItemStyle.done, target: self, action: #selector(ArtWorkListViewController.scan))
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage.init(named: "pulish"), style: UIBarButtonItemStyle.done, target: self, action: #selector(ArtWorkListViewController.publish))
     }

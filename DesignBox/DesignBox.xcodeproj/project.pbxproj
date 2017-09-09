@@ -78,6 +78,9 @@
 		EBC58E121F6241DE00E10FFC /* ArtMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC58E111F6241DE00E10FFC /* ArtMaterial.swift */; };
 		EBC58E171F62700500E10FFC /* ArtMaterilCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC58E151F62700500E10FFC /* ArtMaterilCell.swift */; };
 		EBC58E1A1F6396C500E10FFC /* Material.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBC58E191F6396C500E10FFC /* Material.xcassets */; };
+		EBC58E201F63994E00E10FFC /* ArtDiscoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC58E1F1F63994E00E10FFC /* ArtDiscoveryViewController.swift */; };
+		EBC58E271F6399E400E10FFC /* ArtDiscoveryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBC58E261F6399E400E10FFC /* ArtDiscoveryViewController.storyboard */; };
+		EBC58E291F639F4200E10FFC /* Discovery.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBC58E281F639F4200E10FFC /* Discovery.xcassets */; };
 		EBC8DCCC1F5CFF390047F52C /* ArtUserMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC8DCCB1F5CFF390047F52C /* ArtUserMineViewController.swift */; };
 		EBC8DCD01F5D01B40047F52C /* ArtCommandUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC8DCCF1F5D01B40047F52C /* ArtCommandUser.swift */; };
 		EBC9DD151F56B2FC0013EC94 /* UIView+Art.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC9DD141F56B2FC0013EC94 /* UIView+Art.swift */; };
@@ -181,6 +184,9 @@
 		EBC58E111F6241DE00E10FFC /* ArtMaterial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtMaterial.swift; sourceTree = "<group>"; };
 		EBC58E151F62700500E10FFC /* ArtMaterilCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtMaterilCell.swift; sourceTree = "<group>"; };
 		EBC58E191F6396C500E10FFC /* Material.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Material.xcassets; sourceTree = "<group>"; };
+		EBC58E1F1F63994E00E10FFC /* ArtDiscoveryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtDiscoveryViewController.swift; sourceTree = "<group>"; };
+		EBC58E261F6399E400E10FFC /* ArtDiscoveryViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ArtDiscoveryViewController.storyboard; path = DesignBox/App/Discovery/ArtDiscoveryViewController.storyboard; sourceTree = SOURCE_ROOT; };
+		EBC58E281F639F4200E10FFC /* Discovery.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Discovery.xcassets; sourceTree = "<group>"; };
 		EBC8DCCB1F5CFF390047F52C /* ArtUserMineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtUserMineViewController.swift; sourceTree = "<group>"; };
 		EBC8DCCF1F5D01B40047F52C /* ArtCommandUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtCommandUser.swift; sourceTree = "<group>"; };
 		EBC9DD141F56B2FC0013EC94 /* UIView+Art.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Art.swift"; sourceTree = "<group>"; };
@@ -296,6 +302,7 @@
 		EB249AB31F42F2AF00D48C2F /* App */ = {
 			isa = PBXGroup;
 			children = (
+				EBC58E1B1F63990900E10FFC /* Discovery */,
 				EBC58DFC1F612B0700E10FFC /* Material */,
 				EB9521F61F59021400849DEC /* Login */,
 				EB7FF91E1F4FCB9C00CFEB8A /* Requirement */,
@@ -724,6 +731,40 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		EBC58E1B1F63990900E10FFC /* Discovery */ = {
+			isa = PBXGroup;
+			children = (
+				EBC58E1C1F63990900E10FFC /* Command */,
+				EBC58E1D1F63990900E10FFC /* Model */,
+				EBC58E1E1F63990900E10FFC /* ViewController */,
+				EBC58E281F639F4200E10FFC /* Discovery.xcassets */,
+			);
+			path = Discovery;
+			sourceTree = "<group>";
+		};
+		EBC58E1C1F63990900E10FFC /* Command */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Command;
+			sourceTree = "<group>";
+		};
+		EBC58E1D1F63990900E10FFC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EBC58E1E1F63990900E10FFC /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EBC58E261F6399E400E10FFC /* ArtDiscoveryViewController.storyboard */,
+				EBC58E1F1F63994E00E10FFC /* ArtDiscoveryViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -843,7 +884,9 @@
 				EB249AC81F42F7A100D48C2F /* Info.plist in Resources */,
 				EB249AC01F42F2D600D48C2F /* Assets.xcassets in Resources */,
 				EB95222E1F5CF5BD00849DEC /* User.xcassets in Resources */,
+				EBC58E291F639F4200E10FFC /* Discovery.xcassets in Resources */,
 				EB9522001F59038100849DEC /* Login.xcassets in Resources */,
+				EBC58E271F6399E400E10FFC /* ArtDiscoveryViewController.storyboard in Resources */,
 				EB9521FE1F59024200849DEC /* ArtLoginViewController.storyboard in Resources */,
 				EBC58DF31F5FF55700E10FFC /* ArtRequirementCell.xib in Resources */,
 				EBC58E0A1F613C9B00E10FFC /* ArtMaterialHeaderView.xib in Resources */,
@@ -934,6 +977,7 @@
 				EBC58E091F613C9B00E10FFC /* ArtMaterialHeaderView.swift in Sources */,
 				EBC58DF71F5FFC7500E10FFC /* ArtCommandRequirementList.swift in Sources */,
 				EB95221C1F59477D00849DEC /* ArtUserConfig.swift in Sources */,
+				EBC58E201F63994E00E10FFC /* ArtDiscoveryViewController.swift in Sources */,
 				EBC58DE21F5E8D8800E10FFC /* ArtWorkImageViewModel.swift in Sources */,
 				EB4741791F44658E00235E1A /* ArtWorkCell.swift in Sources */,
 				EBC58DD21F5D37CC00E10FFC /* ArtUserHeaderCell.swift in Sources */,

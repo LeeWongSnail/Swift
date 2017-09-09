@@ -66,6 +66,35 @@
             <point key="canvasLocation" x="-266" y="-1498"/>
         </scene>
         <!--发现-->
+        <scene sceneID="yPn-gl-plg">
+            <objects>
+                <tableViewController id="r9o-1b-wGz" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="6RW-eb-j0h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="E2C-D0-JYe">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="E2C-D0-JYe" id="cIQ-ST-ueh">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="r9o-1b-wGz" id="ram-tv-nxi"/>
+                            <outlet property="delegate" destination="r9o-1b-wGz" id="IaM-5Q-jcF"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="发现" id="g3n-4q-xua"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B7m-v0-52g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="113" y="860"/>
+        </scene>
+        <!--发现-->
         <scene sceneID="56h-fX-nuG">
             <objects>
                 <navigationController id="KFO-hK-aYt" sceneMemberID="viewController">
@@ -75,7 +104,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="zZq-J7-8pY" kind="relationship" relationship="rootViewController" id="Kn2-RR-O8E"/>
+                        <segue destination="r9o-1b-wGz" kind="relationship" relationship="rootViewController" id="Kn2-RR-O8E"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7oe-ZN-hHe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -180,16 +209,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ciT-xu-0Ha" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-4102" y="1569"/>
-        </scene>
-        <!--ArtDiscoveryViewController-->
-        <scene sceneID="LJi-lR-DKf">
-            <objects>
-                <viewControllerPlaceholder storyboardName="ArtDiscoveryViewController" id="zZq-J7-8pY" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="2lC-7Z-LKj"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="C9D-Tz-pWR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="113" y="860"/>
         </scene>
     </scenes>
     <resources>
