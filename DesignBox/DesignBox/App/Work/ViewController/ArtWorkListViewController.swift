@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SnapKit
 
+
 class ArtWorkListViewController: UIViewController, UITableViewDelegate , UITableViewDataSource {
 
     var works:[ArtWork]?
@@ -21,6 +22,7 @@ class ArtWorkListViewController: UIViewController, UITableViewDelegate , UITable
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        tableView.backgroundColor = UIColor.white
         return tableView;
     }()
     
@@ -39,6 +41,8 @@ class ArtWorkListViewController: UIViewController, UITableViewDelegate , UITable
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage.init(named: "pulish"), style: UIBarButtonItemStyle.done, target: self, action: #selector(ArtWorkListViewController.publish))
     }
     
+
+    
     func buildUI() -> Void {
         self.view.addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
@@ -46,6 +50,10 @@ class ArtWorkListViewController: UIViewController, UITableViewDelegate , UITable
         }
         registerCells()
         configNavBar()
+        
+        self.art_addPullToRefresh(tableView: tableView, completion: { 
+            self.fetchData()
+        })
     }
     
     

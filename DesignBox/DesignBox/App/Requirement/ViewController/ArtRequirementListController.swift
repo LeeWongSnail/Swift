@@ -51,6 +51,10 @@ class ArtRequirementListController: UIViewController {
         
         fetchRequrement()
         buildUI()
+        
+        self.art_addPullToRefresh(tableView: tableView, completion: {
+            self.fetchRequrement()
+        })
     }
 
     override func didReceiveMemoryWarning() {

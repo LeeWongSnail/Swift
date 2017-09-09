@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double ETCollectionViewWaterFallLayoutVersionNumber;
-FOUNDATION_EXPORT const unsigned char ETCollectionViewWaterFallLayoutVersionString[];
+FOUNDATION_EXPORT double DGElasticPullToRefreshVersionNumber;
+FOUNDATION_EXPORT const unsigned char DGElasticPullToRefreshVersionString[];
 

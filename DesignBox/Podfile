@@ -9,7 +9,7 @@ target 'DesignBox' do
     pod 'Kingfisher'
     pod 'CryptoSwift'
     pod 'SQLite.swift', '~> 0.11.3'
-
+    pod 'DGElasticPullToRefresh'
 
     # U-Share SDK UI模块（分享面板，建议添加）
     pod ‘UMengUShare/UI’
