@@ -14,6 +14,7 @@ class ArtWorkListViewController: UIViewController, UITableViewDelegate , UITable
 
     var works:[ArtWork]?
     var bannerList: ArtBannerList?
+    var headlines: [ArtArticleList]?
     
     lazy var tableView:UITableView = {
         let tableView = UITableView(frame: CGRect.zero, style: UITableViewStyle.plain)
@@ -66,13 +67,14 @@ class ArtWorkListViewController: UIViewController, UITableViewDelegate , UITable
         let worklistCommand = ArtWorkCommand()
         worklistCommand.order = "1"
         
-        worklistCommand.fetchWork(success: { (works,bannerList) in
+        worklistCommand.fetchWork(success: { (works,bannerList,headlines) in
             //请求获取的work
             if works.count > 0 {
                 self.works = works
                 self.tableView.reloadData()
             }
             self.bannerList = bannerList
+            self.headlines = headlines
         }) { (error) in
             print(error)
         }
@@ -82,6 +84,7 @@ class ArtWorkListViewController: UIViewController, UITableViewDelegate , UITable
     func registerCells() -> Void {
         tableView.register(ArtWorkCell.self, forCellReuseIdentifier: "ArtWorkCell")
         tableView.register(ArtBannerCell.self, forCellReuseIdentifier: "ArtBannerCell")
+        tableView.register(ArtHeadlineCell.self, forCellReuseIdentifier: "ArtHeadlineCell")
     }
     
     override func viewDidLoad() {
@@ -118,6 +121,10 @@ class ArtWorkListViewController: UIViewController, UITableViewDelegate , UITable
             number += 1
         }
         
+        if ((self.headlines != nil) && ((self.headlines?.count)! > 0) ) {
+            number += 1
+        }
+        
         if let paints = works {
             return paints.count + number
         }
@@ -134,11 +141,21 @@ class ArtWorkListViewController: UIViewController, UITableViewDelegate , UITable
             let cell = tableView.dequeueReusableCell(withIdentifier: "ArtBannerCell") as! ArtBannerCell
             cell.configBannerCell(bannerList: self.bannerList!)
             return cell
+        } else if ((self.headlines != nil) && ((self.headlines?.count)! > 0) && indexPath.section == 1) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ArtHeadlineCell") as! ArtHeadlineCell
+            
+            cell.scrollView.configHeadLinesCell(lines: self.headlines!)
+            return cell
         } else {
             var number = 0
             if ((self.bannerList != nil) && ((self.bannerList?.banners?.count)! > 0) ) {
                 number += 1
             }
+            
+            if ((self.headlines != nil) && ((self.headlines?.count)! > 0) ) {
+                number += 1
+            }
+            
             let cell:ArtWorkCell = tableView.dequeueReusableCell(withIdentifier: "ArtWorkCell") as! ArtWorkCell
             cell .configWorkCell(work: (works?[indexPath.section-number])!)
             cell.tapBlock = {(_ work:ArtWork?,_ index:Int) -> Void in
@@ -153,9 +170,14 @@ class ArtWorkListViewController: UIViewController, UITableViewDelegate , UITable
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if ((self.bannerList != nil) && ((self.bannerList?.banners?.count)! > 0) && indexPath.section == 0) {
             return ArtBannerCell.bannerHeight()
+        } else  if ((self.headlines != nil) && ((self.headlines?.count)! > 0) && indexPath.section == 1) {
+            return ArtHeadlineCell.height()
         }
         var number = 0
         if ((self.bannerList != nil) && ((self.bannerList?.banners?.count)! > 0) ) {
+            number += 1
+        }
+        if ((self.headlines != nil) && ((self.headlines?.count)! > 0) ) {
             number += 1
         }
         return ArtWorkCell.cellHeight(work: (works?[indexPath.section-number])!)

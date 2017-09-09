@@ -81,6 +81,9 @@
 		EBC58E201F63994E00E10FFC /* ArtDiscoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC58E1F1F63994E00E10FFC /* ArtDiscoveryViewController.swift */; };
 		EBC58E271F6399E400E10FFC /* ArtDiscoveryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBC58E261F6399E400E10FFC /* ArtDiscoveryViewController.storyboard */; };
 		EBC58E291F639F4200E10FFC /* Discovery.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBC58E281F639F4200E10FFC /* Discovery.xcassets */; };
+		EBC58E2D1F63BD7700E10FFC /* ArtArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC58E2C1F63BD7700E10FFC /* ArtArticle.swift */; };
+		EBC58E2F1F63BFD000E10FFC /* ArtMonkeyScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC58E2E1F63BFD000E10FFC /* ArtMonkeyScrollView.swift */; };
+		EBC58E311F63CD4E00E10FFC /* ArtHeadlineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC58E301F63CD4E00E10FFC /* ArtHeadlineCell.swift */; };
 		EBC8DCCC1F5CFF390047F52C /* ArtUserMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC8DCCB1F5CFF390047F52C /* ArtUserMineViewController.swift */; };
 		EBC8DCD01F5D01B40047F52C /* ArtCommandUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC8DCCF1F5D01B40047F52C /* ArtCommandUser.swift */; };
 		EBC9DD151F56B2FC0013EC94 /* UIView+Art.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC9DD141F56B2FC0013EC94 /* UIView+Art.swift */; };
@@ -187,6 +190,9 @@
 		EBC58E1F1F63994E00E10FFC /* ArtDiscoveryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtDiscoveryViewController.swift; sourceTree = "<group>"; };
 		EBC58E261F6399E400E10FFC /* ArtDiscoveryViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ArtDiscoveryViewController.storyboard; path = DesignBox/App/Discovery/ArtDiscoveryViewController.storyboard; sourceTree = SOURCE_ROOT; };
 		EBC58E281F639F4200E10FFC /* Discovery.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Discovery.xcassets; sourceTree = "<group>"; };
+		EBC58E2C1F63BD7700E10FFC /* ArtArticle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtArticle.swift; sourceTree = "<group>"; };
+		EBC58E2E1F63BFD000E10FFC /* ArtMonkeyScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtMonkeyScrollView.swift; sourceTree = "<group>"; };
+		EBC58E301F63CD4E00E10FFC /* ArtHeadlineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtHeadlineCell.swift; sourceTree = "<group>"; };
 		EBC8DCCB1F5CFF390047F52C /* ArtUserMineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtUserMineViewController.swift; sourceTree = "<group>"; };
 		EBC8DCCF1F5D01B40047F52C /* ArtCommandUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtCommandUser.swift; sourceTree = "<group>"; };
 		EBC9DD141F56B2FC0013EC94 /* UIView+Art.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Art.swift"; sourceTree = "<group>"; };
@@ -379,6 +385,7 @@
 				EB249AD01F44281A00D48C2F /* ArtWork.swift */,
 				EBEE742C1F4BD92C0092EFCC /* ArtUser.swift */,
 				EBEE742E1F4BD97F0092EFCC /* ArtShare.swift */,
+				EBC58E2C1F63BD7700E10FFC /* ArtArticle.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -387,6 +394,8 @@
 			isa = PBXGroup;
 			children = (
 				EB4741781F44658E00235E1A /* ArtWorkCell.swift */,
+				EBC58E2E1F63BFD000E10FFC /* ArtMonkeyScrollView.swift */,
+				EBC58E301F63CD4E00E10FFC /* ArtHeadlineCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -973,13 +982,16 @@
 				EBC8DCCC1F5CFF390047F52C /* ArtUserMineViewController.swift in Sources */,
 				EBC58DEC1F5FE99200E10FFC /* ArtCommandInitInfo.swift in Sources */,
 				EB9522181F5944FA00849DEC /* NSData+Art.swift in Sources */,
+				EBC58E2F1F63BFD000E10FFC /* ArtMonkeyScrollView.swift in Sources */,
 				EBC58DF91F5FFC9D00E10FFC /* ArtRequirement.swift in Sources */,
+				EBC58E311F63CD4E00E10FFC /* ArtHeadlineCell.swift in Sources */,
 				EBC58E091F613C9B00E10FFC /* ArtMaterialHeaderView.swift in Sources */,
 				EBC58DF71F5FFC7500E10FFC /* ArtCommandRequirementList.swift in Sources */,
 				EB95221C1F59477D00849DEC /* ArtUserConfig.swift in Sources */,
 				EBC58E201F63994E00E10FFC /* ArtDiscoveryViewController.swift in Sources */,
 				EBC58DE21F5E8D8800E10FFC /* ArtWorkImageViewModel.swift in Sources */,
 				EB4741791F44658E00235E1A /* ArtWorkCell.swift in Sources */,
+				EBC58E2D1F63BD7700E10FFC /* ArtArticle.swift in Sources */,
 				EBC58DD21F5D37CC00E10FFC /* ArtUserHeaderCell.swift in Sources */,
 				EB95220B1F593B2E00849DEC /* ArtUserService.swift in Sources */,
 				EBC58E041F612E4700E10FFC /* ArtWaterFallLayout.swift in Sources */,
