@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="fNf-H8-SmY" customClass="ArtPublishChoiceView" customModule="DesignBox" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="260"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Why-N1-sbH">
+                    <rect key="frame" x="73" y="69" width="81" height="81"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="81" id="iEc-Qd-9DW"/>
+                        <constraint firstAttribute="height" constant="81" id="xuf-pR-B2p"/>
+                    </constraints>
+                    <state key="normal" image="publish_menu_work"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgr-LE-is8">
+                    <rect key="frame" x="172" y="208" width="30" height="30"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pHo-BK-fzc">
+                    <rect key="frame" x="220" y="69" width="81" height="81"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="81" id="aYC-dB-jXM"/>
+                        <constraint firstAttribute="width" constant="81" id="jFW-ck-2Ql"/>
+                    </constraints>
+                    <state key="normal" image="publish_menu_project"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发帖子" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYE-VO-Mot">
+                    <rect key="frame" x="90.5" y="158" width="46" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发需求" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fY-Pa-dI8">
+                    <rect key="frame" x="237.5" y="158" width="46" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Why-N1-sbH" secondAttribute="bottom" constant="110" id="2xs-2d-78I"/>
+                <constraint firstItem="pgr-LE-is8" firstAttribute="centerX" secondItem="fNf-H8-SmY" secondAttribute="centerX" id="Diu-w7-D0A"/>
+                <constraint firstAttribute="bottom" secondItem="pgr-LE-is8" secondAttribute="bottom" constant="22" id="Eh1-U6-av9"/>
+                <constraint firstItem="pHo-BK-fzc" firstAttribute="bottom" secondItem="Why-N1-sbH" secondAttribute="bottom" id="LZN-9A-lDA"/>
+                <constraint firstItem="pgr-LE-is8" firstAttribute="leading" secondItem="Why-N1-sbH" secondAttribute="trailing" constant="18" id="Lmq-xE-dvf"/>
+                <constraint firstItem="hYE-VO-Mot" firstAttribute="top" secondItem="Why-N1-sbH" secondAttribute="bottom" constant="8" id="SlW-vu-13i"/>
+                <constraint firstItem="2fY-Pa-dI8" firstAttribute="top" secondItem="pHo-BK-fzc" secondAttribute="bottom" constant="8" id="TZe-ys-oWT"/>
+                <constraint firstItem="2fY-Pa-dI8" firstAttribute="centerX" secondItem="pHo-BK-fzc" secondAttribute="centerX" id="ToV-xd-Y6N"/>
+                <constraint firstItem="hYE-VO-Mot" firstAttribute="centerX" secondItem="Why-N1-sbH" secondAttribute="centerX" id="V7F-ua-SWX"/>
+                <constraint firstItem="pHo-BK-fzc" firstAttribute="leading" secondItem="pgr-LE-is8" secondAttribute="trailing" constant="18" id="z09-So-LvX"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-109.5" y="42"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="publish_menu_project" width="81" height="81"/>
+        <image name="publish_menu_work" width="81" height="81"/>
+    </resources>
+</document>

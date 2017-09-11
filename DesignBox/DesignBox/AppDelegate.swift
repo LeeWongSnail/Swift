@@ -12,6 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
     public var tabBarController: UITabBarController?
     
     func buildBaseApp() -> Void {
@@ -22,7 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
     }
     
-    
+    class func getRootWindow() -> UIWindow? {
+        return (UIApplication.shared.delegate?.window)!
+    }
     
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {

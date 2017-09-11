@@ -33,7 +33,8 @@ class ArtWorkListViewController: UIViewController, UITableViewDelegate , UITable
     }
     
     func publish() -> Void {
-        
+        let menuVc = ArtPublishMenuViewController()
+        menuVc.showInViewController(viewController: self.navigationController!)
     }
     
     func configNavBar() -> Void {
