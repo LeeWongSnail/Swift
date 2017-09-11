@@ -1,4 +1,5 @@
 PODS:
+  - ActiveLabel (0.7.1)
   - Alamofire (4.5.0)
   - CryptoSwift (0.6.9)
   - DGElasticPullToRefresh (1.1)
@@ -32,6 +33,7 @@ PODS:
     - UMengUShare/Core
 
 DEPENDENCIES:
+  - ActiveLabel
   - Alamofire (~> 4.4)
   - CryptoSwift
   - DGElasticPullToRefresh
@@ -47,6 +49,7 @@ DEPENDENCIES:
   - UMengUShare/UI
 
 SPEC CHECKSUMS:
+  ActiveLabel: 68625f22775f51c31bb691ca8de20f1e5a3bc825
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   CryptoSwift: a22f6ba238e9ce4d26ee7bf45b9ed82e7122d4a0
   DGElasticPullToRefresh: 28f11a6026302a90f8ffebbc6e24748e584dddd3
@@ -58,6 +61,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   UMengUShare: a5711c54e640b04e3048e931d2b88d50f9cfa55c
 
-PODFILE CHECKSUM: b290e3bd01599bcd9f158d42d2566d363331e7dd
+PODFILE CHECKSUM: 6a0139db1a7c037d0e6377c8099d85f56221cc8f
 
 COCOAPODS: 1.2.1

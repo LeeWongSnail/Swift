@@ -24,6 +24,7 @@
 		EB76D8D71F66826B00464125 /* ArtPublishChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB76D8D51F66826B00464125 /* ArtPublishChoiceView.swift */; };
 		EB76D8D81F66826B00464125 /* ArtPublishChoiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB76D8D61F66826B00464125 /* ArtPublishChoiceView.xib */; };
 		EB76D8DA1F66833D00464125 /* ArtPublishWorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB76D8D91F66833D00464125 /* ArtPublishWorkViewController.swift */; };
+		EB76D8DC1F668BD400464125 /* ArtLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB76D8DB1F668BD400464125 /* ArtLabel.swift */; };
 		EB7FF9031F4D1C5A00CFEB8A /* DesignBox-Prefix.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7FF9021F4D1C5A00CFEB8A /* DesignBox-Prefix.swift */; };
 		EB7FF90C1F4D44D800CFEB8A /* AppDelegate+Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7FF90B1F4D44D800CFEB8A /* AppDelegate+Start.swift */; };
 		EB7FF90F1F4D450E00CFEB8A /* UIColor+Art.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7FF90E1F4D450E00CFEB8A /* UIColor+Art.swift */; };
@@ -138,6 +139,7 @@
 		EB76D8D51F66826B00464125 /* ArtPublishChoiceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtPublishChoiceView.swift; sourceTree = "<group>"; };
 		EB76D8D61F66826B00464125 /* ArtPublishChoiceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtPublishChoiceView.xib; sourceTree = "<group>"; };
 		EB76D8D91F66833D00464125 /* ArtPublishWorkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtPublishWorkViewController.swift; sourceTree = "<group>"; };
+		EB76D8DB1F668BD400464125 /* ArtLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtLabel.swift; sourceTree = "<group>"; };
 		EB7FF9021F4D1C5A00CFEB8A /* DesignBox-Prefix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DesignBox-Prefix.swift"; sourceTree = "<group>"; };
 		EB7FF90B1F4D44D800CFEB8A /* AppDelegate+Start.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Start.swift"; sourceTree = "<group>"; };
 		EB7FF90E1F4D450E00CFEB8A /* UIColor+Art.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Art.swift"; sourceTree = "<group>"; };
@@ -422,6 +424,7 @@
 				EBC58DDA1F5E80A000E10FFC /* PhotoBrowser */,
 				EB7FF9251F4FCBD100CFEB8A /* pageViewController */,
 				EB47417B1F44689400235E1A /* ArtImageView.swift */,
+				EB76D8DB1F668BD400464125 /* ArtLabel.swift */,
 			);
 			path = ArtKit;
 			sourceTree = "<group>";
@@ -1084,6 +1087,7 @@
 				EBC58DE91F5FCD4600E10FFC /* ArtBanner.swift in Sources */,
 				EBC58DDC1F5E80ED00E10FFC /* ArtImageBrowserController.swift in Sources */,
 				EB76D8D71F66826B00464125 /* ArtPublishChoiceView.swift in Sources */,
+				EB76D8DC1F668BD400464125 /* ArtLabel.swift in Sources */,
 				EBC58DFB1F60ED6100E10FFC /* NSNumber+Art.swift in Sources */,
 				EB7FF9141F4D692300CFEB8A /* UIColor+ArtStyle.swift in Sources */,
 				EBC58E101F623E6000E10FFC /* ArtCommandMaterial.swift in Sources */,
