@@ -28,7 +28,8 @@ class ArtWorkListViewController: UIViewController, UITableViewDelegate , UITable
     
     
     func scan() -> Void {
-        self.showText(text: "这是我测试弹窗的一段文本")
+//        self.showText(text: "这是我测试弹窗的一段文本")
+        self.showLoading()
     }
     
     func publish() -> Void {

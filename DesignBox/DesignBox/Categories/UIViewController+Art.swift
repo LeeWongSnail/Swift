@@ -8,9 +8,9 @@
 
 import UIKit
 import DGElasticPullToRefresh
-import NVActivityIndicatorView
+import PKHUD
 
-extension UIViewController: NVActivityIndicatorViewable {
+extension UIViewController {
     
     func art_addRefresh(tableView:UITableView) -> DGElasticPullToRefreshLoadingView {
         let loadingView = DGElasticPullToRefreshLoadingViewCircle()
@@ -39,21 +39,27 @@ extension UIViewController: NVActivityIndicatorViewable {
         
     }
     
-    
-    func test() -> Void {
-
+    func showText(text:String) -> Void {
+        HUD.flash(.label(text), delay: 0.5) { _ in
+            print("License Obtained.")
+        }
     }
     
-    func showText(text:String) -> Void {
-        let size = CGSize(width: 60, height: 60)
-        
-        startAnimating(size, message: text, type: NVActivityIndicatorType.ballTrianglePath)
-        
-       NVActivityIndicatorView.DEFAULT_BLOCKER_BACKGROUND_COLOR = UIColor.clear
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
-            self.stopAnimating()
-        }
+    func showLoading() -> Void {
+        HUD.flash(.rotatingImage(UIImage(named: "progress")), delay: 0.5)
+    }
+    
+    func showSuccess() -> Void {
+        HUD.flash(.success, delay: 2.0)
+    }
+    
+    func showFail() -> Void {
+        HUD.show(.error)
+        HUD.hide(afterDelay: 2.0)
+    }
+    
+    func dismissLoading() -> Void {
+        HUD.hide()
     }
 
 
