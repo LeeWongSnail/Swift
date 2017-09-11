@@ -25,6 +25,12 @@
 		EB76D8D81F66826B00464125 /* ArtPublishChoiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB76D8D61F66826B00464125 /* ArtPublishChoiceView.xib */; };
 		EB76D8DA1F66833D00464125 /* ArtPublishWorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB76D8D91F66833D00464125 /* ArtPublishWorkViewController.swift */; };
 		EB76D8DC1F668BD400464125 /* ArtLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB76D8DB1F668BD400464125 /* ArtLabel.swift */; };
+		EB76D8DF1F6692EC00464125 /* ArtPublishWorkTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB76D8DD1F6692EC00464125 /* ArtPublishWorkTextCell.swift */; };
+		EB76D8E01F6692EC00464125 /* ArtPublishWorkTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB76D8DE1F6692EC00464125 /* ArtPublishWorkTextCell.xib */; };
+		EB76D8E21F66932500464125 /* ArtTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB76D8E11F66932500464125 /* ArtTextView.swift */; };
+		EB76D8E41F6694FF00464125 /* ArtPublishWorkImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB76D8E31F6694FF00464125 /* ArtPublishWorkImageCell.swift */; };
+		EB76D8E71F66951C00464125 /* ArtPublishWorkControlCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB76D8E51F66951C00464125 /* ArtPublishWorkControlCell.swift */; };
+		EB76D8E81F66951C00464125 /* ArtPublishWorkControlCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB76D8E61F66951C00464125 /* ArtPublishWorkControlCell.xib */; };
 		EB7FF9031F4D1C5A00CFEB8A /* DesignBox-Prefix.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7FF9021F4D1C5A00CFEB8A /* DesignBox-Prefix.swift */; };
 		EB7FF90C1F4D44D800CFEB8A /* AppDelegate+Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7FF90B1F4D44D800CFEB8A /* AppDelegate+Start.swift */; };
 		EB7FF90F1F4D450E00CFEB8A /* UIColor+Art.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7FF90E1F4D450E00CFEB8A /* UIColor+Art.swift */; };
@@ -140,6 +146,12 @@
 		EB76D8D61F66826B00464125 /* ArtPublishChoiceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtPublishChoiceView.xib; sourceTree = "<group>"; };
 		EB76D8D91F66833D00464125 /* ArtPublishWorkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtPublishWorkViewController.swift; sourceTree = "<group>"; };
 		EB76D8DB1F668BD400464125 /* ArtLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtLabel.swift; sourceTree = "<group>"; };
+		EB76D8DD1F6692EC00464125 /* ArtPublishWorkTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtPublishWorkTextCell.swift; sourceTree = "<group>"; };
+		EB76D8DE1F6692EC00464125 /* ArtPublishWorkTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtPublishWorkTextCell.xib; sourceTree = "<group>"; };
+		EB76D8E11F66932500464125 /* ArtTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtTextView.swift; sourceTree = "<group>"; };
+		EB76D8E31F6694FF00464125 /* ArtPublishWorkImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtPublishWorkImageCell.swift; sourceTree = "<group>"; };
+		EB76D8E51F66951C00464125 /* ArtPublishWorkControlCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtPublishWorkControlCell.swift; sourceTree = "<group>"; };
+		EB76D8E61F66951C00464125 /* ArtPublishWorkControlCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtPublishWorkControlCell.xib; sourceTree = "<group>"; };
 		EB7FF9021F4D1C5A00CFEB8A /* DesignBox-Prefix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DesignBox-Prefix.swift"; sourceTree = "<group>"; };
 		EB7FF90B1F4D44D800CFEB8A /* AppDelegate+Start.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Start.swift"; sourceTree = "<group>"; };
 		EB7FF90E1F4D450E00CFEB8A /* UIColor+Art.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Art.swift"; sourceTree = "<group>"; };
@@ -326,7 +338,6 @@
 			children = (
 				EBCB4C9E1F663B2700645B4A /* Publish */,
 				EBC58E1B1F63990900E10FFC /* Discovery */,
-				EBC58DFC1F612B0700E10FFC /* Material */,
 				EB9521F61F59021400849DEC /* Login */,
 				EB7FF91E1F4FCB9C00CFEB8A /* Requirement */,
 				EB249AB41F42F2AF00D48C2F /* Work */,
@@ -425,6 +436,7 @@
 				EB7FF9251F4FCBD100CFEB8A /* pageViewController */,
 				EB47417B1F44689400235E1A /* ArtImageView.swift */,
 				EB76D8DB1F668BD400464125 /* ArtLabel.swift */,
+				EB76D8E11F66932500464125 /* ArtTextView.swift */,
 			);
 			path = ArtKit;
 			sourceTree = "<group>";
@@ -718,7 +730,8 @@
 				EBC58DFF1F612B0700E10FFC /* ViewController */,
 				EBC58E191F6396C500E10FFC /* Material.xcassets */,
 			);
-			path = Material;
+			name = Material;
+			path = ../Material;
 			sourceTree = "<group>";
 		};
 		EBC58DFD1F612B0700E10FFC /* Command */ = {
@@ -795,6 +808,7 @@
 		EBCB4C9E1F663B2700645B4A /* Publish */ = {
 			isa = PBXGroup;
 			children = (
+				EBC58DFC1F612B0700E10FFC /* Material */,
 				EBCB4C9F1F663B2700645B4A /* Command */,
 				EBCB4CA01F663B2700645B4A /* Model */,
 				EBCB4CA11F663B2700645B4A /* ViewController */,
@@ -832,6 +846,11 @@
 				EB76D8D51F66826B00464125 /* ArtPublishChoiceView.swift */,
 				EB76D8D61F66826B00464125 /* ArtPublishChoiceView.xib */,
 				EBCB4CAB1F663EA600645B4A /* ArtPublishMenuViewController.swift */,
+				EB76D8DD1F6692EC00464125 /* ArtPublishWorkTextCell.swift */,
+				EB76D8DE1F6692EC00464125 /* ArtPublishWorkTextCell.xib */,
+				EB76D8E31F6694FF00464125 /* ArtPublishWorkImageCell.swift */,
+				EB76D8E51F66951C00464125 /* ArtPublishWorkControlCell.swift */,
+				EB76D8E61F66951C00464125 /* ArtPublishWorkControlCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -950,6 +969,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB7FF9111F4D661B00CFEB8A /* Work.xcassets in Resources */,
+				EB76D8E01F6692EC00464125 /* ArtPublishWorkTextCell.xib in Resources */,
 				EBC58DF51F5FF8D400E10FFC /* Requirement.xcassets in Resources */,
 				EB95221E1F59642D00849DEC /* shareicon@2x.png in Resources */,
 				EB249AC81F42F7A100D48C2F /* Info.plist in Resources */,
@@ -964,6 +984,7 @@
 				EBC58E1A1F6396C500E10FFC /* Material.xcassets in Resources */,
 				EB249AC21F42F2D700D48C2F /* Main.storyboard in Resources */,
 				EBCB4CAA1F663C4000645B4A /* Publish.xcassets in Resources */,
+				EB76D8E81F66951C00464125 /* ArtPublishWorkControlCell.xib in Resources */,
 				EB76D8D81F66826B00464125 /* ArtPublishChoiceView.xib in Resources */,
 				EB249AC11F42F2D700D48C2F /* LaunchScreen.storyboard in Resources */,
 				EB95222C1F5CF4B200849DEC /* User.storyboard in Resources */,
@@ -1040,6 +1061,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB7FF92D1F5402F300CFEB8A /* ArtFilterModel.swift in Sources */,
+				EB76D8E21F66932500464125 /* ArtTextView.swift in Sources */,
 				EB7FF90C1F4D44D800CFEB8A /* AppDelegate+Start.swift in Sources */,
 				EBC58DD91F5D430800E10FFC /* ArtUserDBService.swift in Sources */,
 				EB7FF92B1F53FF0300CFEB8A /* ArtPageViewController.swift in Sources */,
@@ -1054,6 +1076,7 @@
 				EB95221C1F59477D00849DEC /* ArtUserConfig.swift in Sources */,
 				EBC58E201F63994E00E10FFC /* ArtDiscoveryViewController.swift in Sources */,
 				EBC58DE21F5E8D8800E10FFC /* ArtWorkImageViewModel.swift in Sources */,
+				EB76D8E71F66951C00464125 /* ArtPublishWorkControlCell.swift in Sources */,
 				EB4741791F44658E00235E1A /* ArtWorkCell.swift in Sources */,
 				EBC58E2D1F63BD7700E10FFC /* ArtArticle.swift in Sources */,
 				EBC58DD21F5D37CC00E10FFC /* ArtUserHeaderCell.swift in Sources */,
@@ -1091,6 +1114,7 @@
 				EBC58DFB1F60ED6100E10FFC /* NSNumber+Art.swift in Sources */,
 				EB7FF9141F4D692300CFEB8A /* UIColor+ArtStyle.swift in Sources */,
 				EBC58E101F623E6000E10FFC /* ArtCommandMaterial.swift in Sources */,
+				EB76D8E41F6694FF00464125 /* ArtPublishWorkImageCell.swift in Sources */,
 				EBC58DD01F5D30AC00E10FFC /* ArtMineCell.swift in Sources */,
 				EBC58DE01F5E851D00E10FFC /* ArtSingleImageController.swift in Sources */,
 				EBCB4CAC1F663EA600645B4A /* ArtPublishMenuViewController.swift in Sources */,
@@ -1098,6 +1122,7 @@
 				EB9522141F593C6E00849DEC /* ArtUserOperation.swift in Sources */,
 				EBC58DD51F5D40FF00E10FFC /* ArtDBService.swift in Sources */,
 				EB9522161F593E1D00849DEC /* ArtCommandLogin.swift in Sources */,
+				EB76D8DF1F6692EC00464125 /* ArtPublishWorkTextCell.swift in Sources */,
 				EB249AD11F44281A00D48C2F /* ArtWork.swift in Sources */,
 				EBEE742F1F4BD97F0092EFCC /* ArtShare.swift in Sources */,
 				EB7FF9291F50059A00CFEB8A /* ArtScrollTabItem.swift in Sources */,
