@@ -15,7 +15,27 @@ class ArtPublishMenuViewController: UIViewController {
     var topAlphaView: UIView?
     var menuView: ArtPublishChoiceView?
     
+    
+    
+    
     //MARK: - ADD TAP Gesture
+    
+    func publishWorkDidClick() -> Void {
+        dismissMenu()
+        let vc = ArtPublishWorkViewController()
+        vc.hidesBottomBarWhenPushed = true
+        let nav = UINavigationController(rootViewController: vc)
+        self.navigationController?.present(nav, animated: true, completion: nil)
+    }
+    
+    func publishRequirementDidClick() -> Void {
+        dismissMenu()
+        let vc = ArtPublishWorkViewController()
+        vc.hidesBottomBarWhenPushed = true
+        let nav = UINavigationController(rootViewController: vc)
+        self.navigationController?.present(nav, animated: true, completion: nil)
+    }
+    
     
     func dismissMenu() -> Void {
         dismissMenuAnimated(animated: true)
@@ -31,10 +51,12 @@ class ArtPublishMenuViewController: UIViewController {
             }, completion: { (finish) in
                 self.view.removeFromSuperview()
                 self.removeTopAlphaView()
+                self.removeFromParentViewController()
             })
             
         } else {
             self.view.removeFromSuperview()
+            self.removeFromParentViewController()
             removeTopAlphaView()
         }
         
@@ -109,6 +131,11 @@ class ArtPublishMenuViewController: UIViewController {
             menuView.center = CGPoint.init(x: SCREEN_W/2, y: menuView.frame.size.height/2 + 64)
         }
         self.menuView = menuView
+        
+        
+        self.menuView?.publishRequirement.addTarget(self, action: #selector(ArtPublishMenuViewController.publishRequirementDidClick), for: UIControlEvents.touchUpInside)
+        self.menuView?.publishWork.addTarget(self, action: #selector(ArtPublishMenuViewController.publishWorkDidClick), for: UIControlEvents.touchUpInside)
+        
     }
     
     
