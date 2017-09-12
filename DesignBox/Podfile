@@ -12,7 +12,8 @@ target 'DesignBox' do
     pod 'DGElasticPullToRefresh'
     pod 'PKHUD', '~> 4.0'
     pod 'ActiveLabel'
-    
+    pod 'DKImagePickerController'
+
 
     # U-Share SDK UI模块（分享面板，建议添加）
     pod ‘UMengUShare/UI’
