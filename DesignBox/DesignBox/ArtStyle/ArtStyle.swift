@@ -55,4 +55,8 @@ class ArtStyle {
         return CGSize(width: width, height: h)
     }
     
+    public func art_CGFloatPixelRound(value: CGFloat) -> CGFloat {
+        let scale = UIScreen.main.scale
+        return round(value*scale)/scale
+    }
 }

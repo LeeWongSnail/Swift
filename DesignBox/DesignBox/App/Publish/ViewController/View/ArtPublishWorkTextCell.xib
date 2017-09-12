@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="215.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="请填写作品描述" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HrC-we-fu7">
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="请填写作品描述" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HrC-we-fu7" customClass="ArtTextView" customModule="DesignBox" customModuleProvider="target">
                         <rect key="frame" x="7" y="7" width="361" height="181.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -55,6 +55,9 @@
                     <constraint firstAttribute="trailing" secondItem="bde-D0-xeh" secondAttribute="trailing" constant="20" id="mUM-aB-gs8"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="textView" destination="HrC-we-fu7" id="2kG-IQ-W6F"/>
+            </connections>
             <point key="canvasLocation" x="-113.5" y="-93"/>
         </tableViewCell>
     </objects>
