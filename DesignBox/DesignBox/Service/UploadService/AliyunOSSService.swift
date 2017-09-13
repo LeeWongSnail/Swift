@@ -19,76 +19,65 @@ class AliyunOSSService: NSObject {
         super.init()
         initClient()
     }
-    
-    func initClient() -> Void {
-        // 由阿里云颁发的AccessKeyId/AccessKeySecret构造一个CredentialProvider。
-        // 移动端建议使用STS方式初始化OSSClient。更多鉴权模式请参考后面的访问控制章节。
-//        id<OSSCredentialProvider> credential = [[OSSStsTokenCredentialProvider alloc] initWithAccessKeyId:@"AccessKeyId" secretKeyId:@"AccessKeySecret" securityToken:@"SecurityToken"];
-//        client = [[OSSClient alloc] initWithEndpoint:endpoint credentialProvider:credential];
-        
-        
-        let credential = OSSStsTokenCredentialProvider(accessKeyId: "Ao9Yvkwi8ZtMOee4", secretKeyId: "jRBQEb1E8mogleAx118PTVNSCYr0kj", securityToken: "")
-        
-        self.client = OSSClient.init(endpoint: AliyunOSSConfig.shared.host, credentialProvider: credential!)
-    }
+
     
     
     //初始化上传设置
-//    func initClient() {
-//        
-//        //上传配置设置
-//        let conf = OSSClientConfiguration()
-//        conf.maxRetryCount = 2
-//        conf.timeoutIntervalForRequest = 300
-//        conf.timeoutIntervalForResource = TimeInterval(24 * 60 * 60)
-//        conf.maxConcurrentRequestCount = 50
-//        
-//        //实现获取StsToken回调
-//        let credential2:OSSCredentialProvider = OSSFederationCredentialProvider.init(federationTokenGetter: { () -> OSSFederationToken? in
-//            
-//            let tcs = OSSTaskCompletionSource<AnyObject>.init()
-//            
-//            Alamofire.request(AliyunOSSConfig.shared.stsurl, method: .get, parameters: [: ])
-//                .responseJSON { (response) in
-//                    
-//                    if let value = response.result.value {
-//                        
-//                        let json = JSON(value)
-//                        let state = json["success"].intValue
-//                        if state == 1{
-//                            tcs.setResult(json as AnyObject?)
-//                        }else{
-//                            tcs.setError("error" as! Error)
-//                        }
-//                    }
-//            }
-//            
-//            tcs.task.waitUntilFinished()
-//            
-//            if tcs.task.error != nil {
-//                return nil
-//            }else {
-//                
-//                let jsonData:JSON = JSON(tcs.task.result as AnyObject),
-//                tokenInfo:OSSFederationToken = OSSFederationToken()
-//                
-//  
-//                tokenInfo.tAccessKey = jsonData["accessKeyId"].stringValue
-//                tokenInfo.tSecretKey = jsonData["accessKeySecret"].stringValue
-//                tokenInfo.tToken = jsonData["token"].stringValue
-//                tokenInfo.expirationTimeInGMTFormat = jsonData["expiration"].stringValue
-//                
-//                return tokenInfo
-//            }
-//            
-//        })
-//        
-//        //实例化
-//        client = OSSClient(endpoint: AliyunOSSConfig.shared.host, credentialProvider: credential2, clientConfiguration: conf)
-//        
-//        
-//        
-//    }
+    func initClient() {
+        
+        //上传配置设置
+        let conf = OSSClientConfiguration()
+        conf.maxRetryCount = 2
+        conf.timeoutIntervalForRequest = 300
+        conf.timeoutIntervalForResource = TimeInterval(24 * 60 * 60)
+        conf.maxConcurrentRequestCount = 50
+        
+        //实现获取StsToken回调
+        let credential2:OSSCredentialProvider = OSSFederationCredentialProvider.init(federationTokenGetter: { () -> OSSFederationToken? in
+            
+            let tcs = OSSTaskCompletionSource<AnyObject>.init()
+            
+            Alamofire.request(AliyunOSSConfig.shared.stsurl, method: .get, parameters: [: ])
+                .responseJSON { (response) in
+                    
+                    if let value = response.result.value {
+                        
+                        let json = JSON(value)
+                        let state = json["success"].intValue
+                        if state == 1{
+                            tcs.setResult(json as AnyObject?)
+                        }else{
+                            tcs.setError("error" as! Error)
+                        }
+                    }
+            }
+            
+            tcs.task.waitUntilFinished()
+            
+            if tcs.task.error != nil {
+                return nil
+            }else {
+                
+                let jsonData:JSON = JSON(tcs.task.result as AnyObject),
+                tokenInfo:OSSFederationToken = OSSFederationToken()
+                
+  
+                tokenInfo.tAccessKey = jsonData["accessKeyId"].stringValue
+                tokenInfo.tSecretKey = jsonData["accessKeySecret"].stringValue
+                tokenInfo.tToken = jsonData["token"].stringValue
+                tokenInfo.expirationTimeInGMTFormat = jsonData["expiration"].stringValue
+                
+                return tokenInfo
+            }
+            
+        })
+        
+        //实例化
+        client = OSSClient(endpoint: AliyunOSSConfig.shared.host, credentialProvider: credential2, clientConfiguration: conf)
+        
+        
+        
+    }
     
     
     

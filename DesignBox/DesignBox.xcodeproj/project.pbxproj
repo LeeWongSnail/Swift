@@ -33,6 +33,10 @@
 		EB76D8E81F66951C00464125 /* ArtPublishWorkControlCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB76D8E61F66951C00464125 /* ArtPublishWorkControlCell.xib */; };
 		EB76D8EB1F67C43200464125 /* AliyunOSSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB76D8EA1F67C43200464125 /* AliyunOSSService.swift */; };
 		EB76D8ED1F67CE4200464125 /* AliyunOSSConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB76D8EC1F67CE4200464125 /* AliyunOSSConfig.swift */; };
+		EB76D8F41F68DC2800464125 /* ArtScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB76D8F31F68DC2800464125 /* ArtScanViewController.swift */; };
+		EB76D8F61F68DC9700464125 /* ArtScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB76D8F51F68DC9700464125 /* ArtScanView.swift */; };
+		EB76D8F81F69053400464125 /* Scan.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB76D8F71F69053400464125 /* Scan.xcassets */; };
+		EB76D8FB1F69062B00464125 /* ArtQRScanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB76D8FA1F69062B00464125 /* ArtQRScanService.swift */; };
 		EB7FF9031F4D1C5A00CFEB8A /* DesignBox-Prefix.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7FF9021F4D1C5A00CFEB8A /* DesignBox-Prefix.swift */; };
 		EB7FF90C1F4D44D800CFEB8A /* AppDelegate+Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7FF90B1F4D44D800CFEB8A /* AppDelegate+Start.swift */; };
 		EB7FF90F1F4D450E00CFEB8A /* UIColor+Art.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7FF90E1F4D450E00CFEB8A /* UIColor+Art.swift */; };
@@ -156,6 +160,10 @@
 		EB76D8E61F66951C00464125 /* ArtPublishWorkControlCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtPublishWorkControlCell.xib; sourceTree = "<group>"; };
 		EB76D8EA1F67C43200464125 /* AliyunOSSService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AliyunOSSService.swift; sourceTree = "<group>"; };
 		EB76D8EC1F67CE4200464125 /* AliyunOSSConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AliyunOSSConfig.swift; sourceTree = "<group>"; };
+		EB76D8F31F68DC2800464125 /* ArtScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtScanViewController.swift; sourceTree = "<group>"; };
+		EB76D8F51F68DC9700464125 /* ArtScanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtScanView.swift; sourceTree = "<group>"; };
+		EB76D8F71F69053400464125 /* Scan.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Scan.xcassets; sourceTree = "<group>"; };
+		EB76D8FA1F69062B00464125 /* ArtQRScanService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtQRScanService.swift; sourceTree = "<group>"; };
 		EB7FF9021F4D1C5A00CFEB8A /* DesignBox-Prefix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DesignBox-Prefix.swift"; sourceTree = "<group>"; };
 		EB7FF90B1F4D44D800CFEB8A /* AppDelegate+Start.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Start.swift"; sourceTree = "<group>"; };
 		EB7FF90E1F4D450E00CFEB8A /* UIColor+Art.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Art.swift"; sourceTree = "<group>"; };
@@ -340,6 +348,7 @@
 		EB249AB31F42F2AF00D48C2F /* App */ = {
 			isa = PBXGroup;
 			children = (
+				EB76D8EE1F68DC1400464125 /* Scan */,
 				EBCB4C9E1F663B2700645B4A /* Publish */,
 				EBC58E1B1F63990900E10FFC /* Discovery */,
 				EB9521F61F59021400849DEC /* Login */,
@@ -403,6 +412,7 @@
 		EB249ACB1F43E05700D48C2F /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				EB76D8F91F69061200464125 /* QRScanService */,
 				EB76D8E91F67C40700464125 /* UploadService */,
 				EBC58DD31F5D40ED00E10FFC /* DBService */,
 				EB9522031F593B2E00849DEC /* Command */,
@@ -453,6 +463,56 @@
 				EB76D8EC1F67CE4200464125 /* AliyunOSSConfig.swift */,
 			);
 			path = UploadService;
+			sourceTree = "<group>";
+		};
+		EB76D8EE1F68DC1400464125 /* Scan */ = {
+			isa = PBXGroup;
+			children = (
+				EB76D8EF1F68DC1400464125 /* Command */,
+				EB76D8F01F68DC1400464125 /* Model */,
+				EB76D8F11F68DC1400464125 /* ViewController */,
+				EB76D8F71F69053400464125 /* Scan.xcassets */,
+			);
+			path = Scan;
+			sourceTree = "<group>";
+		};
+		EB76D8EF1F68DC1400464125 /* Command */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Command;
+			sourceTree = "<group>";
+		};
+		EB76D8F01F68DC1400464125 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EB76D8F11F68DC1400464125 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EB76D8F21F68DC1400464125 /* View */,
+				EB76D8F31F68DC2800464125 /* ArtScanViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		EB76D8F21F68DC1400464125 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EB76D8F51F68DC9700464125 /* ArtScanView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EB76D8F91F69061200464125 /* QRScanService */ = {
+			isa = PBXGroup;
+			children = (
+				EB76D8FA1F69062B00464125 /* ArtQRScanService.swift */,
+			);
+			path = QRScanService;
 			sourceTree = "<group>";
 		};
 		EB7FF9041F4D2AE800CFEB8A /* AppFrame */ = {
@@ -995,6 +1055,7 @@
 				EB9521FE1F59024200849DEC /* ArtLoginViewController.storyboard in Resources */,
 				EBC58DF31F5FF55700E10FFC /* ArtRequirementCell.xib in Resources */,
 				EBC58E0A1F613C9B00E10FFC /* ArtMaterialHeaderView.xib in Resources */,
+				EB76D8F81F69053400464125 /* Scan.xcassets in Resources */,
 				EBC58E1A1F6396C500E10FFC /* Material.xcassets in Resources */,
 				EB249AC21F42F2D700D48C2F /* Main.storyboard in Resources */,
 				EBCB4CAA1F663C4000645B4A /* Publish.xcassets in Resources */,
@@ -1098,6 +1159,7 @@
 				EBC58E041F612E4700E10FFC /* ArtWaterFallLayout.swift in Sources */,
 				EB7FF9271F4FCC5A00CFEB8A /* ArtScrollTab.swift in Sources */,
 				EB7FF9181F4E82DF00CFEB8A /* String+Art.swift in Sources */,
+				EB76D8FB1F69062B00464125 /* ArtQRScanService.swift in Sources */,
 				EB9521FC1F59022A00849DEC /* ArtLoginViewController.swift in Sources */,
 				EBC58DF11F5FF51300E10FFC /* ArtRequirementCell.swift in Sources */,
 				EB249AC71F42F31200D48C2F /* ArtWorkListViewController.swift in Sources */,
@@ -1116,6 +1178,7 @@
 				EBC58DE41F5E9C1C00E10FFC /* ArtImageBrowserModel.swift in Sources */,
 				EBEE742D1F4BD92C0092EFCC /* ArtUser.swift in Sources */,
 				EBC58DE71F5FC9A300E10FFC /* ArtBannerCell.swift in Sources */,
+				EB76D8F41F68DC2800464125 /* ArtScanViewController.swift in Sources */,
 				EBC58DDE1F5E815800E10FFC /* ArtImageBrowserProtocol.swift in Sources */,
 				EBC8DCD01F5D01B40047F52C /* ArtCommandUser.swift in Sources */,
 				EB7FF9241F4FCBB600CFEB8A /* ArtRequirementViewController.swift in Sources */,
@@ -1140,6 +1203,7 @@
 				EB76D8DF1F6692EC00464125 /* ArtPublishWorkTextCell.swift in Sources */,
 				EB249AD11F44281A00D48C2F /* ArtWork.swift in Sources */,
 				EBEE742F1F4BD97F0092EFCC /* ArtShare.swift in Sources */,
+				EB76D8F61F68DC9700464125 /* ArtScanView.swift in Sources */,
 				EB7FF9291F50059A00CFEB8A /* ArtScrollTabItem.swift in Sources */,
 				EB76D8ED1F67CE4200464125 /* AliyunOSSConfig.swift in Sources */,
 				EBC58DEE1F5FF4CB00E10FFC /* ArtRequirementListController.swift in Sources */,

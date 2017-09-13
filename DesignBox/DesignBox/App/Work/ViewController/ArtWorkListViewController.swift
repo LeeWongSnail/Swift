@@ -28,8 +28,10 @@ class ArtWorkListViewController: UIViewController, UITableViewDelegate , UITable
     
     
     func scan() -> Void {
-//        self.showText(text: "这是我测试弹窗的一段文本")
-        self.showLoading()
+        let scanVc = ArtScanViewController()
+        scanVc.hidesBottomBarWhenPushed = true
+        scanVc.title = "扫一扫"
+        self.navigationController?.pushViewController(scanVc, animated: true)
     }
     
     func publish() -> Void {
