@@ -48,6 +48,11 @@ extension AppDelegate:UITabBarControllerDelegate {
         tabBar?.barTintColor = UIColor.white
         tabBar?.shadowImage = UIColor.art_sepLineHColor().imageForColor()
         tabBar?.backgroundImage = UIColor.white.imageForColor()
+        
+        let dict = [NSForegroundColorAttributeName:UIColor.black]
+        for item in (tabBar?.items)! {
+            (item as UITabBarItem).setTitleTextAttributes(dict, for: UIControlState.selected)
+        }
 
         let navBar = UINavigationBar.appearance()
         navBar.isTranslucent = false

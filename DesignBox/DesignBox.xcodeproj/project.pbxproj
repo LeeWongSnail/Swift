@@ -348,6 +348,7 @@
 		EB249AB31F42F2AF00D48C2F /* App */ = {
 			isa = PBXGroup;
 			children = (
+				EB76D8FC1F69186500464125 /* IM */,
 				EB76D8EE1F68DC1400464125 /* Scan */,
 				EBCB4C9E1F663B2700645B4A /* Publish */,
 				EBC58E1B1F63990900E10FFC /* Discovery */,
@@ -513,6 +514,13 @@
 				EB76D8FA1F69062B00464125 /* ArtQRScanService.swift */,
 			);
 			path = QRScanService;
+			sourceTree = "<group>";
+		};
+		EB76D8FC1F69186500464125 /* IM */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = IM;
 			sourceTree = "<group>";
 		};
 		EB7FF9041F4D2AE800CFEB8A /* AppFrame */ = {
