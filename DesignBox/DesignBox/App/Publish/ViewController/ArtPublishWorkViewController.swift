@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import DKImagePickerController
 
 class ArtPublishWorkViewController: UIViewController {
 
 
+    var publishImages: [UIImage] = Array()
+    var imageCell: ArtPublishWorkImageCell?
     
     //MARK: -CUSTOM METHOD
     func backDidClick() -> Void {
@@ -19,6 +22,82 @@ class ArtPublishWorkViewController: UIViewController {
     
     func nextStep() -> Void {
         
+        if let image = self.publishImages.first {
+            AliyunOSSService.shared.uploadImage(image: image)
+        }
+        
+    }
+    
+    
+    func caculateRowsForCount(count:Int) -> Int {
+        
+        if count <= 3 {
+            return 1
+        } else if (count <= 6) {
+            return 2
+        } else {
+            return 3
+        }
+        
+    }
+    
+    func handleRemoveImage(image:UIImage) -> Void {
+        
+        self.publishImages.remove(at: self.publishImages.index(of: image)!)
+        
+        if self.publishImages.count == 0 {
+            
+        }
+        
+        let row1 = self.caculateRowsForCount(count: (self.publishImages.count+2))
+        let row2 = self.caculateRowsForCount(count: (self.publishImages.count)+1)
+        
+        if row1 != row2 {
+            self.tableView.reloadData()
+        }
+        
+    }
+    
+    func addImage(image:UIImage) -> Void {
+        
+        var width = image.size.width
+        var height = image.size.height
+        
+        let maxW = SCREEN_W * image.scale
+        if width * image.scale > maxW {
+            height *= (maxW/(width * image.scale))
+            width = maxW
+        }
+        
+        self.publishImages.append(image)
+        self.imageCell?.addImage(image: image)
+        
+        let row1 = self.caculateRowsForCount(count: (self.publishImages.count))
+        let row2 = self.caculateRowsForCount(count: (self.publishImages.count)+1)
+
+        if row1 != row2 {
+            self.tableView.reloadData()
+        }
+        
+    }
+    
+    
+    func openImagePicker() -> Void {
+        let pickerController = DKImagePickerController()
+        
+        pickerController.didSelectAssets = { (assets: [DKAsset]) in
+            
+            for asset in assets {
+                asset.fetchFullScreenImage(true, completeBlock: { (image, info) in
+                    if image != nil {
+                        self.addImage(image: image!)
+                    }
+                })
+            }
+            
+        }
+        
+        self.present(pickerController, animated: true, completion: nil)
     }
     
     func registerCells() -> Void {
@@ -88,7 +167,12 @@ extension ArtPublishWorkViewController: UITableViewDelegate,UITableViewDataSourc
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ArtPublishWorkImageCell") as! ArtPublishWorkImageCell
+            cell.addImageBtn?.addTarget(self, action: #selector(ArtPublishWorkViewController.openImagePicker), for: UIControlEvents.touchUpInside)
+            self.imageCell = cell
             
+            cell.removeImageBlock =  { (image) -> Void in
+                self.handleRemoveImage(image: image)
+            }
             return cell
             
         case 2:
@@ -108,7 +192,8 @@ extension ArtPublishWorkViewController: UITableViewDelegate,UITableViewDataSourc
             return ArtPublishWorkTextCell.cellHeight()
             
         case 1:
-            return 100
+            let height = ArtPublishWorkImageCell.rowHeight()
+            return CGFloat(self.caculateRowsForCount(count: self.publishImages.count + 1)) * height + 10.0
         case 2:
             return 48
         default:

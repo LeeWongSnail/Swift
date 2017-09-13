@@ -18,46 +18,46 @@ class ArtPublishWorkImageCell: UITableViewCell {
 
 
     var addImageBtn: UIButton?
-    var imagesBtns: [UIButton]?
+    var imagesBtns: [UIButton] = Array()
     var removeImageBlock: ((_ image:UIImage) -> Void)?
     
     
     //MARK: Public Method
     func addImage(image:UIImage) -> Void {
         
-        if (self.imagesBtns?.count)! >= 9 {
+        
+        
+        if (self.imagesBtns.count) >= 9 {
             return
         }
         
         let btn = createImageBtn(image: image, canRemove: true)
-        if self.imagesBtns?.count == 8 {
+        if self.imagesBtns.count == 8 {
             self.addImageBtn?.isHidden = true
             var idx = 0
-            for btn in self.imagesBtns! {
+            for btn in self.imagesBtns {
                 btn.center = self.caculateCenterForIndex(index: idx)
                 idx += 1
             }
         }
         
-        btn.center = self.caculateCenterForIndex(index: (self.imagesBtns?.count)!)
-        if (self.imagesBtns?.count)! < 8 {
-            self.addImageBtn?.center = self.caculateCenterForIndex(index: (self.imagesBtns?.count)!+1)
+        btn.center = self.caculateCenterForIndex(index: (self.imagesBtns.count))
+        if (self.imagesBtns.count) < 8 {
+            self.addImageBtn?.center = self.caculateCenterForIndex(index: (self.imagesBtns.count)+1)
         }
         
         self.contentView.addSubview(btn)
-        self.imagesBtns?.append(btn)
+        self.imagesBtns.append(btn)
     }
     
     
     func setImages(images:[UIImage]?) -> Void {
         
-        if self.imagesBtns != nil {
-            for btn in self.imagesBtns! {
-                btn.removeFromSuperview()
-            }
+        for btn in self.imagesBtns {
+            btn.removeFromSuperview()
         }
         
-        self.imagesBtns?.removeAll()
+        self.imagesBtns.removeAll()
         
         for image in images! {
             self.addImage(image: image)
@@ -92,7 +92,7 @@ class ArtPublishWorkImageCell: UITableViewCell {
         
         if canRemove {
           let removeBtn = UIButton(type: UIButtonType.custom)
-            removeBtn.setImage(UIImage.init(named: ""), for: UIControlState.normal)
+            removeBtn.setImage(UIImage.init(named: "publish_add_img_del"), for: UIControlState.normal)
             btn.addSubview(removeBtn)
             removeBtn.addTarget(self, action: #selector(ArtPublishWorkImageCell.removeImage(sender:)), for: UIControlEvents.touchUpInside)
             removeBtn.snp.makeConstraints({ (make) in
@@ -116,21 +116,23 @@ class ArtPublishWorkImageCell: UITableViewCell {
             self.addImageBtn?.isHidden = false
         }
         
-        self.imagesBtns?.remove(at: (self.imagesBtns?.index(of: btn as! UIButton))!)
+        self.imagesBtns.remove(at: (self.imagesBtns.index(of: btn as! UIButton))!)
         UIView.animate(withDuration: 0.2, animations: { 
             btn.transform = CGAffineTransform.init(scaleX: 0.2, y: 0.2)
             self.addImageBtn?.alpha = 1
             
             var index = 0
-            for btn in self.imagesBtns! {
+            for btn in self.imagesBtns {
                 btn.center = self.caculateCenterForIndex(index: index)
                 index+=1
             }
-            self.addImageBtn?.center = self.caculateCenterForIndex(index: (self.imagesBtns?.count)!)
+            self.addImageBtn?.center = self.caculateCenterForIndex(index: self.imagesBtns.count)
             
         }) { (finish) in
             btn.removeFromSuperview()
-            self.removeImageBlock!((btn as! UIButton).image(for: UIControlState.normal)!)
+            if self.removeImageBlock != nil {
+                self.removeImageBlock!((btn as! UIButton).image(for: UIControlState.normal)!)
+            }
         }
         
     }

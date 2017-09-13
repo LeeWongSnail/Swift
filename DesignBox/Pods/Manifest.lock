@@ -1,6 +1,7 @@
 PODS:
   - ActiveLabel (0.7.1)
   - Alamofire (4.5.0)
+  - AliyunOSSiOS (2.6.2)
   - CryptoSwift (0.6.9)
   - DGElasticPullToRefresh (1.1)
   - DKImagePickerController (3.6.1):
@@ -40,6 +41,7 @@ PODS:
 DEPENDENCIES:
   - ActiveLabel
   - Alamofire (~> 4.4)
+  - AliyunOSSiOS
   - CryptoSwift
   - DGElasticPullToRefresh
   - DKImagePickerController
@@ -57,6 +59,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   ActiveLabel: 68625f22775f51c31bb691ca8de20f1e5a3bc825
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  AliyunOSSiOS: 602bc287cfa30a2a6375907e684ec66d0c45e3f1
   CryptoSwift: a22f6ba238e9ce4d26ee7bf45b9ed82e7122d4a0
   DGElasticPullToRefresh: 28f11a6026302a90f8ffebbc6e24748e584dddd3
   DKImagePickerController: 4f8072aed44119a33955c9583273ea7c8739c0f4
@@ -68,6 +71,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   UMengUShare: a5711c54e640b04e3048e931d2b88d50f9cfa55c
 
-PODFILE CHECKSUM: 3027ea0566bc26f50e1c94c3ef5a0bb767b116bd
+PODFILE CHECKSUM: aa0e72a962801efe00ccac6671d91fe2b7e413d0
 
 COCOAPODS: 1.2.1

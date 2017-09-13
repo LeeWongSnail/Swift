@@ -31,6 +31,8 @@
 		EB76D8E41F6694FF00464125 /* ArtPublishWorkImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB76D8E31F6694FF00464125 /* ArtPublishWorkImageCell.swift */; };
 		EB76D8E71F66951C00464125 /* ArtPublishWorkControlCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB76D8E51F66951C00464125 /* ArtPublishWorkControlCell.swift */; };
 		EB76D8E81F66951C00464125 /* ArtPublishWorkControlCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB76D8E61F66951C00464125 /* ArtPublishWorkControlCell.xib */; };
+		EB76D8EB1F67C43200464125 /* AliyunOSSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB76D8EA1F67C43200464125 /* AliyunOSSService.swift */; };
+		EB76D8ED1F67CE4200464125 /* AliyunOSSConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB76D8EC1F67CE4200464125 /* AliyunOSSConfig.swift */; };
 		EB7FF9031F4D1C5A00CFEB8A /* DesignBox-Prefix.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7FF9021F4D1C5A00CFEB8A /* DesignBox-Prefix.swift */; };
 		EB7FF90C1F4D44D800CFEB8A /* AppDelegate+Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7FF90B1F4D44D800CFEB8A /* AppDelegate+Start.swift */; };
 		EB7FF90F1F4D450E00CFEB8A /* UIColor+Art.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7FF90E1F4D450E00CFEB8A /* UIColor+Art.swift */; };
@@ -152,6 +154,8 @@
 		EB76D8E31F6694FF00464125 /* ArtPublishWorkImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtPublishWorkImageCell.swift; sourceTree = "<group>"; };
 		EB76D8E51F66951C00464125 /* ArtPublishWorkControlCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtPublishWorkControlCell.swift; sourceTree = "<group>"; };
 		EB76D8E61F66951C00464125 /* ArtPublishWorkControlCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtPublishWorkControlCell.xib; sourceTree = "<group>"; };
+		EB76D8EA1F67C43200464125 /* AliyunOSSService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AliyunOSSService.swift; sourceTree = "<group>"; };
+		EB76D8EC1F67CE4200464125 /* AliyunOSSConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AliyunOSSConfig.swift; sourceTree = "<group>"; };
 		EB7FF9021F4D1C5A00CFEB8A /* DesignBox-Prefix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DesignBox-Prefix.swift"; sourceTree = "<group>"; };
 		EB7FF90B1F4D44D800CFEB8A /* AppDelegate+Start.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Start.swift"; sourceTree = "<group>"; };
 		EB7FF90E1F4D450E00CFEB8A /* UIColor+Art.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Art.swift"; sourceTree = "<group>"; };
@@ -399,6 +403,7 @@
 		EB249ACB1F43E05700D48C2F /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				EB76D8E91F67C40700464125 /* UploadService */,
 				EBC58DD31F5D40ED00E10FFC /* DBService */,
 				EB9522031F593B2E00849DEC /* Command */,
 				EB9522051F593B2E00849DEC /* ImageService */,
@@ -439,6 +444,15 @@
 				EB76D8E11F66932500464125 /* ArtTextView.swift */,
 			);
 			path = ArtKit;
+			sourceTree = "<group>";
+		};
+		EB76D8E91F67C40700464125 /* UploadService */ = {
+			isa = PBXGroup;
+			children = (
+				EB76D8EA1F67C43200464125 /* AliyunOSSService.swift */,
+				EB76D8EC1F67CE4200464125 /* AliyunOSSConfig.swift */,
+			);
+			path = UploadService;
 			sourceTree = "<group>";
 		};
 		EB7FF9041F4D2AE800CFEB8A /* AppFrame */ = {
@@ -1108,6 +1122,7 @@
 				EB9522121F593C5D00849DEC /* ArtLoginUserService.swift in Sources */,
 				EB7FF9031F4D1C5A00CFEB8A /* DesignBox-Prefix.swift in Sources */,
 				EBC58DE91F5FCD4600E10FFC /* ArtBanner.swift in Sources */,
+				EB76D8EB1F67C43200464125 /* AliyunOSSService.swift in Sources */,
 				EBC58DDC1F5E80ED00E10FFC /* ArtImageBrowserController.swift in Sources */,
 				EB76D8D71F66826B00464125 /* ArtPublishChoiceView.swift in Sources */,
 				EB76D8DC1F668BD400464125 /* ArtLabel.swift in Sources */,
@@ -1126,6 +1141,7 @@
 				EB249AD11F44281A00D48C2F /* ArtWork.swift in Sources */,
 				EBEE742F1F4BD97F0092EFCC /* ArtShare.swift in Sources */,
 				EB7FF9291F50059A00CFEB8A /* ArtScrollTabItem.swift in Sources */,
+				EB76D8ED1F67CE4200464125 /* AliyunOSSConfig.swift in Sources */,
 				EBC58DEE1F5FF4CB00E10FFC /* ArtRequirementListController.swift in Sources */,
 				EB7FF9161F4E736B00CFEB8A /* ArtStyle.swift in Sources */,
 			);

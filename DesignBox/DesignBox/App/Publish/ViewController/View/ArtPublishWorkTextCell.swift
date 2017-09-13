@@ -33,6 +33,10 @@ class ArtPublishWorkTextCell: UITableViewCell {
 extension ArtPublishWorkTextCell:UITextViewDelegate {
     
     
+    func textViewDidChange(_ textView: UITextView) {
+        
+    }
+    
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.characters.count < 1 {
             textView.text = "请填写作品描述"
